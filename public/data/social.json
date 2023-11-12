@@ -1,0 +1,23 @@
+
+[
+    {
+      "id" : 1,
+      "icon" : "<FaFacebookF />",
+      "link" : "https://www.facebook.com/profile.php?id=100077666327550"
+    },
+    {
+      "id" : 1,
+      "icon" : "<FaInstagram />",
+      "link" : "https://www.facebook.com/profile.php?id=100077666327550"
+    },
+    {
+      "id" : 2,
+      "icon" : "<FaLinkedin />",
+      "link" : "https://www.facebook.com/profile.php?id=100077666327550"
+    },
+    {
+      "id" : 3,
+      "icon" : "<FaTelegram />",
+      "link" : "https://www.facebook.com/profile.php?id=100077666327550"
+    }
+  ]

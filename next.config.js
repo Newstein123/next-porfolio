@@ -1,4 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+    images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'www.pngall.com',
+            port: '',
+            pathname: '/wp-content/uploads/5/Profile-Male-PNG.png',
+          },
+        ],
+      },  
+}
 
 module.exports = nextConfig
