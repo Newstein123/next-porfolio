@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import Image from 'next/image'
-import Footer from './Footer'
+import Social from './Social'
 import Link from 'next/link'
 import data from '../../public/data/navbar'
 
@@ -37,7 +37,7 @@ const Sidebar = () => {
               }
           </ul>
         </div>
-        <Footer/>
+        <Social/>
       </div>
     </div>
   )

@@ -5,6 +5,7 @@ import {AiFillApi} from 'react-icons/ai'
 import {FaComputer} from 'react-icons/fa6'
 import {MdOutlineComputer} from 'react-icons/md'
 import {GrServer} from 'react-icons/gr'
+import Title from "@/app/utlis/Title";
 
 const data = [
     {
@@ -51,20 +52,14 @@ const Service = () => {
     <div className="min-h-screen bg-slate-100 flex items-center justify-center">
       <div className="mt-10 md:mt-0">
         {/* title  */}
-        <div className="relative text-center">
-          <h1 className="text-3xl inline leading-normal font-bold text-slate-800">
-            My Service
-          </h1>
-          <span className="absolute left-1/2 bottom-0 -translate-x-1/2 w-32 bg-violet-700 h-1">
-          </span>
-        </div>
+        <Title title="My Service" />
         {/* My service  */}
-        <div className="flex flex-wrap mt-20">
+        <div className="flex flex-wrap mt-20 mb-5">
           {data.map((item) => (
             <div className="lg:w-1/2" key={item.id}>
               <div className="flex justify-between mx-10 items-center mt-10">
                 <div className="w-1/4">
-                  <div className="bg-slate-200 rounded-2xl text-violet-700 text-center px-3 py-5 flex justify-center shadow-md shadow-slate-600">
+                  <div className="bg-slate-200 rounded-2xl text-violet-700 text-center px-3 py-5 flex justify-center shadow-md shadow-violet-500">
                     {item.icon}
                   </div>
                 </div>

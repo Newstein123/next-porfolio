@@ -1,3 +1,4 @@
+import Title from '@/app/utlis/Title'
 import React from 'react'
 import {LiaDownloadSolid} from 'react-icons/lia'
 
@@ -26,11 +27,8 @@ const data = [
 
 const About = () => {
   return (
-    <div className='my-10'>
-      <div className="relative text-center">
-        <h1 className='text-3xl inline leading-normal font-bold text-slate-800'> Know Me More </h1>
-        <span className='absolute left-1/2 bottom-0 -translate-x-1/2 w-32 bg-violet-700 h-1'>  </span>
-      </div>
+    <div className='my-10 min-h-screen'>
+      <Title title="Know Me More" />
       {/* Information  */}
       <div className="flex flex-wrap mt-20">
         <div className='lg:w-2/3'>
@@ -66,7 +64,7 @@ const About = () => {
                   <span className="absolute bottom-0 left-0 bg-slate-500 w-3/4 h-[2px]"></span>
                 </div>
                 <div className='text-center mt-10'>
-                  <a href="" className='py-3 px-4 bg-violet-700 text-white  rounded-3xl' > Download CV <LiaDownloadSolid className='inline' /> </a>
+                  <a href="" className='py-3 px-4 bg-violet-700 text-white  rounded-3xl shadow-md shadow-violet-500' > Download CV <LiaDownloadSolid className='inline' /> </a>
                 </div>
               </div>
             </div>

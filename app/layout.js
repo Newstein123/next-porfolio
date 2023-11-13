@@ -1,5 +1,5 @@
 import { Inter } from 'next/font/google'
-import Footer from './componets/Footer'
+import Footer from './componets/parts/Footer'
 import Sidebar from './componets/Sidebar'
 import './globals.css'
 import MobileNavbar from './componets/MobileNavbar'
@@ -23,6 +23,7 @@ export default function RootLayout({ children }) {
               {/* Mobile Navbar  */}
               <MobileNavbar />
               {children}
+              <Footer />
             </div>
           </div>
       </body>

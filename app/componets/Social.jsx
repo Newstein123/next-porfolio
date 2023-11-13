@@ -25,7 +25,7 @@ const data = [
   },
 ]
 
-const Footer = () => {
+const Social = () => {
   return (
     <div className='fixed bottom-0'>
       <div className='flex justify-center bg-red-400 px-5 py-2 border-t-red-500 rounded-tl-lg rounded-tr-lg'>
@@ -41,4 +41,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Social
