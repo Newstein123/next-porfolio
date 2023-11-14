@@ -10,10 +10,10 @@ const nextConfig = {
           },
           {
             protocol: 'https',
-            hostname: 'https://www.laminationsonline.com',
+            hostname: 'www.laminationsonline.com',
             port: '',
             pathname: '/wp-content/uploads/2019/03/placeholder-400x300.png',
-          },
+          }
         ],
       },  
 }
