@@ -3,48 +3,88 @@
         "id" : 1,
         "title" : "MMQrGenerator",
         "desc" : "Qr generation app with customized design and template. Jquery, Laravel, Bootstrap",
-        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png"
+        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png",
+        "client" : "",
+        "content" : "",
+        "date" : "",
+        "category" : "",
+        "location" : ""
     },
     {
         "id" : 2,
         "title" : "MM ChatAi",
         "desc" : "Chat GPT Myanmar Version with google translate and Chat GPT Api. Jquery, Laravel, Bootstrap",
-        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png"
+        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png",
+        "client" : "",
+        "content" : "",
+        "date" : "",
+        "category" : "",
+        "location" : ""
     },
     {
         "id" : 3,
         "title" : "Trading Platform",
         "desc" : "Trading agent platform with binance websocket api. React, Laravel, Bootstrap",
-        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png"
+        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png",
+        "client" : "",
+        "content" : "",
+        "date" : "",
+        "category" : "",
+        "location" : ""
     },
     {
         "id" : 4,
         "title" : "Media Website",
         "desc" : "Blog platform with payment integration and facebook like features. Laravel, Jquery, Bootstrap",
-        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png"
+        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png",
+        "client" : "",
+        "content" : "",
+        "date" : "",
+        "category" : "",
+        "location" : ""
     },
     {
         "id" : 5,
         "title" : "Business Finding App",
         "desc" : "Business selling and buying app with colorful UI/UX. React, Laravel, Inertia Js, Tailwind",
-        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png"
+        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png",
+        "client" : "",
+        "content" : "",
+        "date" : "",
+        "category" : "",
+        "location" : ""
     },
     {
         "id" : 6,
         "title" : "Fire Qr Product",
         "desc" : "Product showcase page with integrated Qr System. Laravel, Jquery, Bootstrap",
-        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png"
+        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png",
+        "client" : "",
+        "content" : "",
+        "date" : "",
+        "category" : "",
+        "location" : ""
     },
     {
         "id" : 7,
         "title" : "this is title",
         "desc" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
-        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png"
+        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png",
+        "client" : "",
+        "content" : "",
+        "date" : "",
+        "category" : "",
+        "location" : ""
     },
     {
         "id" : 8,
         "title" : "this is title",
         "desc" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
-        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png"
+        "image" : "https://www.laminationsonline.com/wp-content/uploads/2019/03/placeholder-400x300.png",
+        "client" : "",
+        "content" : "",
+        "date" : "",
+        "category" : "",
+        "location" : ""
     }
 ]

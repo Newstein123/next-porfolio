@@ -13,11 +13,11 @@ const ProjectDetail = ({id}) => {
     <div>
         {/* image  */}
         <img src="https://placehold.co/1920x350" alt='project cover image' width={1920} height={350} />
-        <div className='mx-20 mt-20'>
+        <div className='mx-10 md:mx-20 mt-20'>
             {/* Project details || Image  project information */}
-            <div className="flex">
+            <div className="flex flex-wrap">
                 {/* project details  */}
-                <div className="w-2/3">
+                <div className="w-full lg:w-2/3">
                     <img src="https://placehold.co/803x488" alt='project cover image' width={803} height={488} />
                     {/* Heading One  */}
                     <h1 className='text-2xl font-bold text-slate-700 mt-10'> {item[0].title} </h1>
@@ -44,7 +44,7 @@ const ProjectDetail = ({id}) => {
                     <p className='text-slate-500 my-10'> {item[0].desc} </p>
                 </div>
                 {/* project info */}
-                <div className="w-1/3">
+                <div className="w-full lg:w-1/3">
                     <div className="ms-5">
                         <ProjectInfoCard />
                         <ContactNow />
@@ -131,7 +131,7 @@ export const ProjectInfoCard = () => {
     )
 }
 
-export const ContactNow = () => {
+export const ContactNow = () => {   
     return (
         <div className='mt-10'>
             <p> contact now </p>

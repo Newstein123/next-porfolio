@@ -1,9 +1,10 @@
 import React from 'react'
+import Project from '../componets/project/Project'
 
 const page = () => {
   return (
     <div>
-      this is project page
+      <Project />
     </div>
   )
 }

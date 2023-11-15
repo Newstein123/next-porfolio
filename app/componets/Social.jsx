@@ -31,7 +31,7 @@ const Social = () => {
       <div className='flex justify-center bg-red-400 px-5 py-2 border-t-red-500 rounded-tl-lg rounded-tr-lg'>
         {
           data.map(item => (
-            <Link href={item.link} className='text-white text-xl mx-2 hover:text-red-300'>
+            <Link href={item.link} key={item.id} className='text-white text-xl mx-2 hover:text-red-300'>
               {item.icon}
             </Link>
           ))

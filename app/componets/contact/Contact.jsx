@@ -122,7 +122,7 @@ const Contact = () => {
                 <div className="text-center mt-3">
                   <button
                     type="submit"
-                    className="rounded-3xl bg-violet-700 text-white px-4 py-3 shadow-md shadow-violet-500"
+                    className="rounded-3xl transition-all ease-out delay-100  bg-violet-700 text-white px-4 py-3 shadow-md shadow-violet-500 hover:bg-red-400"
                   >
                     Message Me
                   </button>
