@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
+
 const ProjectItem = ({ item }) => {
  
   return (
@@ -38,22 +39,22 @@ export const CardItemOne = ({item}) => {
 export const CardItemTwo = ({item}) => {
   return (
     <div className="w-full md:w-2/3 lg:w-1/3">
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 me-3 mt-3">
+      <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-300 dark:border-gray-200 me-3 mt-3 relative group">
         <Link href={`/project/detail/${item.id}`}>
-          <Image class="rounded-t-lg" src={item.image} alt="" width={400} height={300} />
+          <Image className="rounded-t-lg" src={item.image} alt="" width={400} height={300} priority/>
         </Link>
-        <div class="p-5">
+        <div className="hidden p-5 absolute top-0 group-hover:block bg-black bg-opacity-75 w-full h-full">
           <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-200 dark:text-white">
               {item.title}
             </h5>
           </a>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {item.desc}
           </p>
           <Link
             href={`/project/detail/${item.id}`}
-            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-violet-700 rounded-lg hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
+            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-violet-700 rounded-lg hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
           >
           <span className="me-3"> See Details </span> <AiOutlineArrowRight className="inline" />
           </Link>

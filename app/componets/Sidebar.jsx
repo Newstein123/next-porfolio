@@ -19,7 +19,6 @@ const Sidebar = () => {
               height={200}
               className='rounded-full'
               blurDataURL="data:..."
-              placeholder="blur"
               alt='profile image'
           />
           <h3 className='font-bold text-slate-200 text-center text-xl mt-3'> Min Thet Paing </h3>
@@ -31,7 +30,7 @@ const Sidebar = () => {
                   data.map(item => (
                       <li 
                         key={item.id}
-                        className={`my-5 text-lg text-white hover:text-red-500 ${pathname == item.link ? "text-red-400" : ""}`}
+                        className={item.link == pathname ? "my-5 text-lg hover:text-red-500 text-red-400" : "my-5 text-lg hover:text-red-500"}
                       > 
                         <Link href={item.link}> {item.name} </Link> 
                       </li>

@@ -4,6 +4,7 @@ import HeroImage from '../../../public/image/hero.png'
 import { Typewriter, Cursor } from 'react-simple-typewriter'
 import Link from 'next/link'
 import {AiOutlineArrowRight} from 'react-icons/ai'
+import Button from '@/app/utlis/Button'
 
 const HeroSection = () => {
   return (
@@ -29,9 +30,7 @@ const HeroSection = () => {
           </span>
           <span> Develper </span> 
         </h1>
-        <button className='mt-10'>
-          <Link href="/contact" className='bg-violet-700 text-white py-4 px-5 rounded-3xl  shadow-md shadow-violet-400'> Hire Me <AiOutlineArrowRight className='inline' /> </Link>
-        </button>
+        <Button link="/contact" name="Hire Me" />
       </div>
     </div>
   )

@@ -30,8 +30,8 @@ const data = [
 
 const Contact = () => {
   return (
-    <div className="min-h-screen mt-10 flex justify-center items-center bg-slate-50">
-      <div className="w-full">
+    <div className="min-h-screen flex justify-center items-center bg-slate-50">
+      <div className="w-full pt-10 ">
         <Title title="Get In Touch" />
 
         <div className="mt-20">
@@ -80,7 +80,7 @@ const Contact = () => {
                   <div className='flex justify-center my-3 bg-violet-700 px-5 py-3 rounded-tl-lg rounded-tr-lg'>
                     {
                       data.map(item => (
-                        <Link href={item.link} className=' text-xl mx-2 hover:text-red-300'>
+                        <Link href={item.link} key={item.id} className=' text-xl mx-2 hover:text-red-300'>
                           {item.icon}
                         </Link>
                       ))

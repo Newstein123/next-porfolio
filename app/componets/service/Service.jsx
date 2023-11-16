@@ -4,48 +4,57 @@ import {GiGearHammer} from 'react-icons/gi'
 import {AiFillApi} from 'react-icons/ai'
 import {FaComputer} from 'react-icons/fa6'
 import {MdOutlineComputer} from 'react-icons/md'
-import {GrServer} from 'react-icons/gr'
+import {GrServers} from 'react-icons/gr'
+import { CiServer } from "react-icons/ci";
+
 import Title from "@/app/utlis/Title";
+import ServiceItem from "./ServiceItem";
 
 const data = [
-    {
-        id: 1,
-        name: "Full Stack Development",
-        desc: "Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.",
-        icon: <FaComputer size={40} />,
-    },
-    {
-        id: 2,
-        name: "Frontend Technologies",
-        desc: "Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.",
-        icon: <MdOutlineComputer size={40} />,
-    },
-    {
-        id: 3,
-        name: "Backend Technologies",
-        desc: "Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.",
-        icon: <GiGearHammer size={40} />,
-    },
-    {
-        id: 4,
-        name: "Database Management",
-        desc: "Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.",
-        icon: <BsDatabaseFillGear size={40} />,
-    },
-    {
-        id: 5,
-        name: "Api Development",
-        desc: "Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.",
-        icon: <AiFillApi size={40} />,
-    },
-    {
-        id: 6,
-        name: "Server Management",
-        desc: "Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.",
-        icon: <GrServer size={40} />,
-    },
-
+  {
+      id: 1,
+      name: "Full Stack Development",
+      short_desc: "Proficient in React, Laravel, Next.js, Node.js, Inertia.js, AWS, and Digital Ocean.",
+      desc: "I possess skills in React, Laravel, Next.js, Node.js, Inertia.js, AWS, and Digital Ocean, ensuring expertise in Full Stack Development.",
+      icon: <FaComputer size={40} />,
+  },
+  {
+      id: 2,
+      name: "Frontend Technologies",
+      short_desc: "Expertise in React for building responsive and user-friendly interfaces.",
+      desc: "My proficiency lies in Frontend Technologies, with a focus on React, ensuring a strong foundation in building responsive and user-friendly interfaces.",
+      icon: <MdOutlineComputer size={40} />,
+  },
+  {
+      id: 3,
+      name: "Backend Technologies",
+      short_desc: "Excel in Laravel and Node.js for robust and scalable server-side solutions.",
+      desc: "In Backend Technologies, I excel in utilizing Laravel and Node.js to create robust and scalable server-side solutions, ensuring optimal performance and functionality.",
+      icon: <GiGearHammer size={40} />,
+  },
+  {
+      id: 4,
+      name: "Database Management",
+      short_desc: "Proficient in MySQL and MongoDb for efficient database design and management.",
+      desc: "Skilled in Database Management, I am well-versed in utilizing MySQL and MongoDb to design and manage databases, ensuring efficient data storage and retrieval.",
+      icon: <BsDatabaseFillGear size={40} />,
+  },
+  {
+      id: 5,
+      name: "API Development",
+      short_desc: "Specialize in Node.js and Express.js for secure and efficient API development.",
+      desc: "Focusing on API Development, I leverage Node.js and Express.js to craft secure and efficient APIs, facilitating seamless communication between different components of a software system.",
+      icon: <AiFillApi size={40} />,
+  },
+  {
+      id: 6,
+      name: "Server Management",
+      short_desc: "Expertise in AWS and Digital Ocean for reliable and scalable server infrastructure.",
+      desc: "My skills extend to Server Management, with a focus on AWS and Digital Ocean, ensuring reliable and scalable infrastructure to support various applications and services.",
+      icon: <CiServer size={40} />,
+  },
 ];
+
 
 const Service = () => {
   return (
@@ -56,23 +65,7 @@ const Service = () => {
         {/* My service  */}
         <div className="flex flex-wrap mt-20 mb-5">
           {data.map((item) => (
-            <div className="lg:w-1/2" key={item.id}>
-              <div className="flex justify-between mx-10 items-center mt-10">
-                <div className="w-1/4">
-                  <div className="bg-slate-200 rounded-2xl text-violet-700 text-center px-3 py-5 flex justify-center shadow-md shadow-violet-500">
-                    {item.icon}
-                  </div>
-                </div>
-                <div className="w-3/4">
-                  <div className="ms-5">
-                    <h2 className="text-slate-800 text-2xl font-bold mb-2">
-                      {item.name}
-                    </h2>
-                    <p className="text-slate-500"> {item.desc} </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ServiceItem item={item} key={item.id}/>
           ))}
         </div>
       </div>

@@ -1,6 +1,8 @@
 import Title from "@/app/utlis/Title";
 import React from "react";
 import { LiaDownloadSolid } from "react-icons/lia";
+import ProfileImg from '../../../public/image/profile_img.png'
+import Image from "next/image";
 
 const data = [
   {
@@ -49,14 +51,21 @@ const About = () => {
               successfully contributed to the development of web applications.
             </p>
             <br />
-            <p className="text-slate-500 leading-loose text-justify">
-              My background also includes experience as a service technician at
-              Esco Life Science, an on-the-job training role as a Junior Web
-              Developer at Lyrion Co Ltd, and a brief stint as a Web Development
-              Teacher at MST University. I have honed my skills in frontend and
-              backend development, troubleshooting, and training, making me a
-              well-rounded professional in the field.
-            </p>
+            <div className="flex flex-wrap flex-col-reverse md:flex-row-reverse"> 
+              <div className="lg:w-2/3 mt-3 md:mt-0">
+                <p className="text-slate-500 leading-loose text-justify md:ms-3">
+                My background also includes experience as a service technician at
+                Esco Life Science, an on-the-job training role as a Junior Web
+                Developer at Lyrion Co Ltd, and a brief stint as a Web Development
+                Teacher at MST University. I have honed my skills in frontend and
+                backend development, troubleshooting, and training, making me a
+                well-rounded professional in the field.
+              </p>
+              </div>
+              <div className="lg:w-1/3">
+                <Image src={ProfileImg} width={400} height={400} alt="profile_img" />
+              </div>
+            </div>
           </div>
         </div>
         <div className="lg:w-1/3 text-lg ">
