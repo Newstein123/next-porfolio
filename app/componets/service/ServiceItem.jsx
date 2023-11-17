@@ -17,7 +17,7 @@ export default ServiceItem;
 export const Service = ({item}) => {
   return (
     <div className="lg:w-1/3 md:w-1/2 group service-item">
-      <div className="bg-slate-300 mx-5 mt-5 rounded-md group-hover:bg-violet-700 shadow-sm shadow-slate-600 group-hover:shadow-violet-900 transition-transform duration-300 ease-in-out transform scale-100 hover:scale-115">
+      <div className="bg-slate-300 mx-5 mt-5 rounded-md group-hover:bg-violet-700 shadow-sm shadow-slate-600 group-hover:shadow-violet-900 transition-transform duration-300 ease-in-out transform scale-100 hover:scale-115  h-[300px]">
         <div className="flex justify-center">
           <div className="p-3">
             <div className="text-center text-violet-700 group-hover:text-slate-100 inline transition-transform duration-300 ease-in-out transform scale-100 hover:scale-115">{item.icon}</div>

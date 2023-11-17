@@ -17,7 +17,10 @@ const Sidebar = () => {
               src={ProfileImage}
               width={200}
               height={200}
-              className='rounded-full'
+              className='border-8 border-slate-700'
+              style={{
+                borderRadius : "50%"
+              }}
               blurDataURL="data:..."
               alt='profile image'
           />
@@ -30,7 +33,12 @@ const Sidebar = () => {
                   data.map(item => (
                       <li 
                         key={item.id}
-                        className={item.link == pathname ? "my-5 text-lg hover:text-red-500 text-red-400" : "my-5 text-lg hover:text-red-500"}
+                        className={
+                          item.link === pathname || 
+                          (pathname.startsWith('/project') && item.link === '/project')
+                            ? "my-5 text-lg hover:text-red-500 text-red-400"
+                            : "my-5 text-lg hover:text-red-500"
+                        }
                       > 
                         <Link href={item.link}> {item.name} </Link> 
                       </li>

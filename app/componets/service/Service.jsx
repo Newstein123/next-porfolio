@@ -63,7 +63,7 @@ const Service = () => {
         {/* title  */}
         <Title title="My Service" />
         {/* My service  */}
-        <div className="flex flex-wrap mt-20 mb-5">
+        <div className="flex flex-wrap mt-20 mb-5 mx-5 md:mx-10">
           {data.map((item) => (
             <ServiceItem item={item} key={item.id}/>
           ))}
