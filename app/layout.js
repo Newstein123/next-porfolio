@@ -3,6 +3,7 @@ import Footer from './componets/parts/Footer'
 import Sidebar from './componets/Sidebar'
 import './globals.css'
 import MobileNavbar from './componets/MobileNavbar'
+import ScrollUpButton from './utlis/ScrollUpButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,10 +13,11 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       <body className={inter.className}>
-          <div className='flex min-h-screen'>
+          <div className='flex min-h-screen relative'>
             <div className='md:w-2/6 lg:w-1/6 bg-violet-700 hidden md:block'>  
               <Sidebar />
             </div>
@@ -23,6 +25,7 @@ export default function RootLayout({ children }) {
               {/* Mobile Navbar  */}
               <MobileNavbar />
               {children}
+              <ScrollUpButton />
               <Footer />
             </div>
           </div>

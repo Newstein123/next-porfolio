@@ -4,6 +4,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import Link from "next/link";
 import {FaFacebookF, FaInstagram, FaLinkedin, FaTelegram} from 'react-icons/fa6'
 import Title from "@/app/utlis/Title";
+import ContactForm from "./ContactForm";
 
 const data = [
   {
@@ -90,45 +91,7 @@ const Contact = () => {
               </div>
             </div>
             {/* contact form  */}
-            <div className="lg:w-3/4">
-              <div className="mx-10 md:mx-20">
-                <h1 className="text-2xl font-bold text-slate-800 mb-5">
-                  Sent Me A Note
-                </h1>
-                <div className="flex">
-                  <div className="w-1/2 me-2">
-                    <input
-                      type="text"
-                      placeholder="Name"
-                      className="p-3 border-2 border-slate-300 rounded-md w-full focus:border-violet-700"
-                    />
-                  </div>
-                  <div className="w-1/2 ms-2">
-                    <input
-                      type="email"
-                      placeholder="Email"
-                      className="p-3 border-2 border-slate-300 rounded-md w-full"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <textarea
-                    cols="30"
-                    rows="5"
-                    placeholder="Tell me more about your needs..."
-                    className="w-full mt-5 rounded-md border-2 border-slate-300"
-                  ></textarea>
-                </div>
-                <div className="text-center mt-3">
-                  <button
-                    type="submit"
-                    className="rounded-3xl transition-all ease-out delay-100  bg-violet-700 text-white px-4 py-3 shadow-md shadow-violet-500 hover:bg-red-400"
-                  >
-                    Message Me
-                  </button>
-                </div>
-              </div>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </div>
@@ -137,3 +100,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
