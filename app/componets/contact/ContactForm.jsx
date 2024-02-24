@@ -31,65 +31,68 @@ const ContactForm = () => {
             toast.success('Thank you.')
         }
     }
-
-    console.log(form)
     
     return (
-        <div className="lg:w-3/4">
+        <React.Fragment>
             <Toaster />
             <form onSubmit={handleSubmit}>
-            <div className="mx-10 md:mx-20">
-              <h1 className="text-2xl font-bold text-slate-800 mb-5">
-                Sent Me A Note
-              </h1>
-              <div className="flex flex-wrap">
-                <div className="w-full md:w-1/2">
-                  <input
-                    type="text"
-                    name='name'
-                    placeholder="Name"
-                    value={form.name}
-                    className="p-3 border-2 border-slate-300 rounded-md w-full focus:border-violet-700  md:me-2  text-slate-700 placeholder:text-violet-400"
+              <div 
+                data-aos="slide-left" 
+                data-aos-delay="20"
+                data-aos-duration="1500"
+                className="mx-10 md:mx-20"
+              >
+                <h1 className="text-2xl font-bold text-slate-800 mb-5">
+                  Sent Me A Note
+                </h1>
+                <div className="flex flex-wrap">
+                  <div className="w-full md:w-1/2">
+                    <input
+                      type="text"
+                      name='name'
+                      placeholder="Name"
+                      value={form.name}
+                      className="p-3 border-2 border-slate-300 rounded-md w-full focus:border-violet-700  md:me-2  text-slate-700 placeholder:text-violet-400"
+                      required
+                      onChange={(e) => handleChange(e)}
+                    />
+                  </div>
+                  <div className="w-full md:w-1/2 mt-5 md:mt-0">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={form.email}
+                      placeholder="Email"
+                      className="p-3 border-2 border-slate-300 rounded-md w-full  md:ms-2  placeholder:text-violet-400 text-slate-700"
+                      required
+                      onChange={(e) => handleChange(e)}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <textarea
+                    cols="30"
+                    rows="5"
+                    name="message"
+                    id="message"
+                    placeholder="Tell me more about your needs..."
+                    className="w-full mt-5 rounded-md border-2 border-slate-300  placeholder:text-violet-400 text-slate-700"
                     required
                     onChange={(e) => handleChange(e)}
-                  />
+                  >{form.message}</textarea>
                 </div>
-                <div className="w-full md:w-1/2 mt-5 md:mt-0">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={form.email}
-                    placeholder="Email"
-                    className="p-3 border-2 border-slate-300 rounded-md w-full  md:ms-2  placeholder:text-violet-400 text-slate-700"
-                    required
-                    onChange={(e) => handleChange(e)}
-                  />
+                <div className="text-center mt-3">
+                  <button
+                    type="submit"
+                    className={`rounded-3xl transition-all ease-out delay-100 ${loading ? "bg-red-400" : "bg-violet-700"}   text-white px-4 py-3 shadow-md shadow-violet-500 hover:bg-red-400`}
+                  >
+                    {!loading ? "Message Me" : "Messaging...."}
+                  </button>
                 </div>
               </div>
-              <div>
-                <textarea
-                  cols="30"
-                  rows="5"
-                  name="message"
-                  id="message"
-                  placeholder="Tell me more about your needs..."
-                  className="w-full mt-5 rounded-md border-2 border-slate-300  placeholder:text-violet-400 text-slate-700"
-                  required
-                  onChange={(e) => handleChange(e)}
-                >{form.message}</textarea>
-              </div>
-              <div className="text-center mt-3">
-                <button
-                  type="submit"
-                  className={`rounded-3xl transition-all ease-out delay-100 ${loading ? "bg-red-400" : "bg-violet-700"}   text-white px-4 py-3 shadow-md shadow-violet-500 hover:bg-red-400`}
-                >
-                  {!loading ? "Message Me" : "Messaging...."}
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
+            </form>
+        </React.Fragment>
       )
 }
 

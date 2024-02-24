@@ -1,110 +1,364 @@
 [
-    {
-        "id" : 1,
-        "title" : "MMQrGenerator",
-        "desc" : "Qr generation app with customized design and template. Jquery, Laravel, Bootstrap",
-        "image" : "/image/projects/mmqr.png",
-        "client" : "Myanmar ICT Solutions",
-        "content" : "",
-        "date" : "04-07-2023",
-        "category" : "Qrcode",
-        "location" : "Myanmar ICT Solutions",
-        "gitlink" : ""
-    },
-    {
-        "id" : 2,
-        "title" : "MM ChatAi",
-        "desc" : "Chat GPT Myanmar Version with google translate and Chat GPT Api. Jquery, Laravel, Bootstrap",
-        "image" : "/image/projects/chat.png",
-        "client" : "Myanmar ICT Solutions",
-        "content" : "",
-        "date" : "02-06-2023",
-        "category" : "Artificial Intelligence",
-        "location" : "Myanmar ICT Solutions",
-        "gitlink" : ""
-    },
-    {
-        "id" : 3,
-        "title" : "Trading Platform",
-        "desc" : "Trading agent platform with binance websocket api. React, Laravel, Bootstrap",
-        "image" : "/image/projects/trade.png",
-        "client" : "CoinBankKr",
-        "content" : "",
-        "date" : "21-08-2023",
-        "category" : "Finance",
-        "location" : "Myanmar ICT Solutions",
-        "gitlink" : ""
-    },
-    {
-        "id" : 4,
-        "title" : "Media Website",
-        "desc" : "Blog platform with payment integration and facebook like features. Laravel, Jquery, Bootstrap",
-        "image" : "/image/projects/media.png",
-        "client" : "Anonymous",
-        "content" : "",
-        "date" : "05-12-2022",
-        "category" : "Media",
-        "location" : "Myanmar ICT Solutions",
-        "gitlink" : ""
-    },
-    {
-        "id" : 5,
-        "title" : "Business Finding App",
-        "desc" : "Business selling and buying app with colorful UI/UX. React, Laravel, Inertia Js, Tailwind",
-        "image" : "/image/projects/business.png",
-        "client" : "Laracamp Contest",
-        "content" : "",
-        "date" : "09-18-2023",
-        "category" : "Business",
-        "location" : "Myanmar ICT Solutions",
-        "gitlink" : ""
-    },
-    {
-        "id" : 6,
-        "title" : "Fire Qr Product",
-        "desc" : "Product showcase page with integrated Qr System. Laravel, Jquery, Bootstrap",
-        "image" : "/image/projects/fireqr.png",
-        "client" : "Fire Service Department",
-        "content" : "",
-        "date" : "24-03-2022",
-        "category" : "Qrcode",
-        "location" : "Myanmar ICT Solutions",
-        "gitlink" : ""
-    },
-    {
-        "id" : 7,
-        "title" : "Cherry Han",
-        "desc" : "Delivery Service with different kinds of business, integrated with React, Laravel, Bootstrap, Mysql. ",
-        "image" : "/image/projects/cherryhan.png",
-        "client" : "",
-        "content" : "",
-        "date" : "30-01-2023",
-        "category" : "Business",
-        "location" : "Myanmar ICT Solutions",
-        "gitlink" : ""
-    },
-    {
-        "id" : 8,
-        "title" : "Promptopia",
-        "desc" : "Prompt creating platform integrated with Nextjs, Mongodb and Tailwindcss",
-        "image" : "/image/projects/prompt.png",
-        "client" : "Own Project",
-        "content" : "",
-        "date" : "05-09-2023",
-        "category" : "Media",
-        "location" : "Myanmar ICT Solutions",
-        "gitlink" : ""
-    },
-    {
-        "id" : 9,
-        "title" : "Booking App",
-        "desc" : "Booking service for various business platform. Customized with React, Nodejs, Mongodb and Tailwindcss ",
-        "image" : "/image/projects/booking.png",
-        "client" : "Own Project",
-        "content" : "",
-        "date" : "01-10-2023",
-        "category" : "Media",
-        "location" : "Myanmar ICT Solutions",
-        "gitlink" : ""
-    }
+	{
+		"id": 1,
+		"title": "MMQrGenerator",
+		"short_desc": "Qr generation app with customized design and template. Jquery, Laravel, Bootstrap",
+		"image": "/image/projects/mmqr.png",
+		"project_img": {
+			"main": "/image/projects/qrcode/main.png",
+			"imageone": "/image/projects/qrcode/imageone.png",
+			"imagetwo": "/image/projects/qrcode/imagetwo.png"
+		},
+		"project_desc": "The prevalence of QR code generator applications across the internet is undeniable. However, our project distinguishes itself by incorporating a template system. Unlike conventional generation apps, our platform offers both static and dynamic QR code generation capabilities. During the QR code creation process, users have the freedom to select their preferred template from a range of options. Reflecting industry standards, predefined templates relevant to various sectors are available. Users retain the flexibility to customize elements such as images, text fields, colors, and background hues, akin to a miniature website builder interface. Presently, our application features a modest selection of six templates, with plans for expansion in the future. Encouraged by this endeavor, I subsequently developed a full-fledged website builder application. Noteworthy is its sophisticated payment system, leveraging the local payment gateway KPay. Users benefit from the convenience of manual payments as well as QR code-based transactions. These insights provide a glimpse into the myriad captivating features encapsulated within our application.",
+		"project_tech": [
+			"Laravel",
+			"Jquery",
+			"AJAX",
+			"Bootstrap5",
+			"Mysql"
+		],
+		"project_challenge": {
+			"intro": "This project posed several challenges, mainly centered around designing and adapting the code for different template systems. ",
+			"short_desc": "Originally, we only planned for three templates, but the client later requested more. To accommodate this, we developed a system that could easily add new templates without using unfamiliar technologies.Another hurdle was integrating real payment transactions via KPay, ensuring smooth transactions for both mobile app and web-based QR code systems. Additionally, we had to handle manual payment transactions.Language localization, specifically English and Myanmar, was also implemented, allowing for dynamic word changes as needed.Overall, the project took four months to complete, presenting several challenges along the way. However, it stands as a significant achievement in my career."
+		},
+		"client": "Myanmar ICT Solutions",
+		"content": "",
+		"date": "04-07-2023",
+		"category": "Qrcode",
+		"location": "Myanmar ICT Solutions",
+		"website_url": "https://mmqrcodegenerator.com",
+		"gitlink": "https://github.com/Newstein123/mmqrgenerator"
+	},
+	{
+		"id": 2,
+		"title": "MM ChatAi",
+		"short_desc": "Chat GPT Myanmar Version with google translate and Chat GPT Api. Jquery, Laravel, Bootstrap",
+		"image": "/image/projects/chat.png",
+		"project_img": {
+			"main": "/image/projects/mmchatai/main.png",
+			"imageone": "/image/projects/mmchatai/imageone.png",
+			"imagetwo": "/image/projects/mmchatai/imagetwo.png"
+		},
+		"project_desc": "MMChatAi is a fascinating project that leverages various technologies to enable human-like conversation in both Myanmar and English languages. Integrating ChatGPT API with Google Translate is a clever approach to handling multilingual conversations. However, if the system struggles with text streamlining compared to a real ChatGPT, it may be worth exploring further optimization techniques or refining the integration to enhance the user experience.With over a thousand daily users, MMChatAi seems to be making a significant impact, especially in Myanmar where access to advanced language processing technologies might be limited. Continuous improvement and user feedback will likely be crucial in refining the system and making it even more effective over time.",
+		"project_tech": [
+			"Laravel",
+			"Jquery",
+			"AJAX",
+			"Mysql",
+			"Bootstrap5",
+			"Google Translate Api",
+			"ChatGPT 3.5 Api"
+		],
+		"project_challenge": {
+			"intro": "The main challenge of this project lies in streamlining conversations and managing multilingual interactions effectively.",
+			"short_desc": "Historical conversations also present a challenge. The project's timeline of just one month constrained the development of features to address these issues comprehensively. Currently, the system can only understand English and Myanmar languages. When a user inputs text, the system detects the language used. If it's Myanmar, the system translates it into English before sending the conversation to the ChatGPT API. The API responds in English, which is then translated back into Myanmar. While ChatGPT API provides streamlining in English, the translation from English to Myanmar complicates streamlining. Another challenge pertains to historical conversations. The system needs to retain the entire conversation history, but due to token limitations, only the last five conversations are remembered. Despite these challenges, the project is both enjoyable and highly beneficial."
+		},
+		"client": "Myanmar ICT Solutions",
+		"content": "",
+		"date": "02-06-2023",
+		"category": "Artificial Intelligence",
+		"location": "Myanmar ICT Solutions",
+		"website_url": "https://chat.myanmarictsolutions.pro",
+		"gitlink": "https://github.com/Newstein123/mmchatai"
+	},
+	{
+		"id": 3,
+		"title": "Trading Platform",
+		"short_desc": "Trading agent platform with binance websocket api. React, Laravel, Bootstrap",
+		"image": "/image/projects/trade.png",
+		"project_img": {
+			"main": "/image/projects/trade/main.png",
+			"imageone": "/image/projects/trade/imageone.png",
+			"imagetwo": "/image/projects/trade/imagetwo.png"
+		},
+		"project_desc": "This trade application employs the Binance WebSocket API to present diverse trade-related data. Users have the capability to schedule appointments with agents for trading purposes. Notably, the application does not engage with Binance's payment and service functionalities, and outcomes such as losses and gains are not determined within the app. Its primary function is to serve as an intermediary platform between the Binance application and trade agents. Users can perform deposits and withdrawals of funds within the application, with all intricate processes being managed by the agents and the Binance platform. Moreover, the application facilitates communication in various languages through integration with the Google Translate API, rendering it internationally accessible. Additionally, users can engage in conversations with agents via a ticket-based messaging system",
+		"project_tech": [
+			"Laravel",
+			"Jquery",
+			"AJAX",
+			"Mysql",
+			"React",
+			"Bootstarp4 and 5",
+			"Google Translate Api",
+			"Binance Web Socket Api"
+		],
+		"project_challenge": {
+			"intro": "There are multiple challenges in this project including live streaming, multiple language and data minipulation.",
+			"short_desc": "Formally, the decision was initially made to develop the application solely with Laravel. However, challenges arose when incorporating live trade data, including candlestick data and market trends from the Binance app, as requested by the client. To meet these requirements, it was later decided to integrate React to handle WebSocket API data effectively. Despite this adjustment, the data displayed in the application are only marginally delayed compared to those in the actual Binance app.Furthermore, accommodating the client's request for multilingual support presented another hurdle. To address this, a dynamic language system was implemented, allowing for flexibility in language selection. While this introduced a slight delay in transaction processing between languages, the application's capacity extends beyond the initial ten languages specified by the client. By leveraging Google Translate and incorporating additional languages in the backend, the application can support a wide range of languages.Additionally, the application features intricate calculations for allocating payments based on traders' wins and losses. Overall, this project demonstrates the integration of various technologies to overcome real challenges and deliver a robust trading platform."
+		},
+		"client": "CoinBankKr",
+		"content": "",
+		"date": "21-08-2023",
+		"category": "Finance",
+		"location": "Myanmar ICT Solutions",
+		"website_url": "https://trade-mm.com",
+		"gitlink": "https://github.com/Newstein123/coinbankkr"
+	},
+	{
+		"id": 4,
+		"title": "Media Website",
+		"short_desc": "Media platform with payment integration and facebook like features. Laravel, Jquery, Bootstrap",
+		"image": "/image/projects/media.png",
+		"project_img": {
+			"main": "/image/projects/media/main.png",
+			"imageone": "/image/projects/media/imageone.png",
+			"imagetwo": "/image/projects/media/imagetwo.png"
+		},
+		"project_desc": "This media website bears resemblance to prominent platforms such as BBC and CNN, offering users the ability to view, comment on, and share posts. However, it boasts an additional feature: users can submit reports to the media, which, upon approval by administrators, become publicly visible. Remarkably, contributors are compensated for their reports. Furthermore, as users demonstrate greater reliability in their reporting, the system promotes them to the status of amateur reporters, with payment determined by a star rating system established within the platform.Users also enjoy the convenience of selecting their preferred language for posts, with options available in both Myanmar and English. While certain posts are freely accessible, others are designated as premium content, requiring payment for access. To facilitate this, the platform seamlessly integrates with a local payment service known as BP Payment. Additionally, SMS services are integrated to enhance user engagement and communication.In essence, the platform bears semblance to a miniature Facebook system, offering a captivating and multifaceted development experience.",
+		"project_tech": [
+			"Laravel",
+			"AJAX",
+			"Jquery",
+			"Bootstrap4"
+		],
+		"project_challenge": {
+			"intro": "Video uploading process is the main problem in this project.",
+			"short_desc": "The client's initial challenge stemmed from the substantial cost associated with maintaining their own server for hosting uploaded videos. To mitigate this expense, a strategic solution was devised: leveraging the URLs of established video uploading services such as YouTube and Mtube. By incorporating these external platforms, the client effectively circumvented the need for an extensive and costly server infrastructure. Another significant adjustment pertained to the restructuring of the reporter role within the system. Originally, the system featured distinct roles for administrators and reporters, with reporters responsible for creating posts and administrators tasked with post approval. However, a revised approach was implemented, granting users dual roles as both regular users and reporters. This modification streamlined the workflow, enhancing user engagement and content creation. Additionally, a minor but noteworthy challenge involved transitioning from Laravel 8 to Laravel 9. While numerous services facilitate instantaneous Laravel version updates, the client opted to forego such solutions due to budgetary considerations. Instead, the transition was managed manually, ensuring seamless compatibility and functionality across the platform. Despite these adjustments, integrating payment gateways and SMS services posed minimal difficulty, with both functionalities seamlessly incorporated into the system architecture. These features enhance user interaction and facilitate financial transactions with ease and efficiency."
+		},
+		"client": "Anonymous",
+		"content": "",
+		"date": "05-12-2022",
+		"category": "Media",
+		"location": "Myanmar ICT Solutions",
+		"website_url": "https://nssmy.com",
+		"gitlink": "https://github.com/Newstein123/mmdailytimes"
+	},
+	{
+		"id": 5,
+		"title": "Business Finding App",
+		"short_desc": "Business selling and buying app with colorful UI/UX. React, Laravel, Inertia Js, Tailwind",
+		"image": "/image/projects/business.png",
+		"project_img": {
+			"main": "/image/projects/mmchatai/main",
+			"imageone": "/image/projects/mmchatai/imageone",
+			"imagetwo": "/image/projects/mmchatai/imagetwo"
+		},
+		"project_desc": "This project represents our entry into a contest organized by our local Laravel community. The objective of the contest was to innovate with Laravel and develop new technologies within a one-month timeframe, with the results shared during a seminar. Opting to utilize Inertia.js, our team secured a position in the top five out of twenty competing teams.The primary aim of our project was to showcase the adoption of new technology rather than delving deeply into domain-specific knowledge. Consequently, the project's scope remained relatively simple. Users were afforded limited functionality, primarily centered around searching for businesses listed within the system. Various search parameters, such as city, town, or category, facilitated comprehensive search capabilities.Although our initial intention was to expand the project to foster connections between business owners, users, and brokers, the constraints of time dictated that this functionality remained unincorporated. Despite this limitation, our project served as a testament to our adeptness with Laravel and our ability to leverage emerging technologies effectively within a constrained timeframe.",
+		"project_tech": [
+            "Laravel",
+            "React",
+            "Inertia Js",
+            "Tailwind css"
+        ],
+		"project_challenge": {
+			"intro": "The main challenge of this project was using new technology and working as a team. We had one senior developer (me) and three junior or intern developers.",
+			"short_desc": "I decided to use React, Tailwind CSS, and Inertia.js, even though Inertia.js was new to me. The other team members found it challenging to learn all these new technologies. But we managed to finish the project by dividing tasks among ourselves. I created the basic structure, and they followed my lead. It was tough because we didn't have the same level of experience, but we needed to write the code in the same style. If something went wrong, I had to help them right away. Since we all had day jobs, we could only work on the project at night. Despite these challenges, we completed the project on time as a team. It was the most challenging and enjoyable project I've ever worked on, and I learned a lot from it."
+		},
+		"client": "Laracamp Contest in Myanmar",
+		"content": "",
+		"date": "09-18-2023",
+		"category": "Business",
+		"location": "Myanmar ICT Solutions",
+		"website_url": "https://fsd.gov.mm/product",
+		"gitlink": "https://github.com/lara-camp/business-finding"
+	},
+	{
+		"id": 6,
+		"title": "Fire Qr Product",
+		"short_desc": "Fire fighting products showcase page with integrated Qr System. Laravel, Jquery, Bootstrap",
+		"image": "/image/projects/fireqr.png",
+		"project_img": {
+			"main": "/image/projects/fireqr/main.png",
+			"imageone": "/image/projects/fireqr/imageone.png",
+			"imagetwo": "/image/projects/fireqr/imagetwo.png"
+		},
+		"project_desc": "This project stands as a pivotal component of Myanmar's E-Government initiatives, specifically crafted for the Fire Service Department's 76th anniversary celebrations. Its primary function is to showcase fire-fighting products through an innovative QR code system. While conceptually straightforward, the project's execution is marked by a high degree of sophistication, characterized by seamless integration with the Fire Service Department's main website via APIs.Functioning as a microservice, the project embodies efficiency and modularity. The administrative panel resides on a distinct server, providing a centralized hub for managing the system's operations. Notably, the administrative panel serves as the provider of APIs, supplying essential data and functionalities to the main server. The primary objective of this system is to distribute QR codes during the anniversary ceremony, enabling attendees to effortlessly access detailed information about featured fire-fighting products. By leveraging this technology, the project enhances the accessibility and visibility of crucial resources within the Fire Service Department. In essence, this project exemplifies Myanmar's commitment to leveraging cutting-edge technology within its governmental frameworks, offering a tailored solution to support the commemorative endeavors of the Fire Service Department.",
+		"project_tech": [
+			"Laravel",
+			"Jquery",
+			"AJAX",
+			"Bootstrap5"
+		],
+		"project_challenge": {
+			"intro": "The challenge of this project are less knowledge on main website, api service and pagination.",
+			"short_desc": "The development of the administrative system progressed smoothly, culminating in its completion within a month. However, challenges surfaced during the integration phase with the main website through APIs. Our team encountered unfamiliarity with the intricacies of the main site, necessitating rapid familiarization to seamlessly integrate the API with the main site's workflow and user interface. Notably, the main website operates on the Laravel framework, necessitating a backend-centric approach to API consumption. To optimize integration, we tailored certain aspects of the Laravel pagination system and adopted a methodology wherein views from the Blade files were transmitted akin to conventional collections. This bespoke approach prioritized clarity and simplicity, facilitating ease of comprehension and subsequent maintenance.Despite these challenges, the project achieved success, garnering positive reception during the ceremonial event. Attendees enthusiastically embraced the system, demonstrating its efficacy and user-friendly design."
+		},
+		"client": "Fire Service Department",
+		"content": "",
+		"date": "24-03-2022",
+		"category": "Qrcode",
+		"location": "Myanmar ICT Solutions",
+		"website_url": "https://fsd.gov.mm.com/products",
+		"gitlink": "https://github.com/Newstein123/fireqr"
+	},
+	{
+		"id": 7,
+		"title": "Tennthone",
+		"short_desc": "Tennthone, website builder app is created various kinds of technologies. It uses laravel, react for backend ui and service. And nextjs for frontend development. Design is created using tailwind css",
+		"image": "/image/projects/tennthone.png",
+		"project_img": {
+			"main": "/image/projects/mmchatai/main",
+			"imageone": "/image/projects/mmchatai/imageone",
+			"imagetwo": "/image/projects/mmchatai/imagetwo"
+		},
+		"project_desc": "",
+		"project_tech": [],
+		"project_challenge": {
+			"intro": "",
+			"short_desc": ""
+		},
+		"client": "Own Project",
+		"content": "",
+		"date": "01-10-2023",
+		"category": "Media",
+		"location": "Myanmar ICT Solutions",
+		"website_url": "",
+		"gitlink": ""
+	},
+	{
+		"id": 8,
+		"title": "Promptopia",
+		"short_desc": "Prompt creating platform integrated with Nextjs, Mongodb and Tailwindcss",
+		"image": "/image/projects/prompt.png",
+		"project_img": {
+			"main": "/image/projects/mmchatai/main",
+			"imageone": "/image/projects/mmchatai/imageone",
+			"imagetwo": "/image/projects/mmchatai/imagetwo"
+		},
+		"project_desc": "In our latest project, we've departed from traditional relational databases, opting instead for the dynamic MongoDB Atlas alongside the innovative MERN stack. This decision has paved the way for an intuitive AI prompt repository, where users can effortlessly share and discover their favorite prompts. With a user-friendly interface and a robust tagging system, finding relevant commands is a breeze. Whether it's exploring new machine learning techniques or diving into data analytics, our platform simplifies prompt management while fostering collaboration within the AI community. Join us as we redefine the landscape of prompt access and sharing, one tag at a time.",
+		"project_tech": [
+			"Nodejs",
+			"React",
+			"Expressjs",
+			"Tailwind css",
+			"Mongo DB"
+		],
+		"project_challenge": {
+			"intro": "The project presented numerous challenges, particularly considering my background primarily as a PHP developer. ",
+			"short_desc": "Transitioning to Node.js and its compatible database, MongoDB, required a significant learning curve. However, despite these hurdles, I swiftly grasped the essential concepts within a relatively short timeframe."
+		},
+		"client": "Own Project",
+		"content": "",
+		"date": "05-09-2023",
+		"category": "Media",
+		"location": "Myanmar ICT Solutions",
+		"website_url": "",
+		"gitlink": "https://github.com/Newstein123/promptopia"
+	},
+	{
+		"id": 9,
+		"title": "Booking App",
+		"short_desc": "Booking service for various business platform. Customized with React, Nodejs, Mongodb and Tailwindcss ",
+		"image": "/image/projects/booking.png",
+		"project_img": {
+			"main": "/image/projects/mmchatai/main",
+			"imageone": "/image/projects/mmchatai/imageone",
+			"imagetwo": "/image/projects/mmchatai/imagetwo"
+		},
+		"project_desc": "This project marks another venture into the realm of MERN stack development. Specifically, it entails the creation of a comprehensive booking platform tailored to diverse hotel businesses. One of the distinguishing features of this platform is its user-friendly interface, which enables seamless room reservations within specified timeframes. Notably, the backend exclusively supports API functionalities, emphasizing a separation of concerns. Users are empowered to search for hotels and assess room availability, facilitating informed decision-making. Through this initiative, we aim to streamline the booking process while maintaining a robust and efficient backend infrastructure.",
+		"project_tech": [
+			"Nodejs",
+			"Expressjs",
+			"React",
+			"Mongo DB",
+			"Tailwind css"
+		],
+		"project_challenge": {
+			"intro": "The primary challenge encountered in this endeavor was navigating the unfamiliar terrain of the language utilized for development.",
+			"short_desc": "Acclimating to novel concepts and syntax demanded a concerted effort to grasp the intricacies of the new environment. However, through meticulous attention to detail, patient error handling, and a commitment to robust development practices, I successfully completed the project. This application not only showcases technical proficiency but also affords valuable experiential learning, enriching my skill set with diverse perspectives and methodologies."
+		},
+		"client": "Own Project",
+		"content": "",
+		"date": "01-10-2023",
+		"category": "Media",
+		"location": "Myanmar ICT Solutions",
+		"website_url": "",
+		"gitlink": ""
+	},
+	{
+		"id": 10,
+		"title": "Cherry Han",
+		"short_desc": "Delivery Service with different kinds of business, integrated with React, Laravel, Bootstrap, Mysql. ",
+		"image": "/image/projects/cherryhan.png",
+		"project_img": {
+			"main": "/image/projects/mmchatai/main",
+			"imageone": "/image/projects/mmchatai/imageone",
+			"imagetwo": "/image/projects/mmchatai/imagetwo"
+		},
+		"project_desc": "",
+		"project_tech": [],
+		"project_challenge": {
+			"intro": "",
+			"short_desc": ""
+		},
+		"client": "Own Project",
+		"content": "",
+		"date": "30-01-2023",
+		"category": "Business",
+		"location": "Myanmar ICT Solutions",
+		"website_url": "",
+		"gitlink": ""
+	},
+	{
+		"id": 11,
+		"title": "EOffice",
+		"short_desc": "Myanmar Fire Service Deparment Management with Code Igniter, Bootstrap and Mysql.",
+		"image": "/image/projects/cherryhan.png",
+		"project_img": {
+			"main": "/image/projects/mmchatai/main",
+			"imageone": "/image/projects/mmchatai/imageone",
+			"imagetwo": "/image/projects/mmchatai/imagetwo"
+		},
+		"project_desc": "",
+		"project_tech": [],
+		"project_challenge": {
+			"intro": "",
+			"short_desc": ""
+		},
+		"client": "Own Project",
+		"content": "",
+		"date": "30-01-2023",
+		"category": "Business",
+		"location": "Myanmar ICT Solutions",
+		"website_url": "",
+		"gitlink": ""
+	},
+	{
+		"id": 12,
+		"title": "Elicense",
+		"short_desc": "Myanmar Fire Service Deparment's Fire Safety Certificate with Code Igniter, Bootstrap and Mysql.",
+		"image": "/image/projects/cherryhan.png",
+		"project_img": {
+			"main": "/image/projects/mmchatai/main",
+			"imageone": "/image/projects/mmchatai/imageone",
+			"imagetwo": "/image/projects/mmchatai/imagetwo"
+		},
+		"project_desc": "",
+		"project_tech": [],
+		"project_challenge": {
+			"intro": "",
+			"short_desc": ""
+		},
+		"client": "Own Project",
+		"content": "",
+		"date": "30-01-2023",
+		"category": "Business",
+		"location": "Myanmar ICT Solutions",
+		"website_url": "",
+		"gitlink": ""
+	},
+	{
+		"id": 13,
+		"title": "CatchBall",
+		"short_desc": "Defered Payment System in Japan between Enterprise, Customers and Stores with Zend Framework, Docker and Mysql.",
+		"image": "/image/projects/cherryhan.png",
+		"project_img": {
+			"main": "/image/projects/mmchatai/main",
+			"imageone": "/image/projects/mmchatai/imageone",
+			"imagetwo": "/image/projects/mmchatai/imagetwo"
+		},
+		"project_desc": "",
+		"project_tech": [],
+		"project_challenge": {
+			"intro": "",
+			"short_desc": ""
+		},
+		"client": "Own Project",
+		"content": "",
+		"date": "30-01-2023",
+		"category": "Business",
+		"location": "Myanmar ICT Solutions",
+		"website_url": "",
+		"gitlink": ""
+	}
 ]

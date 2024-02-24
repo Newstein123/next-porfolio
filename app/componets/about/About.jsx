@@ -1,8 +1,11 @@
+'use client'
 import Title from "@/app/utlis/Title";
-import React from "react";
 import { LiaDownloadSolid } from "react-icons/lia";
 import ProfileImg from '../../../public/image/profile_img.png'
 import Image from "next/image";
+import CountUp from "react-countup";
+import ScrollTrigger from "react-scroll-trigger";
+import { useState } from "react";
 
 const data = [
   {
@@ -28,6 +31,7 @@ const data = [
 ];
 
 const About = () => {
+  const [counterOn, setCounterOn] = useState(false)
   return (
     <div className="my-10 min-h-screen">
       <Title title="Know Me More" />
@@ -36,30 +40,21 @@ const About = () => {
         <div className="lg:w-2/3">
           <div className="mx-10 md:mx-20">
             <h1 className="text-2xl text-slate-800 font-bold">
-              {" "}
-              I'm{" "}
+              I'm
               <span className="text-2xl text-violet-700 ms-3">
-                {" "}
-                Min Thet Paing{" "}
+                Min Thet Paing
               </span>
-              , a Full Stack Web Developer{" "}
+              , a Full Stack Web Developer
             </h1>
             <br />
-            <p className="text-slate-500 leading-loose text-justify">
-              I am a skilled Laravel and React Developer with one and a half
-              years of experience at Myanmar ICT Solutions Co Ltd, where I
-              successfully contributed to the development of web applications.
+            <p className="text-slate-500 leading-loose text-justify font-semibold">
+            I have a genuine passion for technology and innovation. With a background in marine electrical and electronics studies at Myanmar Maritime University, I've always been fascinated by the possibilities of technology. 
             </p>
             <br />
             <div className="flex flex-wrap flex-col-reverse md:flex-row-reverse"> 
               <div className="lg:w-2/3 mt-3 md:mt-0">
                 <p className="text-slate-500 leading-loose text-justify md:ms-3">
-                My background also includes experience as a service technician at
-                Esco Life Science, an on-the-job training role as a Junior Web
-                Developer at Lyrion Co Ltd, and a brief stint as a Web Development
-                Teacher at MST University. I have honed my skills in frontend and
-                backend development, troubleshooting, and training, making me a
-                well-rounded professional in the field.
+                However, the Covid-19 pandemic provided a unique opportunity for reflection and exploration, leading me to delve into new areas such as astronomy and science. This period of self-discovery sparked a newfound passion for programming, prompting me to transition my career to become a web developer. From teaching web development assignments at MST University to making significant contributions to web application development at Myanmar ICT Solutions Co. Ltd., I've been fortunate to pursue my passion and make meaningful impacts in the field. Recently, I joined Mysol Co. Ltd., further expanding my expertise in Laravel and React development. I passed NCC level 4 education during my worktime, and I'm currently attending NCC level 5 to deepen my knowledge and skills in web development. I am deeply interested in the intersection of technology and creativity, and I'm excited to continue my journey of growth and exploration in the dynamic world of web development. Feel free to reach out to me.
               </p>
               </div>
               <div className="lg:w-1/3">
@@ -69,45 +64,42 @@ const About = () => {
           </div>
         </div>
         <div className="lg:w-1/3 text-lg ">
-          <div className="mx-10 md:mx-20 lg:mx-0 mt-5 lg:mt-0">
+          <div data-aos="slide-left" className="mx-10 md:mx-20 lg:mx-0 mt-5 lg:mt-0">
             <div>
               <div className="relative">
                 <div className="mb-2 py-3">
-                  {" "}
-                  <span className="font-bold text-slate-800"> Name: </span>{" "}
+                  
+                  <span className="font-bold text-slate-800"> Name: </span>
                   <span className="ms-3 text-slate-500"> Min Thet Paing </span>
                 </div>
                 <span className="absolute bottom-0 left-0 bg-slate-500 w-3/4 h-[2px]"></span>
               </div>
               <div className="relative">
                 <div className="mb-2 py-3">
-                  {" "}
                   <span className="font-bold text-slate-800">
-                    {" "}
-                    Email:{" "}
-                  </span>{" "}
+                    Email:
+                  </span>
                   <a
                     href="mailto:minthetpaing376@gmail.com"
                     className="ms-3 text-violet-700"
                   >
-                    {" "}
-                    minthetpaing376@gmail.com{" "}
+                    minthetpaing376@gmail.com
                   </a>
                 </div>
                 <span className="absolute bottom-0 left-0 bg-slate-500 w-3/4 h-[2px]"></span>
               </div>
               <div className="relative">
                 <div className="mb-2 py-3">
-                  {" "}
-                  <span className="font-bold text-slate-800"> Age: </span>{" "}
+                  
+                  <span className="font-bold text-slate-800"> Age: </span>
                   <span className="ms-3 text-slate-500"> 25 </span>
                 </div>
                 <span className="absolute bottom-0 left-0 bg-slate-500 w-3/4 h-[2px]"></span>
               </div>
               <div className="relative">
                 <div className="mb-2 py-3">
-                  {" "}
-                  <span className="font-bold text-slate-800"> From: </span>{" "}
+                  
+                  <span className="font-bold text-slate-800"> From: </span>
                   <span className="ms-3 text-slate-500"> Insein, Yangon </span>
                 </div>
                 <span className="absolute bottom-0 left-0 bg-slate-500 w-3/4 h-[2px]"></span>
@@ -118,7 +110,7 @@ const About = () => {
                   download={true}
                   className="py-3 px-4 bg-violet-700 text-white transition-all ease-out delay-100  rounded-3xl shadow-md shadow-violet-500 hover:bg-red-400"
                 >
-                  Download CV <LiaDownloadSolid className="inline" />{" "}
+                  Download CV <LiaDownloadSolid className="inline" />
                 </a>
               </div>
             </div>
@@ -128,13 +120,21 @@ const About = () => {
       {/* status section  */}
       <div className="flex flex-wrap mt-20 md:mx-20 md:mb-10 lg:mb-0">
         {data.map((item) => (
-          <div className="w-1/2 lg:w-1/4" key={item.id}>
+          <div data-aos="fade-up" className="w-1/2 lg:w-1/4" key={item.id}>
             <div className="border-r-2 border-r-slate-300 px-4  mx-5 mt-3 md:mt-0">
               <div className="flex text-slate-800  font-bold items-center justify-center mb-5">
-                <h1 className="text-6xl"> {item.number} </h1>
-                <div>
-                  {" "}
-                  <span className="text-5xl"> + </span>{" "}
+                <h1 className="text-6xl">
+                  <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
+                    {counterOn && <CountUp 
+                      start={0} 
+                      end={item.number}
+                      duration={2} 
+                      delay={0} 
+                    /> }
+                  </ScrollTrigger> 
+                </h1>
+                <div>  
+                  <span className="text-5xl"> + </span>
                 </div>
               </div>
               <div>
@@ -149,3 +149,6 @@ const About = () => {
 };
 
 export default About;
+
+
+

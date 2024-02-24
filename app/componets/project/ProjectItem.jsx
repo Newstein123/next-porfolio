@@ -2,12 +2,13 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { renderTransition } from "@/app/helper/helper";
 
 
-const ProjectItem = ({ item }) => {
+const ProjectItem = ({ item, index}) => {
  
   return (
-      <CardItemTwo item={item} />
+      <CardItemTwo item={item} index={index} />
   );
 };
 
@@ -15,7 +16,7 @@ export const CardItemOne = ({item}) => {
    return (
     <div className="w-full md:w-1/2 lg:w-1/3">
       <div className="me-3 mt-2 group relative transition ease-in-out delay-150">
-        <Image src={item.image} alt="project image" width={400} height={300} />
+        <Image src={item.image} alt="project image" width={300} height={150} />
         {/* overlay div  */}
         <div className="hidden absolute top-0 group-hover:block bg-black bg-opacity-50 w-full h-full">
           <div className="flex flex-col justify-center items-center mx-5 md:mx-10 mt-10">
@@ -36,12 +37,17 @@ export const CardItemOne = ({item}) => {
 }
 
 
-export const CardItemTwo = ({item}) => {
+export const CardItemTwo = ({item, index}) => {
+
   return (
     <div className="w-full md:w-2/3 lg:w-1/3">
-      <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-300 dark:border-gray-200 me-3 mt-3 relative group">
+      <div 
+        data-aos={renderTransition(index)} 
+        data-aos-delay="10"
+        data-aos-duration="1200"
+        className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-violet-700 dark:border-gray-200 me-3 mt-3 relative group z-0">
         <Link href={`/project/detail/${item.id}`}>
-          <Image className="rounded-t-lg" src={item.image} alt="" width={400} height={300} priority/>
+          <Image className="rounded-t-lg" src={item.image} alt="" width={300} height={150} priority/>
         </Link>
         <div className="hidden p-5 absolute top-0 group-hover:block bg-black bg-opacity-75 w-full h-full">
           <a href="#">
@@ -49,8 +55,8 @@ export const CardItemTwo = ({item}) => {
               {item.title}
             </h5>
           </a>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {item.desc}
+          <p className="mb-3 text-xs text-justify font-normal text-gray-700 dark:text-gray-300">
+            {item.short_desc}
           </p>
           <Link
             href={`/project/detail/${item.id}`}

@@ -4,9 +4,7 @@ import {GiGearHammer} from 'react-icons/gi'
 import {AiFillApi} from 'react-icons/ai'
 import {FaComputer} from 'react-icons/fa6'
 import {MdOutlineComputer} from 'react-icons/md'
-import {GrServers} from 'react-icons/gr'
 import { CiServer } from "react-icons/ci";
-
 import Title from "@/app/utlis/Title";
 import ServiceItem from "./ServiceItem";
 
@@ -15,7 +13,7 @@ const data = [
       id: 1,
       name: "Full Stack Development",
       short_desc: "Proficient in React, Laravel, Next.js, Node.js, Inertia.js, AWS, and Digital Ocean.",
-      desc: "I possess skills in React, Laravel, Next.js, Node.js, Inertia.js, AWS, and Digital Ocean, ensuring expertise in Full Stack Development.",
+      desc: "I possess skills in React, Laravel, Next.js, Node.js, Inertia.js, AWS, Digital Ocean, Git, Github and Gitlab, ensuring expertise in Full Stack Development.",
       icon: <FaComputer size={40} />,
   },
   {

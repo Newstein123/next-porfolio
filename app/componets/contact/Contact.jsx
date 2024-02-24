@@ -5,6 +5,7 @@ import Link from "next/link";
 import {FaFacebookF, FaInstagram, FaLinkedin, FaTelegram} from 'react-icons/fa6'
 import Title from "@/app/utlis/Title";
 import ContactForm from "./ContactForm";
+import { FaWhatsapp } from "react-icons/fa";
 
 const data = [
   {
@@ -27,6 +28,11 @@ const data = [
     icon : <FaTelegram />,
     link : "https://www.facebook.com/profile.php?id=100077666327550",
   },
+  {
+    id : 5,
+    icon : <FaWhatsapp />,
+    link : "https://www.facebook.com/profile.php?id=100077666327550",
+  },
 ]
 
 const Contact = () => {
@@ -39,13 +45,17 @@ const Contact = () => {
           <div className="flex flex-col-reverse md:flex-row flex-wrap justify-between">
             {/* personal info  */}
             <div className="w-full lg:w-1/4">
-              <div className="mx-10 md:me-0  mt-5 md:mt-0 px-3 bg-white rounded-lg pt-3 shadow-md shadow-violet-400">
+              <div 
+                data-aos="fade-up" 
+                data-aos-delay="20"
+                data-aos-duration="1500"
+                className="mx-10 md:me-0  mt-5 md:mt-0 px-3 bg-white rounded-lg pt-3 shadow-md shadow-violet-400">
                 <div>
                   <h1 className="text-2xl font-bold text-slate-600 mb-5">
                     Address
                   </h1>
                   <p className="text-slate-500 text-justify">
-                    491/B West Ywama Myo Pat Street, Insein Township, Yangon.
+                    491/B West Ywama Myo Pat Street, Insein Township, Yangon City, Myanmar.
                   </p>
                 </div>
                 {/* contact info  */}
@@ -55,8 +65,8 @@ const Contact = () => {
                       size={20}
                       className="text-violet-700 inline me-3"
                     />
-                    <a href="phoneto:09770139207" className="text-slate-500 text-sm">
-                      09770139207
+                    <a href="phoneto:+959770139207" className="text-slate-500 text-sm">
+                      +95 9770139207
                     </a>
                   </div>
                   <div className="mt-3">
@@ -81,7 +91,7 @@ const Contact = () => {
                   <div className='flex justify-center my-3 bg-violet-700 px-5 py-3 rounded-tl-lg rounded-tr-lg'>
                     {
                       data.map(item => (
-                        <Link href={item.link} key={item.id} className=' text-xl mx-2 hover:text-red-300'>
+                        <Link href={item.link} key={item.id} className=' text-xl mx-2 hover:scale-150'>
                           {item.icon}
                         </Link>
                       ))
@@ -91,7 +101,9 @@ const Contact = () => {
               </div>
             </div>
             {/* contact form  */}
-            <ContactForm />
+            <div className="lg:w-3/4">
+              <ContactForm />
+            </div>
           </div>
         </div>
       </div>

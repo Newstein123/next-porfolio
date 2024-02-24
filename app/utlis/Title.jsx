@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Title = ({title}) => {
+const Title = ({title, className}) => {
   return (
-    <div className="relative text-center">
+    <div className={`relative text-center ${className}`}>
         <h1 className="text-3xl inline leading-normal font-bold text-slate-800">
         {title}
         </h1>
