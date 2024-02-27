@@ -10,6 +10,7 @@ import {
   FaTelegram,
 } from "react-icons/fa6";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const socials = [
   {
@@ -36,6 +37,7 @@ const socials = [
 
 const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   return (
     <div className="sticky top-0 z-50">
       <div className="md:hidden p-3 bg-violet-700 shadow-md shadow-violet-500">
@@ -44,8 +46,7 @@ const MobileNavbar = () => {
           <div className="flex justify-between items-center">
             {socials.map((item) => (
               <Link key={item.id} href={item.link} className="mx-2">
-                {" "}
-                {item.icon}{" "}
+                {item.icon}
               </Link>
             ))}
             <div className="ms-3">
@@ -71,7 +72,17 @@ const MobileNavbar = () => {
               className={index == 4 ? "p-2" : "p-2 border-b border-b-white"}
               onClick={() => setOpen(false)}
             >
-              <Link href={item.link}> {item.name}</Link>
+              <li
+                key={item.id}
+                className={
+                  item.link === pathname ||
+                  (pathname.startsWith("/project") && item.link === "/project")
+                    ? "text-lg hover:text-red-500 text-red-400 list-none"
+                    : "text-lg hover:text-red-500 list-none"
+                }
+              >
+                <Link href={item.link}> {item.name} </Link>
+              </li>
             </div>
           ))}
         </div>

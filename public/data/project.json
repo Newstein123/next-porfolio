@@ -182,6 +182,37 @@
 		"gitlink": "https://github.com/Newstein123/fireqr"
 	},
 	{
+		"id": 13,
+		"title": "CatchBall",
+		"short_desc": "Defered Payment System in Japan between Enterprise, Customers and Stores with Zend Framework, Docker and Mysql.",
+		"image": "/image/projects/cherryhan.png",
+		"project_img": {
+			"main": "/image/projects/catchball/main.png",
+			"imageone": "/image/projects/catchball/imageone.png",
+			"imagetwo": "/image/projects/catchball/imagetwo"
+		},
+		"project_desc": "The project is a deferred payment system facilitating transactions between customers, stores, and enterprises. Customers can postpone their payments using this system, allowing them to make purchases on credit. The platform manages complex operations involving customers, stores, and enterprises. It supports various payment methods, including both local and international options. While built on the Zend Framework, it has been extensively customized to meet specific needs such as emailing, templating, and other services.",
+		"project_tech": [
+			"Zend Framework",
+			"AJAX",
+			"PHP",
+			"Docker",
+			"Mysql",
+			"AWS"
+		],
+		"project_challenge": {
+			"intro": "This project is of significant scale, and my involvement was focused on specific modules within the larger system. Working within a large team presented numerous challenges. ",
+			"short_desc": "We had to meticulously develop and integrate our assigned modules. I gained valuable experience in teamwork throughout this project. My primary responsibilities included batch processing for store data and the payment system. Additionally, I contributed to the development of some administrative modules, particularly those involved in order processing, such as uploading orders using CSV data.The most significant challenge I encountered was handling vast amounts of data. Previously, I had worked with datasets of no more than a few million records. However, in this project, I had to contend with datasets containing billions upon billions of records. This necessitated efficient querying of data within tight timeframes. Overall, this project has been my most challenging yet rewarding experience, where I learned extensively from experienced developers and colleagues."
+		},
+		"client": "CatchBall Co.ltd",
+		"content": "",
+		"date": "01-11-2023",
+		"category": "Business",
+		"location": "MySol Co.ltd",
+		"website_url": "https://atobarai-user.jp/",
+		"gitlink": "Not Provided"
+	},
+	{
 		"id": 7,
 		"title": "Tennthone",
 		"short_desc": "Tennthone, website builder app is created various kinds of technologies. It uses laravel, react for backend ui and service. And nextjs for frontend development. Design is created using tailwind css",
@@ -276,7 +307,13 @@
 			"imagetwo": "/image/projects/mmchatai/imagetwo"
 		},
 		"project_desc": "",
-		"project_tech": [],
+		"project_tech": [
+			"React",
+			"Laravel",
+			"Mysql",
+			"Bootstrap5",
+			"Restful Api"
+		],
 		"project_challenge": {
 			"intro": "",
 			"short_desc": ""
@@ -299,13 +336,18 @@
 			"imageone": "/image/projects/mmchatai/imageone",
 			"imagetwo": "/image/projects/mmchatai/imagetwo"
 		},
-		"project_desc": "",
-		"project_tech": [],
+		"project_desc": "This project forms an integral component of the Myanmar E-Government Project, specifically tailored for the Fire Service Department. Serving as a comprehensive fire department management system, its functionalities span across various crucial aspects. Primarily, the system maintains an updated inventory of fire department equipment, tracks the roster of firefighters and national employees, and facilitates seamless communication among stakeholders.Within the framework of this system, administrators can efficiently allocate equipment to different regions and states, streamline correspondence through letter dissemination, and assign duties effectively. Developed utilizing the CodeIgniter framework, the system incorporates extensive integration with Ajax technology, enhancing its responsiveness and interactivity.By automating previously manual processes, this system tackles complex operational challenges faced by department personnel, optimizing efficiency and resource utilization.",
+		"project_tech": [
+			"Code Igniter",
+			"AJAX",
+			"Mysql",
+			"Bootstarp4 and 5"
+		],
 		"project_challenge": {
-			"intro": "",
-			"short_desc": ""
+			"intro": "My contribution to this project primarily centered around enhancing the search functionality. Despite its modest scope, this endeavor presented notable challenges, primarily stemming from the utilization of an outdated framework. While the project adhered to the Model-View-Controller (MVC) architecture, the codebase was considerably disorganized and convoluted.",
+			"short_desc": "The main challenge I faced was dealing with the outdated framework. Even though the project followed the MVC structure, the code was messy and hard to work with. My main task was to make data retrieval more efficient, especially when dealing with large amounts of data. Although my role in the project was small, it was a valuable learning experience as it was my first time dealing with such large datasets. Additionally, I directly communicated with the government agency to obtain the required data. This experience greatly influenced my career path, providing me with the skills needed to handle similar challenges in future projects."
 		},
-		"client": "Own Project",
+		"client": "Myanmar Fire Service Department.",
 		"content": "",
 		"date": "30-01-2023",
 		"category": "Business",
@@ -323,35 +365,16 @@
 			"imageone": "/image/projects/mmchatai/imageone",
 			"imagetwo": "/image/projects/mmchatai/imagetwo"
 		},
-		"project_desc": "",
-		"project_tech": [],
+		"project_desc": "This project is also part of the Myanmar E-Goverment system for Fire Service Department. User can upload their building documents and information to get approve from the fire service deparment. Once approved, the system generate fire service certificate with relavant information and Qr Code. User can communicate with the system during the process and make payment. In the system, there are many complex operation to handle these process digitally and manually for example assigning group for building investigation.",
+		"project_tech": [
+			"Code Igniter",
+			"AJAX",
+			"Mysql",
+			"Bootstarp4 and 5"
+		],
 		"project_challenge": {
-			"intro": "",
-			"short_desc": ""
-		},
-		"client": "Own Project",
-		"content": "",
-		"date": "30-01-2023",
-		"category": "Business",
-		"location": "Myanmar ICT Solutions",
-		"website_url": "",
-		"gitlink": ""
-	},
-	{
-		"id": 13,
-		"title": "CatchBall",
-		"short_desc": "Defered Payment System in Japan between Enterprise, Customers and Stores with Zend Framework, Docker and Mysql.",
-		"image": "/image/projects/cherryhan.png",
-		"project_img": {
-			"main": "/image/projects/mmchatai/main",
-			"imageone": "/image/projects/mmchatai/imageone",
-			"imagetwo": "/image/projects/mmchatai/imagetwo"
-		},
-		"project_desc": "",
-		"project_tech": [],
-		"project_challenge": {
-			"intro": "",
-			"short_desc": ""
+			"intro": "The primary challenge within this project lies in understanding the intricate domain knowledge pertaining to fire certificate processes.",
+			"short_desc": "Despite my primary responsibilities revolving around tasks such as QR code generation, updating role assignments, and optimizing routing efficiency, I encountered significant hurdles due to the complexity of the project domain. To overcome this obstacle, I underwent a week-long training to gain a comprehensive understanding of the intricate processes involved. Another challenge arose during the uploading of large volumes of data. Initially, the code was designed to facilitate bulk uploads, but this approach proved to be time-consuming. In response, I devised a solution wherein data could be uploaded in sessions, alleviating the need for users to wait for extended periods. This streamlined approach enables users to resume uploading from where they left off, improving overall efficiency and user experience."
 		},
 		"client": "Own Project",
 		"content": "",

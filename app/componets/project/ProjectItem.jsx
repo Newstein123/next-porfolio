@@ -6,7 +6,6 @@ import { renderTransition } from "@/app/helper/helper";
 
 
 const ProjectItem = ({ item, index}) => {
- 
   return (
       <CardItemTwo item={item} index={index} />
   );
@@ -38,14 +37,13 @@ export const CardItemOne = ({item}) => {
 
 
 export const CardItemTwo = ({item, index}) => {
-
   return (
     <div className="w-full md:w-2/3 lg:w-1/3">
       <div 
         data-aos={renderTransition(index)} 
         data-aos-delay="10"
         data-aos-duration="1200"
-        className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-violet-700 dark:border-gray-200 me-3 mt-3 relative group z-0">
+        className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-violet-700 dark:border-gray-200 me-0 md:me-3 mt-3 relative group z-0">
         <Link href={`/project/detail/${item.id}`}>
           <Image className="rounded-t-lg" src={item.image} alt="" width={300} height={150} priority/>
         </Link>
