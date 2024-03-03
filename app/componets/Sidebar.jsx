@@ -17,7 +17,7 @@ const Sidebar = () => {
               src={ProfileImage}
               width={200}
               height={200}
-              className='border-8 border-slate-700'
+              className='border-slate-400 border-4'
               style={{
                 borderRadius : "50%"
               }}

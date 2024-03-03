@@ -13,7 +13,6 @@
 		"project_tech": [
 			"Laravel",
 			"Jquery",
-			"AJAX",
 			"Bootstrap5",
 			"Mysql"
 		],
@@ -43,7 +42,6 @@
 		"project_tech": [
 			"Laravel",
 			"Jquery",
-			"AJAX",
 			"Mysql",
 			"Bootstrap5",
 			"Google Translate Api",
@@ -75,7 +73,6 @@
 		"project_tech": [
 			"Laravel",
 			"Jquery",
-			"AJAX",
 			"Mysql",
 			"React",
 			"Bootstarp4 and 5",
@@ -107,7 +104,6 @@
 		"project_desc": "This media website bears resemblance to prominent platforms such as BBC and CNN, offering users the ability to view, comment on, and share posts. However, it boasts an additional feature: users can submit reports to the media, which, upon approval by administrators, become publicly visible. Remarkably, contributors are compensated for their reports. Furthermore, as users demonstrate greater reliability in their reporting, the system promotes them to the status of amateur reporters, with payment determined by a star rating system established within the platform.Users also enjoy the convenience of selecting their preferred language for posts, with options available in both Myanmar and English. While certain posts are freely accessible, others are designated as premium content, requiring payment for access. To facilitate this, the platform seamlessly integrates with a local payment service known as BP Payment. Additionally, SMS services are integrated to enhance user engagement and communication.In essence, the platform bears semblance to a miniature Facebook system, offering a captivating and multifaceted development experience.",
 		"project_tech": [
 			"Laravel",
-			"AJAX",
 			"Jquery",
 			"Bootstrap4"
 		],
@@ -129,9 +125,9 @@
 		"short_desc": "Business selling and buying app with colorful UI/UX. React, Laravel, Inertia Js, Tailwind",
 		"image": "/image/projects/business.png",
 		"project_img": {
-			"main": "/image/projects/mmchatai/main",
-			"imageone": "/image/projects/mmchatai/imageone",
-			"imagetwo": "/image/projects/mmchatai/imagetwo"
+			"main": "/image/projects/laracamp/main.png",
+			"imageone": "/image/projects/laracamp/imageone.png",
+			"imagetwo": "/image/projects/laracamp/imagetwo.png"
 		},
 		"project_desc": "This project represents our entry into a contest organized by our local Laravel community. The objective of the contest was to innovate with Laravel and develop new technologies within a one-month timeframe, with the results shared during a seminar. Opting to utilize Inertia.js, our team secured a position in the top five out of twenty competing teams.The primary aim of our project was to showcase the adoption of new technology rather than delving deeply into domain-specific knowledge. Consequently, the project's scope remained relatively simple. Users were afforded limited functionality, primarily centered around searching for businesses listed within the system. Various search parameters, such as city, town, or category, facilitated comprehensive search capabilities.Although our initial intention was to expand the project to foster connections between business owners, users, and brokers, the constraints of time dictated that this functionality remained unincorporated. Despite this limitation, our project served as a testament to our adeptness with Laravel and our ability to leverage emerging technologies effectively within a constrained timeframe.",
 		"project_tech": [
@@ -166,7 +162,6 @@
 		"project_tech": [
 			"Laravel",
 			"Jquery",
-			"AJAX",
 			"Bootstrap5"
 		],
 		"project_challenge": {
@@ -194,7 +189,7 @@
 		"project_desc": "The project is a deferred payment system facilitating transactions between customers, stores, and enterprises. Customers can postpone their payments using this system, allowing them to make purchases on credit. The platform manages complex operations involving customers, stores, and enterprises. It supports various payment methods, including both local and international options. While built on the Zend Framework, it has been extensively customized to meet specific needs such as emailing, templating, and other services.",
 		"project_tech": [
 			"Zend Framework",
-			"AJAX",
+			"Jquery",
 			"PHP",
 			"Docker",
 			"Mysql",
@@ -215,25 +210,34 @@
 	{
 		"id": 7,
 		"title": "Tennthone",
-		"short_desc": "Tennthone, website builder app is created various kinds of technologies. It uses laravel, react for backend ui and service. And nextjs for frontend development. Design is created using tailwind css",
+		"short_desc": "Tennthone, website builder app is created various kinds of technologies. It uses laravel, react for backend ui and service. And nextjs for frontend development. Design is created using tai`lwind css",
 		"image": "/image/projects/tennthone.png",
 		"project_img": {
-			"main": "/image/projects/mmchatai/main",
-			"imageone": "/image/projects/mmchatai/imageone",
-			"imagetwo": "/image/projects/mmchatai/imagetwo"
+			"main": "/image/projects/tennthone/main.png",
+			"imageone": "/image/projects/tennthone/imageone.png",
+			"imagetwo": "/image/projects/tennthone/imagetwo.png"
 		},
-		"project_desc": "",
-		"project_tech": [],
+		"project_desc": "The Website Builder Platform is a dynamic tool poised to revolutionize website creation, offering users the ability to effortlessly generate customized websites without coding. With a diverse array of professionally developed templates, users can select, customize, and personalize their websites to reflect their unique vision. Seamless integration with custom domains further enhances the user experience, while an intuitive admin interface empowers administrators to manage the system efficiently. As the platform progresses through development, features like e-commerce integration, advanced customization options, and robust analytics capabilities will further elevate its functionality, promising users an unparalleled website building experience.",
+		"project_tech": [
+			"Laravel",
+			"React",
+			"Next",
+			"Tailwind css",
+			"Inertia Js",
+			"Mysql",
+			"AWS",
+			"Git Hub"
+		],
 		"project_challenge": {
-			"intro": "",
-			"short_desc": ""
+			"intro": "Developing the Website Builder app posed numerous challenges, foremost among them being the establishment of a flexible template management system. " ,
+			"short_desc": "Initially, we relied on a database to store templates, but later transitioned to GitHub for increased flexibility. Understanding the intricacies of various backend systems for website generators demanded thorough research. The dynamic generation of subdomains for each user-added complexity, prompting the adoption of AWS's Route53 server for robust DNS management. Taking inspiration from Contentful, we devised a content system for websites, but integrating additional features such as blogs and e-commerce proved daunting due to their interactive nature. However, by leveraging our existing content management system and injecting scripts for interactions, we found a viable solution. Addressing template generation required careful consideration, leading us from Laravel's blade system to PHP Twig templates for enhanced independence and developer resourcefulness. While this system remains a work in progress, the journey has been invaluable in terms of learning and growth."
 		},
 		"client": "Own Project",
 		"content": "",
 		"date": "01-10-2023",
-		"category": "Media",
+		"category": "Website Generator",
 		"location": "Myanmar ICT Solutions",
-		"website_url": "",
+		"website_url": "admin.tennthone.com",
 		"gitlink": ""
 	},
 	{
@@ -306,7 +310,7 @@
 			"imageone": "/image/projects/mmchatai/imageone",
 			"imagetwo": "/image/projects/mmchatai/imagetwo"
 		},
-		"project_desc": "",
+		"project_desc": "This application functions as a service platform, with its frontend developed using React and its backend implemented using Laravel. The app provides a comprehensive range of services, encompassing hiring tracks and cars, delivering products with diverse specifications, and facilitating hotel bookings.",
 		"project_tech": [
 			"React",
 			"Laravel",
@@ -315,16 +319,16 @@
 			"Restful Api"
 		],
 		"project_challenge": {
-			"intro": "",
-			"short_desc": ""
+			"intro": "The primary challenge encountered in this project lies in my inaugural utilization of React within a production environment. My involvement primarily pertains to the complete development of the frontend component, alongside contributions to select segments of API production, specifically focusing on authentication and the integration of a coin system.",
+			"short_desc": "Additionally, a noteworthy challenge entails the adept management of authentication tokens within the frontend to ensure a secure and streamlined login system. Despite these hurdles, the project presents itself as both straightforward and engaging, offering valuable opportunities to augment my proficiency in frontend development."
 		},
-		"client": "Own Project",
+		"client": "Cherry Han",
 		"content": "",
 		"date": "30-01-2023",
 		"category": "Business",
 		"location": "Myanmar ICT Solutions",
-		"website_url": "",
-		"gitlink": ""
+		"website_url": "Not Provided",
+		"gitlink": "Not Provided"
 	},
 	{
 		"id": 11,
@@ -339,7 +343,7 @@
 		"project_desc": "This project forms an integral component of the Myanmar E-Government Project, specifically tailored for the Fire Service Department. Serving as a comprehensive fire department management system, its functionalities span across various crucial aspects. Primarily, the system maintains an updated inventory of fire department equipment, tracks the roster of firefighters and national employees, and facilitates seamless communication among stakeholders.Within the framework of this system, administrators can efficiently allocate equipment to different regions and states, streamline correspondence through letter dissemination, and assign duties effectively. Developed utilizing the CodeIgniter framework, the system incorporates extensive integration with Ajax technology, enhancing its responsiveness and interactivity.By automating previously manual processes, this system tackles complex operational challenges faced by department personnel, optimizing efficiency and resource utilization.",
 		"project_tech": [
 			"Code Igniter",
-			"AJAX",
+			"Jquery",
 			"Mysql",
 			"Bootstarp4 and 5"
 		],
@@ -352,8 +356,8 @@
 		"date": "30-01-2023",
 		"category": "Business",
 		"location": "Myanmar ICT Solutions",
-		"website_url": "",
-		"gitlink": ""
+		"website_url": "Not Provided",
+		"gitlink": "Not Provided"
 	},
 	{
 		"id": 12,
@@ -368,7 +372,7 @@
 		"project_desc": "This project is also part of the Myanmar E-Goverment system for Fire Service Department. User can upload their building documents and information to get approve from the fire service deparment. Once approved, the system generate fire service certificate with relavant information and Qr Code. User can communicate with the system during the process and make payment. In the system, there are many complex operation to handle these process digitally and manually for example assigning group for building investigation.",
 		"project_tech": [
 			"Code Igniter",
-			"AJAX",
+			"Jquery",
 			"Mysql",
 			"Bootstarp4 and 5"
 		],
@@ -381,7 +385,7 @@
 		"date": "30-01-2023",
 		"category": "Business",
 		"location": "Myanmar ICT Solutions",
-		"website_url": "",
-		"gitlink": ""
+		"website_url": "Not Provided",
+		"gitlink": "Not Provided"
 	}
 ]

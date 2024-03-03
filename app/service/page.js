@@ -3,7 +3,7 @@ import Service from '../componets/service/Service'
 
 export const metadata = {
   title: "Min Thet Paing - Service",
-  description: '...',
+  description: 'Service Page of Min Thet Paing Portfolio',
 }
 
 const page = () => {

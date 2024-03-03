@@ -41,7 +41,7 @@ const data = [
       id: 5,
       name: "API Development",
       short_desc: "Specialize in Node.js and Express.js for secure and efficient API development.",
-      desc: "Focusing on API Development, I leverage Node.js and Express.js to craft secure and efficient APIs, facilitating seamless communication between different components of a software system.",
+      desc: "Focusing on API Development, I leverage Node.js, Express.js and Laravel to craft secure and efficient APIs, facilitating seamless communication between different components of a software system.",
       icon: <AiFillApi size={40} />,
   },
   {

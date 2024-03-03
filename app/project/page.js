@@ -3,7 +3,7 @@ import Project from '../componets/project/Project'
 
 export const metadata = {
   title: "Min Thet Paing - Project",
-  description: '...',
+  description: 'Project Page of Min Thet Paing Portfolio',
 }
 
 const page = () => {

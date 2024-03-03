@@ -3,7 +3,7 @@ import About from '../componets/about/About'
 
 export const metadata = {
   title: "Min Thet Paing - About",
-  description: '...',
+  description: 'About page of Min Thet Paing Portfolio',
 }
 
 const page = () => {

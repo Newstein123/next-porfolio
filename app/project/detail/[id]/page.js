@@ -3,7 +3,7 @@ import React from 'react'
 
 export const metadata = {
   title: "Min Thet Paing - Project",
-  description: '...',
+  description: 'Project Detail Page of Min Thet Paing Portfolio',
 }
 
 const page = ({params}) => {

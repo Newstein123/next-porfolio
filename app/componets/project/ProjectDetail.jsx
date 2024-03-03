@@ -47,24 +47,21 @@ const ProjectDetail = ({ id }) => {
               <h2 className="mb-2 text-lg font-semibold text-gray-700">
                 Project Technologies:
               </h2>
-              <ul className="max-w-md space-y-1 text-gray-500 list-inside">
+              <div className="flex flex-wrap">
                 {
                     item.project_tech?.map((proj, index) => (
-                        <li className="flex items-center" key={index}>
-                            <svg
-                                className="w-3.5 h-3.5 me-2 text-violet-500 flex-shrink-0"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                            >
-                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                            </svg>
-                            {proj}
-                        </li>
+                      <div 
+                        data-aos="fade-up" 
+                        className="w-1/2 md:w-1/3"
+                      >
+                        <div className="flex flex-col p-2 border me-3 mt-3 shadow-sm shadow-gray-600 items-center justify-center" key={index}>
+                            <img src={getSvg(proj)} alt="tech" width={40} height={40}/>
+                            <span className="mt-2 italic text-sm text-gray-500"> {proj}</span>
+                        </div>
+                      </div>
                     ))
                 }
-              </ul>
+              </div>
             </div>
             {/* Heading Two  */}
             <h2 className="text-2xl font-bold text-slate-700 mt-10">
@@ -76,7 +73,7 @@ const ProjectDetail = ({ id }) => {
             <div className="flex flex-wrap mt-10">
                 {/* Image one  */}
               <div className="w-full md:w-1/2">
-                <div data-aos="slide-left" className="me-0 md:me-3">
+                <div data-aos="fade-up" className="me-0 md:me-3">
                   <img
                     src={
                       item.project_img?.imageone ??
@@ -90,7 +87,7 @@ const ProjectDetail = ({ id }) => {
               </div>
               {/* Image two  */}
               <div className="w-full md:w-1/2">
-                <div className="ms-0 md:ms-3 mt-3 md:mt-0" data-aos="slide-right">
+                <div className="ms-0 md:ms-3 mt-3 md:mt-0" data-aos="fade-up">
                   <img
                     src={
                       item.project_img?.imagetwo ??
@@ -104,11 +101,14 @@ const ProjectDetail = ({ id }) => {
               </div>
             </div>
             {/* Paragraph three */}
-            <p className="text-slate-500 text-justify my-10"> {item.project_challenge?.short_desc} </p>
+            <p 
+              className="text-slate-500 text-justify my-10" 
+              data-aos="fade-up"
+            > {item.project_challenge?.short_desc} </p>
           </div>
           {/* project info */}
           <div className="w-full lg:w-1/3">
-            <div className="ms-5">
+            <div className="ms-5" data-aos="slide-left">
               <ProjectCardInfo item={item} />
               <ContactNow />
             </div>
@@ -118,6 +118,41 @@ const ProjectDetail = ({ id }) => {
     </div>
   );
 };
+
+function getSvg(name) {
+  switch (name) {
+    case 'Laravel':
+      return '/image/svg/laravel.svg'
+    case 'React':
+      return '/image/svg/react.svg'
+    case 'Nextjs':
+      return '/image/svg/nextjs.svg'
+    case 'Mongo DB':
+      return '/image/svg/mongo.svg'
+    case 'Mysql':
+      return '/image/svg/mysql.svg'
+    case 'Nodejs':
+      return '/image/svg/nodejs.svg'
+    case 'Tailwind css':
+      return '/image/svg/tailwind.svg'
+    case 'Bootstrap5': case 'Bootstrap4':
+      return '/image/svg/bootstrap.svg'
+    case 'Expressjs':
+      return '/image/svg/express.svg'
+    case 'Jquery':
+      return '/image/svg/jquery.svg'
+    case 'Inertia Js':
+      return '/image/svg/inertiajs.png'
+    case 'AWS':
+      return '/image/svg/aws.svg'
+    case 'Docker':
+      return '/image/svg/docker.svg'
+    case 'PHP':
+      return '/image/svg/php.svg'
+    default:
+      return '/image/svg/cpu.svg'
+  }
+}
 
 export const ContactNow = () => {
   return (
