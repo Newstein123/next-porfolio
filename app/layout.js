@@ -8,6 +8,8 @@ import ScrollUpButton from './utlis/ScrollUpButton'
 import AOS from 'aos'
 import 'aos/dist/aos.css';
 import { useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Roboto_Condensed({ subsets: ['latin'] })
 
@@ -51,6 +53,8 @@ export default function RootLayout({ children }) {
               {/* Mobile Navbar  */}
               <MobileNavbar />
               {children}
+              <Analytics />
+              <SpeedInsights />
               <ScrollUpButton />
               <Footer />
             </div>
