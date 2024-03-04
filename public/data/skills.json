@@ -1,0 +1,65 @@
+[
+    {
+        "id" : 1,
+        "name" : "HTML",
+        "logo" : "/image/svg/html.svg",
+        "percentage" : "90%",
+        "color" : "bg-orange-500"
+    },
+    {
+        "id" : 2,
+        "name" : "CSS",
+        "logo" : "/image/svg/css.svg",
+        "percentage" : "80%",
+        "color" : "bg-sky-400"
+    },
+    {
+        "id" : 3,
+        "name" : "Javascript",
+        "logo" : "/image/svg/js.svg",
+        "percentage" : "70%",
+        "color" : "bg-yellow-500"
+    },
+    {
+        "id" : 4,
+        "name" : "PHP",
+        "logo" : "/image/svg/php.svg",
+        "percentage" : "85%",
+        "color" : "bg-indigo-400"
+    },
+    {
+        "id" : 5,
+        "name" : "Laravel",
+        "logo" : "/image/svg/laravel.svg",
+        "percentage" : "95%",
+        "color" : "bg-red-500"
+    },
+    {
+        "id" : 6,
+        "name" : "React",
+        "logo" : "/image/svg/react.svg",
+        "percentage" : "70%",
+        "color" : "bg-cyan-600"
+    },
+    {
+        "id" : 7,
+        "name" : "Node Js",
+        "logo" : "/image/svg/nodejs.svg",
+        "percentage" : "70%",
+        "color" : "bg-green-600"
+    },
+    {
+        "id" : 8,
+        "name" : "MySql",
+        "logo" : "/image/svg/mysql.svg",
+        "percentage" : "85%",
+        "color" : "bg-orange-500"
+    },
+    {
+        "id" : 9,
+        "name" : "MongoDB",
+        "logo" : "/image/svg/mongo.svg",
+        "percentage" : "70%",
+        "color" : "bg-green-600"
+    }
+]

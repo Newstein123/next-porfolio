@@ -6,6 +6,8 @@ import Image from "next/image";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 import { useState } from "react";
+import Skills from "./Skills";
+import Experience from "./Experience";
 
 const data = [
   {
@@ -37,6 +39,7 @@ const About = () => {
       <Title title="Know Me More" />
       {/* Information  */}
       <div className="flex flex-wrap mt-20">
+        {/* About me info */}
         <div className="lg:w-2/3">
           <div className="mx-10 md:mx-20">
             <h1 className="text-2xl text-slate-800 font-bold">
@@ -66,8 +69,9 @@ const About = () => {
             <p data-aos="fade-up" className="text-slate-500 leading-loose text-justify md:ms-3"> been fortunate to pursue my passion and make meaningful impacts in the field. Recently, I joined Mysol Co. Ltd., further expanding my expertise in Laravel and React development. I passed NCC level 4 education during my worktime, and I'm currently attending NCC level 5 to deepen my knowledge and skills in web development. I am deeply interested in the intersection of technology and creativity, and I'm excited to continue my journey of growth and exploration in the dynamic world of web development. Feel free to reach out to me.</p>
           </div>
         </div>
-        <div className="lg:w-1/3 text-lg ">
-          <div data-aos="slide-left" className="mx-10 md:mx-20 lg:mx-0 mt-5 lg:mt-0">
+        {/* Contact me info */}
+        <div data-aos="slide-left" className="w-full lg:w-1/3 text-lg ">
+          <div className="mx-10 md:mx-20 lg:mx-0 mt-5 lg:mt-0">
             <div>
               <div className="relative">
                 <div className="mb-2 py-3">
@@ -107,18 +111,23 @@ const About = () => {
                 </div>
                 <span className="absolute bottom-0 left-0 bg-slate-500 w-3/4 h-[2px]"></span>
               </div>
-              <div className="text-center mt-10">
-                <a
-                  href="/pdf/minthetpaing_cv.pdf"
-                  download={true}
-                  className="py-3 px-4 bg-violet-700 text-white transition-all ease-out delay-100  rounded-3xl shadow-md shadow-violet-500 hover:bg-red-400"
-                >
-                  Download CV <LiaDownloadSolid className="inline" />
-                </a>
-              </div>
             </div>
           </div>
+          {/* Download button  */}
+          <div className="text-center mt-10">
+            <a
+              href="/pdf/minthetpaing_cv.pdf"
+              download={true}
+              className="py-3 px-4 bg-violet-700 text-white transition-all ease-out delay-100  rounded-3xl shadow-md shadow-violet-500 hover:bg-red-400"
+            >
+              Download CV <LiaDownloadSolid className="inline" />
+            </a>
+          </div>
         </div>
+      </div>
+      {/* skills */}
+      <div className="my-10 mx-5 md:mx-20">
+        <Skills />
       </div>
       {/* status section  */}
       <div className="flex flex-wrap mt-20 md:mx-20 md:mb-10 lg:mb-0">
@@ -146,6 +155,10 @@ const About = () => {
             </div>
           </div>
         ))}
+      </div>
+      {/* Experience  */}
+      <div className="my-10 mx-5 md:mx-20">
+        <Experience />
       </div>
     </div>
   );
