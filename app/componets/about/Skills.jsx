@@ -21,13 +21,15 @@ const Skills = () => {
               height={50}
             />
           </div>
-          <div class="w-10/12 md:w-11/12 bg-gray-200 rounded-full h-2.5 md:h-4">
-            <div
-              class={`${item.color} md:text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full h-2.5 md:h-4`}
+          <div className="w-10/12 md:w-11/12 bg-gray-200 rounded-full h-2.5 md:h-3.5">
+            {item?.color &&
+              <div
+              className={`bg-indigo-500 md:text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full h-2.5 md:h-3.5`}
               style={{ width: item.percentage }}
             >
               {item.percentage}
             </div>
+            }
           </div>
         </div>
       ))}

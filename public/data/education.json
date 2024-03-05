@@ -1,0 +1,26 @@
+[
+    {
+        "id" : 1,
+        "year" : "2010 - 2015",
+        "title" : "High School Degree",
+        "description" : "During my formative academic years, I attended Basic Education High School (BEHS) (2) Insein, where I completed my education from Grade 6 to Grade 11"
+    },
+    {
+        "id" : 2,
+        "year" : "2016 - 2020",
+        "title" : "Bachelor Degree of Myanmar Maritime University",
+        "description" : "I pursued Marine Electrical and Electronics at Myanmar Maritime University, reaching the final year. Unfortunately, due to political unrest in my country, I was unable to obtain my degree."
+    },
+    {
+        "id" : 3,
+        "year" : "2022 (Spring)",
+        "title" : "Handong University",
+        "description" : "I successfully completed the Operating System Course at Global Handong University, earning my first international certificate in the computing field."
+    },
+    {
+        "id" : 4,
+        "year" : "2022 - 2023",
+        "title" : "NCC Level 4 Diploma in Computing",
+        "description" : "I recently achieved another diploma in the computing field by passing the NCC Level 4 Computing Diploma with flying colors."
+    }
+]

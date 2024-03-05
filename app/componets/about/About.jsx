@@ -12,7 +12,7 @@ import Experience from "./Experience";
 const data = [
   {
     id: 1,
-    number: 2,
+    number: 3,
     name: "Years Experience",
   },
   {
@@ -157,7 +157,7 @@ const About = () => {
         ))}
       </div>
       {/* Experience  */}
-      <div className="my-10 mx-5 md:mx-20">
+      <div className="my-20 mx-5 md:mx-20">
         <Experience />
       </div>
     </div>

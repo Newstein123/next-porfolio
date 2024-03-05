@@ -1,0 +1,26 @@
+[
+    {
+        "id" : 1,
+        "year" : "2021 (March) - 2021 (June)",
+        "title" : "Internship",
+        "description" : "I secured my first unpaid internship at Lyrion Co. Ltd, where I worked as a full-stack web developer. During this time, I successfully completed four projects utilizing HTML, CSS, JavaScript, and PHP."
+    },
+    {
+        "id" : 2,
+        "year" : "2021 (July) - 2021 (August)",
+        "title" : "Assitant Web Development Teacher",
+        "description" : "Since I have five years of teaching experience, I embarked on my first career as an assistant web development teacher at MST University."
+    },
+    {
+        "id" : 3,
+        "year" : "2021 (August) - 2023 (November)",
+        "title" : "Full Stack Web Developer",
+        "description" : "Initially, I started my journey as a Junior Web Developer at Myanmar ICT Solutions Co. Ltd. Through dedication and hard work, I was later promoted to the position of Mid-Level Developer. During my tenure, I made significant contributions to eight projects, utilizing technologies such as Laravel, CodeIgniter, React, jQuery, and others."
+    },
+    {
+        "id" : 4,
+        "year" : "2023 (December) - 2024 (March)",
+        "title" : "Senior PHP Developer",
+        "description" : "Recently, I transitioned to MySol Co. Ltd, a Japan-based company, where I assumed the role of Senior PHP Developer. However, amidst political changes, I found it necessary to contemplate pursuing my career path in another country."
+    }
+]
