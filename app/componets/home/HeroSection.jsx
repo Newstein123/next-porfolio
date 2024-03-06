@@ -10,7 +10,7 @@ const HeroSection = () => {
       <Image
         src={HeroImage}
         alt="HeroImage"
-        className='min-h-screen object-cover'
+        className='min-h-screen object-cover opacity-50 md:opacity-100 object-center-right'
       />
       <div className='text-center absolute top-1/2 text-white w-full md:w-2/3 translate-y-[-50%]'>
         <div className='text-2xl'> Welcome, <span> I am Min Thet Paing </span></div>
