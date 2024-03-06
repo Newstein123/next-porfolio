@@ -6,7 +6,7 @@ export const metadata = {
   generator: 'Next.js',
   applicationName: "Min Thet Paing's Portfolio",
   referrer: 'origin-when-cross-origin',
-  keywords: ['minthetpaing', 'web developer', 'myanmar', 'programmer'],
+  keywords: ['minthetpaing', 'web developer', 'myanmar', 'programmer', 'myanmar maritime university'],
   creator: 'Min Thet Paing',
   publisher: 'Min Thet Paing',
   openGraph: {
@@ -16,7 +16,7 @@ export const metadata = {
     siteName: 'Min Thet Paing',
     images: [
       {
-        url: process.env.APP_URL + '/image/profile.jpg', // Must be an absolute URL
+        url: process.env.APP_URL + '/image/profile.png', // Must be an absolute URL
         width: 800,
         height: 600,
       },

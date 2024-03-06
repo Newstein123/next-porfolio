@@ -1,7 +1,7 @@
 'use client'
 import Title from "@/app/utlis/Title";
 import { LiaDownloadSolid } from "react-icons/lia";
-import ProfileImg from '../../../public/image/profile_img.png'
+import ProfileImg from '../../../public/image/profile.png'
 import Image from "next/image";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";

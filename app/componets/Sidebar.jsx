@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Social from './Social'
 import Link from 'next/link'
 import data from '../../public/data/navbar'
-import ProfileImage from '../../public/image/profile.jpg'
+import ProfileImage from '../../public/image/profile.png'
 import { usePathname } from 'next/navigation'
 
 const Sidebar = () => {
@@ -12,7 +12,7 @@ const Sidebar = () => {
   return (
     <div className='fixed top-0 start-0 mt-10 md:w-2/6 lg:w-1/6'>
       <div className='flex flex-col justify-center items-center'>
-        <div className=''>
+        <div>
           <Image 
               src={ProfileImage}
               width={200}
