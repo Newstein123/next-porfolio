@@ -1,7 +1,7 @@
 import { Table } from "flowbite-react";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
-import DeleteModal from "../../components/delete/deleteModal";
+import DeleteModal from "../../components/delete/DeleteModal";
 import { PostContext } from "@/context/PostContext";
 
 const Post = ({ item, index }) => {
