@@ -1,5 +1,5 @@
 import React from 'react'
-import Service from '../componets/service/Service'
+import Service from '../../componets/service/Service'
 
 export const metadata = {
   title: "Min Thet Paing - Service",

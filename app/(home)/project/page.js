@@ -1,5 +1,5 @@
 import React from 'react'
-import Project from '../componets/project/Project'
+import Project from '../../componets/project/Project'
 
 export const metadata = {
   title: "Min Thet Paing - Project",
