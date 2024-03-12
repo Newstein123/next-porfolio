@@ -51,6 +51,7 @@ const ProjectDetail = ({ id }) => {
                 {
                     item.project_tech?.map((proj, index) => (
                       <div 
+                        key={index}
                         data-aos="fade-up" 
                         className="w-1/2 md:w-1/3"
                       >

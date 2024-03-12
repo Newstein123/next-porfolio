@@ -87,10 +87,10 @@ const About = () => {
                     Email:
                   </span>
                   <a
-                    href="mailto:minthetpaing376@gmail.com"
+                    href="mailto:minthetpaingdev@gmail.com"
                     className="ms-3 text-violet-700"
                   >
-                    minthetpaing376@gmail.com
+                    minthetpaingdev@gmail.com
                   </a>
                 </div>
                 <span className="absolute bottom-0 left-0 bg-slate-500 w-3/4 h-[2px]"></span>

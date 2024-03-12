@@ -16,22 +16,22 @@ const data = [
   {
     id : 2,
     icon : <FaInstagram />,
-    link : "https://www.facebook.com/profile.php?id=100077666327550",
+    link : "https://www.instagram.com/newstein26?igsh=MWE5OWY4ZmR2dzNjMw%3D%3D&utm_source=qr",
   },
   {
     id : 3,
     icon : <FaLinkedin />,
-    link : "https://www.facebook.com/profile.php?id=100077666327550",
+    link : "www.linkedin.com/in/min-thet-paing-793738241",
   },
   {
     id : 4,
     icon : <FaTelegram />,
-    link : "https://www.facebook.com/profile.php?id=100077666327550",
+    link : "https://t.me/alpha27century",
   },
   {
     id : 5,
     icon : <FaWhatsapp />,
-    link : "https://www.facebook.com/profile.php?id=100077666327550",
+    link : "https://wa.me/+959770139833",
   },
 ]
 
@@ -66,7 +66,7 @@ const Contact = () => {
                       className="text-violet-700 inline me-3"
                     />
                     <a href="phoneto:+959770139207" className="text-slate-500 text-sm">
-                      +95 9770139207
+                      +95 9770139833
                     </a>
                   </div>
                   <div className="mt-3">
@@ -75,10 +75,10 @@ const Contact = () => {
                       className="text-violet-700 inline me-3"
                     />
                     <a
-                      href="mailto:minthetpaing376@gmail.com"
+                      href="mailto:minthetpaingdev@gmail.com"
                       className="text-slate-500 text-sm"
                     >
-                      minthetpaing376@gmail.com
+                      minthetpaingdev@gmail.com
                     </a>
                   </div>
                 </div>
@@ -91,7 +91,12 @@ const Contact = () => {
                   <div className='flex justify-center my-3 bg-violet-700 px-5 py-3 rounded-tl-lg rounded-tr-lg'>
                     {
                       data.map(item => (
-                        <Link href={item.link} key={item.id} className=' text-xl mx-2 hover:scale-150'>
+                        <Link 
+                          href={item.link} 
+                          key={item.id} 
+                          className=' text-xl mx-2 hover:scale-150'
+                          target="_blank"
+                        >
                           {item.icon}
                         </Link>
                       ))

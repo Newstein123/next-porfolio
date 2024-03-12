@@ -3,7 +3,7 @@
 		"id": 1,
 		"title": "MMQrGenerator",
 		"short_desc": "Qr generation app with customized design and template. Jquery, Laravel, Bootstrap",
-		"image": "/image/projects/mmqr.png",
+		"image": "/image/projects/thumbnails/mmqr.jpg",
 		"project_img": {
 			"main": "/image/projects/qrcode/main.png",
 			"imageone": "/image/projects/qrcode/imageone.png",
@@ -32,7 +32,7 @@
 		"id": 2,
 		"title": "MM ChatAi",
 		"short_desc": "Chat GPT Myanmar Version with google translate and Chat GPT Api. Jquery, Laravel, Bootstrap",
-		"image": "/image/projects/chat.png",
+		"image": "/image/projects/thumbnails/mmchatai.jpg",
 		"project_img": {
 			"main": "/image/projects/mmchatai/main.png",
 			"imageone": "/image/projects/mmchatai/imageone.png",
@@ -63,7 +63,7 @@
 		"id": 3,
 		"title": "Trading Platform",
 		"short_desc": "Trading agent platform with binance websocket api. React, Laravel, Bootstrap",
-		"image": "/image/projects/trade.png",
+		"image": "/image/projects/thumbnails/trading.jpg",
 		"project_img": {
 			"main": "/image/projects/trade/main.png",
 			"imageone": "/image/projects/trade/imageone.png",
@@ -95,7 +95,7 @@
 		"id": 4,
 		"title": "Media Website",
 		"short_desc": "Media platform with payment integration and facebook like features. Laravel, Jquery, Bootstrap",
-		"image": "/image/projects/media.png",
+		"image": "/image/projects/thumbnails/media.jpg",
 		"project_img": {
 			"main": "/image/projects/media/main.png",
 			"imageone": "/image/projects/media/imageone.png",
@@ -123,7 +123,7 @@
 		"id": 5,
 		"title": "Business Finding App",
 		"short_desc": "Business selling and buying app with colorful UI/UX. React, Laravel, Inertia Js, Tailwind",
-		"image": "/image/projects/business.png",
+		"image": "/image/projects/thumbnails/business-finding.jpg",
 		"project_img": {
 			"main": "/image/projects/laracamp/main.png",
 			"imageone": "/image/projects/laracamp/imageone.png",
@@ -152,7 +152,7 @@
 		"id": 6,
 		"title": "Fire Qr Product",
 		"short_desc": "Fire fighting products showcase page with integrated Qr System. Laravel, Jquery, Bootstrap",
-		"image": "/image/projects/fireqr.png",
+		"image": "/image/projects/thumbnails/fireqr.jpg",
 		"project_img": {
 			"main": "/image/projects/fireqr/main.png",
 			"imageone": "/image/projects/fireqr/imageone.png",
@@ -184,7 +184,7 @@
 		"project_img": {
 			"main": "/image/projects/catchball/main.png",
 			"imageone": "/image/projects/catchball/imageone.png",
-			"imagetwo": "/image/projects/catchball/imagetwo"
+			"imagetwo": "/image/projects/catchball/imagetwo.png"
 		},
 		"project_desc": "The project is a deferred payment system facilitating transactions between customers, stores, and enterprises. Customers can postpone their payments using this system, allowing them to make purchases on credit. The platform manages complex operations involving customers, stores, and enterprises. It supports various payment methods, including both local and international options. While built on the Zend Framework, it has been extensively customized to meet specific needs such as emailing, templating, and other services.",
 		"project_tech": [

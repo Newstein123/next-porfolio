@@ -5,7 +5,6 @@ import data from "../../../public/data/project";
 import ProjectItem from "./ProjectItem";
 import { usePathname } from "next/navigation";
 import Button from "@/app/utlis/Button";
-import ProjectSkeleton from "../skeleton/ProjectSkeleton";
 
 const Project = () => {
   const perPage = 9;
