@@ -1,7 +1,7 @@
 'use client'
 import { PostContext } from '@/context/PostContext'
 import { Alert, Button, Label, Modal, Select, TextInput } from 'flowbite-react'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 
 const Create = ({openModal, setOpenModal}) => {
     const {state, createPost} = useContext(PostContext)
@@ -9,7 +9,7 @@ const Create = ({openModal, setOpenModal}) => {
         title : '',
         body : '',
         category_id : '65f00dec577434f80623d24a',
-        tags : ['AI', 'Technology']
+        tags : ['Laravel', 'Technology']
     }
     const [data, setData] = useState(initData)
     const handleCreate = async () => {

@@ -1,4 +1,4 @@
-import { Table } from "flowbite-react";
+import { Pagination, Table } from "flowbite-react";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
 import DeleteModal from "../../components/delete/DeleteModal";
@@ -10,12 +10,12 @@ const Post = ({ item, index }) => {
 
   return (
     <React.Fragment>
-        <DeleteModal 
-            openModal={openModal}
-            setOpenModal={setOpenModal}
-            deleteData={deletePost}
-            state={state}
-        />
+      <DeleteModal 
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+          deleteData={deletePost}
+          state={state}
+      />
       <Table.Row
         className="bg-white dark:border-gray-700 dark:bg-gray-800"
         key={item._id}

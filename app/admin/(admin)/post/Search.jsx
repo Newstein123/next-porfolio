@@ -1,4 +1,4 @@
-import { Button, Datepicker, TextInput } from 'flowbite-react'
+import { Button, Datepicker, Select, TextInput } from 'flowbite-react'
 import React from 'react'
 
 const Search = () => {
@@ -6,17 +6,23 @@ const Search = () => {
     <form>
         <div className='flex justify-between'>
             <TextInput 
-                placeholder='Enter name'
+                placeholder='Search Post'
                 className='w-full me-3'
             />
             <TextInput 
-                placeholder='Enter email'
+                placeholder='Enter tag'
                 className='w-full me-3'
             />
             <Datepicker
                 placeholder='Enter name'
                 className='w-full me-3'
             />
+            <Select
+                className='w-full me-3'
+            >
+                <option value=""> Select Category </option>
+                <option value=""></option>
+            </Select>
             <Button type='submit'> Search </Button>
         </div>
     </form>

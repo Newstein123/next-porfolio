@@ -1,5 +1,5 @@
 "use client";
-import { Breadcrumb, Button, Table } from "flowbite-react";
+import { Breadcrumb, Button, Pagination, Table } from "flowbite-react";
 import React, { useContext, useEffect, useState } from "react";
 import { HiHome } from "react-icons/hi";
 import TableLoading from "../../components/loading/TableLoading";
@@ -11,6 +11,8 @@ import Create from "./Create";
 const PostAll = () => {
   const {state, getAllPost} = useContext(PostContext)
   const [openModal, setOpenModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1)
+  const onPageChange = (page) => setCurrentPage(page);
 
   useEffect(() => {
     getAllPost();
@@ -71,7 +73,15 @@ const PostAll = () => {
             )}
           </Table>
         </div>
-
+        {/* pagination  */}
+        <div className="flex overflow-x-auto sm:justify-center">
+          <Pagination 
+            currentPage={currentPage} 
+            totalPages={100} 
+            onPageChange={onPageChange} 
+            showIcons 
+          />
+        </div>
         {/* create modal */}
         <Create 
           openModal={openModal}

@@ -25,9 +25,9 @@ const Login = () => {
             })
     
             if(res.ok) {
-                setLoading(false)
                 const data = await res.json();
                 if(data.success) {
+                    setLoading(false)
                     router.push('/admin/dashboard');
                 } else {
                     setErrMessage(data.message);
