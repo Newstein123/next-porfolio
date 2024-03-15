@@ -55,7 +55,7 @@ const Contact = () => {
                     Address
                   </h1>
                   <p className="text-slate-500 text-justify">
-                    491/B West Ywama Myo Pat Street, Insein Township, Yangon City, Myanmar.
+                  Block 653 JLN TENAGA Singapore #04-60, S-410653 
                   </p>
                 </div>
                 {/* contact info  */}
@@ -75,10 +75,10 @@ const Contact = () => {
                       className="text-violet-700 inline me-3"
                     />
                     <a
-                      href="mailto:minthetpaingdev@gmail.com"
+                      href="mailto:minthetpaing376@gmail.com"
                       className="text-slate-500 text-sm"
                     >
-                      minthetpaingdev@gmail.com
+                      minthetpaing376@gmail.com
                     </a>
                   </div>
                 </div>

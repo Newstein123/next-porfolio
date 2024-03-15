@@ -8,6 +8,7 @@ import ScrollTrigger from "react-scroll-trigger";
 import { useState } from "react";
 import Skills from "./Skills";
 import Experience from "./Experience";
+import { BsEye} from "react-icons/bs";
 
 const data = [
   {
@@ -87,10 +88,10 @@ const About = () => {
                     Email:
                   </span>
                   <a
-                    href="mailto:minthetpaingdev@gmail.com"
+                    href="mailto:minthetpaing376@gmail.com"
                     className="ms-3 text-violet-700"
                   >
-                    minthetpaingdev@gmail.com
+                    minthetpaing376@gmail.com
                   </a>
                 </div>
                 <span className="absolute bottom-0 left-0 bg-slate-500 w-3/4 h-[2px]"></span>
@@ -107,21 +108,34 @@ const About = () => {
                 <div className="mb-2 py-3">
                   
                   <span className="font-bold text-slate-800"> From: </span>
-                  <span className="ms-3 text-slate-500"> Insein, Yangon </span>
+                  <span className="ms-3 text-slate-500"> Block 653 JLN TENAGA Singapore </span>
+                  <span className="ms-3 text-slate-500 block"> #04-60, S-410653 </span>
                 </div>
                 <span className="absolute bottom-0 left-0 bg-slate-500 w-3/4 h-[2px]"></span>
               </div>
             </div>
           </div>
           {/* Download button  */}
-          <div className="text-center mt-10">
-            <a
-              href="/pdf/minthetpaing_cv.pdf"
-              download={true}
-              className="py-3 px-4 bg-violet-700 text-white transition-all ease-out delay-100  rounded-3xl shadow-md shadow-violet-500 hover:bg-red-400"
-            >
-              Download CV <LiaDownloadSolid className="inline" />
-            </a>
+          <div className="mx-10 flex justify-start gap-2">
+            <div className="text-center mt-10">
+              <a
+                href="/pdf/minthetpaing_cv.pdf"
+                download="MinThetPaingCV.pdf"
+                className="py-3 px-4 bg-violet-700 text-white transition-all ease-out delay-100  rounded-3xl shadow-md shadow-violet-500 hover:bg-red-400"
+              >
+                Download CV <LiaDownloadSolid className="inline" />
+              </a>
+            </div>
+            <div className="text-center mt-10">
+              <a
+                href="/pdf/minthetpaing_cv.pdf"
+                target="_blank"
+                title="MinThetPaingCV"
+                className="py-3 px-4 bg-violet-700 text-white transition-all ease-out delay-100  rounded-3xl shadow-md shadow-violet-500 hover:bg-red-400"
+              >
+                View CV <BsEye className="inline" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
