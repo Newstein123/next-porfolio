@@ -1,13 +1,30 @@
-import React from 'react'
-import { cookies } from 'next/headers'
-import { getUserInfo } from '@/utlis/getUserInfo'
+'use client'
+import Dashboard from './Dashboard';
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import DashboardLoading from './DashboardLoading';
 
 const page = () => {
-  const userInfo = getUserInfo();
+  const [dashboardData, setDashboardData] = useState([])
+
+    const getDashboardData = async () => {
+        const res = await axios.get('/api/dashboard');
+        if(res.status == 200) {
+            setDashboardData(res.data.data);
+        }
+    }
+    useEffect(() => {
+        getDashboardData()
+    }, [])
 
   return (
     <div className='text-slate-700'>
-      Welcome, {userInfo.name}
+      Welcome, Admin
+      {dashboardData.length !== 0 ? 
+        <Dashboard 
+          dashboardData={dashboardData}
+        /> : <DashboardLoading />
+      }
     </div>
   )
 }

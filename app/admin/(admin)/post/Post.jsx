@@ -18,7 +18,6 @@ const Post = ({ item, index }) => {
       />
       <Table.Row
         className="bg-white dark:border-gray-700 dark:bg-gray-800"
-        key={item._id}
       >
         <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
           {index + 1}

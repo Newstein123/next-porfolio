@@ -1,10 +1,6 @@
 "use client";
 import { Roboto_Condensed } from "next/font/google";
-import Footer from "./componets/parts/Footer";
-import Sidebar from "./componets/Sidebar";
 import "./globals.css";
-import MobileNavbar from "./componets/MobileNavbar";
-import ScrollUpButton from "./utlis/ScrollUpButton";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -46,8 +42,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         {children}
-        <Analytics />
-        <SpeedInsights />
+        {process.env.APP_ENV == "production" &&
+          <React.Fragment>
+            <Analytics />
+            <SpeedInsights />
+          </React.Fragment>
+        }
       </body>
     </html>
   );

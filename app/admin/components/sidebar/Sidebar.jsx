@@ -13,8 +13,8 @@ export const AdminSidebar = ({handleLogout}) => {
       </Sidebar.Logo>
       <Sidebar.Items>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="#" icon={HiChartPie}>
-            Dashboard
+          <Sidebar.Item href="#" icon={HiChartPie} as="div">
+            <Link href='/admin/dashboard'>Dashboard </Link>
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={HiViewBoards} as="div">
             <Link href="/admin/post"> Post </Link>
@@ -27,6 +27,9 @@ export const AdminSidebar = ({handleLogout}) => {
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={HiShoppingBag}>
             User
+          </Sidebar.Item>
+          <Sidebar.Item href="#" icon={HiShoppingBag} as="div">
+            <Link href='/admin/gs'>General Setting</Link>
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={HiShoppingBag}>
             Profile

@@ -14,9 +14,16 @@ export function middleware(request) {
       }
     })
     return NextResponse.redirect(new URL("/admin/login", request.url));
-  } 
+  }
 }
 
 export const config = {
-  matcher: ['/admin/dashboard', '/admin/post', '/admin/category', '/admin/profile', '/admin/user'],
+  matcher: [
+    '/admin/dashboard', 
+    '/admin/post', 
+    '/admin/category', 
+    '/admin/profile', 
+    '/admin/user', 
+    '/admin/general_setting',
+  ],
 };
