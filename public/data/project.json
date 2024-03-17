@@ -246,9 +246,9 @@
 		"short_desc": "Prompt creating platform integrated with Nextjs, Mongodb and Tailwindcss",
 		"image": "/image/projects/prompt.png",
 		"project_img": {
-			"main": "/image/projects/mmchatai/main",
-			"imageone": "/image/projects/mmchatai/imageone",
-			"imagetwo": "/image/projects/mmchatai/imagetwo"
+			"main": "/image/projects/promptopia/main.png",
+			"imageone": "/image/projects/promptopia/imageone.png",
+			"imagetwo": "/image/projects/promptopia/imagetwo.png"
 		},
 		"project_desc": "In our latest project, we've departed from traditional relational databases, opting instead for the dynamic MongoDB Atlas alongside the innovative MERN stack. This decision has paved the way for an intuitive AI prompt repository, where users can effortlessly share and discover their favorite prompts. With a user-friendly interface and a robust tagging system, finding relevant commands is a breeze. Whether it's exploring new machine learning techniques or diving into data analytics, our platform simplifies prompt management while fostering collaboration within the AI community. Join us as we redefine the landscape of prompt access and sharing, one tag at a time.",
 		"project_tech": [
@@ -266,8 +266,8 @@
 		"content": "",
 		"date": "05-09-2023",
 		"category": "Media",
-		"location": "Myanmar ICT Solutions",
-		"website_url": "",
+		"location": "Own Project",
+		"website_url": "https://promptopia-mu-olive.vercel.app",
 		"gitlink": "https://github.com/Newstein123/promptopia"
 	},
 	{
