@@ -31,7 +31,7 @@ const data = [
   {
     id : 5,
     icon : <FaWhatsapp />,
-    link : "https://wa.me/+959770139833",
+    link : "https://wa.me/+6588571785 ",
   },
 ]
 
@@ -65,8 +65,8 @@ const Contact = () => {
                       size={20}
                       className="text-violet-700 inline me-3"
                     />
-                    <a href="phoneto:+959770139207" className="text-slate-500 text-sm">
-                      +95 9770139833
+                    <a href="phoneto:+6588571785" className="text-slate-500 text-sm">
+                      +6588571785 
                     </a>
                   </div>
                   <div className="mt-3">

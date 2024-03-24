@@ -8,19 +8,19 @@
     {
         "id" : 2,
         "year" : "2016 - 2020",
-        "title" : "Bachelor Degree of Myanmar Maritime University",
+        "title" : "Bachelor Degree of Myanmar Maritime University (Myanmar)",
         "description" : "I pursued Marine Electrical and Electronics at Myanmar Maritime University, reaching the final year. Unfortunately, due to political unrest in my country, I was unable to obtain my degree."
     },
     {
         "id" : 3,
         "year" : "2022 (Spring)",
-        "title" : "Handong University",
+        "title" : "Handong Global University (Korea)",
         "description" : "I successfully completed the Operating System Course at Global Handong University, earning my first international certificate in the computing field."
     },
     {
         "id" : 4,
         "year" : "2022 - 2023",
-        "title" : "NCC Level 4 Diploma in Computing",
+        "title" : "NCC Level 4 Diploma in Computing (UK)",
         "description" : "I recently achieved another diploma in the computing field by passing the NCC Level 4 Computing Diploma with flying colors."
     }
 ]

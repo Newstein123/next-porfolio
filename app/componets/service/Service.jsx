@@ -12,7 +12,7 @@ const data = [
   {
       id: 1,
       name: "Full Stack Development",
-      short_desc: "Proficient in React, Laravel, Next.js, Node.js, Inertia.js, AWS, and Digital Ocean.",
+      short_desc: "Proficient in React, Laravel, CodeIgniter, Next.js, Node.js, Inertia.js, AWS, and Digital Ocean.",
       desc: "I possess skills in React, Laravel, Next.js, Node.js, Inertia.js, AWS, Digital Ocean, Git, Github and Gitlab, ensuring expertise in Full Stack Development.",
       icon: <FaComputer size={40} />,
   },

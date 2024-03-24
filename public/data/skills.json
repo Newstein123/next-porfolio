@@ -49,6 +49,13 @@
         "color" : "red"
     },
     {
+        "id" : 13,
+        "name" : "CodeIgniter",
+        "logo" : "/image/svg/codeigniter.svg",
+        "percentage" : "90",
+        "color" : "red"
+    },
+    {
         "id" : 6,
         "name" : "React",
         "logo" : "/image/svg/react.svg",

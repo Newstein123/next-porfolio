@@ -150,6 +150,8 @@ function getSvg(name) {
       return '/image/svg/docker.svg'
     case 'PHP':
       return '/image/svg/php.svg'
+    case 'Code Igniter':
+      return '/image/svg/codeigniter.svg'
     default:
       return '/image/svg/cpu.svg'
   }
