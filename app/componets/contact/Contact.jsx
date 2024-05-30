@@ -11,6 +11,7 @@ import {
 import Title from "@/app/utlis/Title";
 import ContactForm from "./ContactForm";
 import { FaWhatsapp } from "react-icons/fa";
+import Freelancer from "./Freelancer";
 
 const data = [
   {
@@ -117,6 +118,11 @@ const Contact = () => {
               <ContactForm />
             </div>
           </div>
+        </div>
+
+        {/* freelancer link  */}
+        <div className="mx-10 my-20 border border-violet-500 rounded-md p-3 flex bg-violet-700 shadow-md shadow-violet-400">
+          <Freelancer />
         </div>
       </div>
     </div>
