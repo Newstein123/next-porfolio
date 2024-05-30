@@ -180,7 +180,7 @@
 		"id": 13,
 		"title": "CatchBall",
 		"short_desc": "Defered Payment System in Japan between Enterprise, Customers and Stores with Zend Framework, Docker and Mysql.",
-		"image": "/image/projects/cherryhan.png",
+		"image": "/image/projects/catchball.png",
 		"project_img": {
 			"main": "/image/projects/catchball/main.png",
 			"imageone": "/image/projects/catchball/imageone.png",
@@ -246,9 +246,9 @@
 		"short_desc": "Prompt creating platform integrated with Nextjs, Mongodb and Tailwindcss",
 		"image": "/image/projects/prompt.png",
 		"project_img": {
-			"main": "/image/projects/mmchatai/main",
-			"imageone": "/image/projects/mmchatai/imageone",
-			"imagetwo": "/image/projects/mmchatai/imagetwo"
+			"main": "/image/projects/promptopia/main.png",
+			"imageone": "/image/projects/promptopia/imageone.png",
+			"imagetwo": "/image/projects/promptopia/imagetwo.png"
 		},
 		"project_desc": "In our latest project, we've departed from traditional relational databases, opting instead for the dynamic MongoDB Atlas alongside the innovative MERN stack. This decision has paved the way for an intuitive AI prompt repository, where users can effortlessly share and discover their favorite prompts. With a user-friendly interface and a robust tagging system, finding relevant commands is a breeze. Whether it's exploring new machine learning techniques or diving into data analytics, our platform simplifies prompt management while fostering collaboration within the AI community. Join us as we redefine the landscape of prompt access and sharing, one tag at a time.",
 		"project_tech": [
@@ -266,8 +266,8 @@
 		"content": "",
 		"date": "05-09-2023",
 		"category": "Media",
-		"location": "Myanmar ICT Solutions",
-		"website_url": "",
+		"location": "Own Project",
+		"website_url": "https://promptopia-mu-olive.vercel.app",
 		"gitlink": "https://github.com/Newstein123/promptopia"
 	},
 	{
@@ -276,9 +276,9 @@
 		"short_desc": "Booking service for various business platform. Customized with React, Nodejs, Mongodb and Tailwindcss ",
 		"image": "/image/projects/booking.png",
 		"project_img": {
-			"main": "/image/projects/mmchatai/main",
-			"imageone": "/image/projects/mmchatai/imageone",
-			"imagetwo": "/image/projects/mmchatai/imagetwo"
+			"main": "/image/projects/booking/main.png",
+			"imageone": "/image/projects/booking/imageone.png",
+			"imagetwo": "/image/projects/booking/imagetwo.png"
 		},
 		"project_desc": "This project marks another venture into the realm of MERN stack development. Specifically, it entails the creation of a comprehensive booking platform tailored to diverse hotel businesses. One of the distinguishing features of this platform is its user-friendly interface, which enables seamless room reservations within specified timeframes. Notably, the backend exclusively supports API functionalities, emphasizing a separation of concerns. Users are empowered to search for hotels and assess room availability, facilitating informed decision-making. Through this initiative, we aim to streamline the booking process while maintaining a robust and efficient backend infrastructure.",
 		"project_tech": [
@@ -301,44 +301,14 @@
 		"gitlink": ""
 	},
 	{
-		"id": 10,
-		"title": "Cherry Han",
-		"short_desc": "Delivery Service with different kinds of business, integrated with React, Laravel, Bootstrap, Mysql. ",
-		"image": "/image/projects/cherryhan.png",
-		"project_img": {
-			"main": "/image/projects/mmchatai/main",
-			"imageone": "/image/projects/mmchatai/imageone",
-			"imagetwo": "/image/projects/mmchatai/imagetwo"
-		},
-		"project_desc": "This application functions as a service platform, with its frontend developed using React and its backend implemented using Laravel. The app provides a comprehensive range of services, encompassing hiring tracks and cars, delivering products with diverse specifications, and facilitating hotel bookings.",
-		"project_tech": [
-			"React",
-			"Laravel",
-			"Mysql",
-			"Bootstrap5",
-			"Restful Api"
-		],
-		"project_challenge": {
-			"intro": "The primary challenge encountered in this project lies in my inaugural utilization of React within a production environment. My involvement primarily pertains to the complete development of the frontend component, alongside contributions to select segments of API production, specifically focusing on authentication and the integration of a coin system.",
-			"short_desc": "Additionally, a noteworthy challenge entails the adept management of authentication tokens within the frontend to ensure a secure and streamlined login system. Despite these hurdles, the project presents itself as both straightforward and engaging, offering valuable opportunities to augment my proficiency in frontend development."
-		},
-		"client": "Cherry Han",
-		"content": "",
-		"date": "30-01-2023",
-		"category": "Business",
-		"location": "Myanmar ICT Solutions",
-		"website_url": "Not Provided",
-		"gitlink": "Not Provided"
-	},
-	{
 		"id": 11,
 		"title": "EOffice",
 		"short_desc": "Myanmar Fire Service Deparment Management with Code Igniter, Bootstrap and Mysql.",
 		"image": "/image/projects/cherryhan.png",
 		"project_img": {
-			"main": "/image/projects/mmchatai/main",
-			"imageone": "/image/projects/mmchatai/imageone",
-			"imagetwo": "/image/projects/mmchatai/imagetwo"
+			"main": "/image/projects/confidential.png",
+			"imageone": "/image/projects/confidential.png",
+			"imagetwo": "/image/projects/confidential.png"
 		},
 		"project_desc": "This project forms an integral component of the Myanmar E-Government Project, specifically tailored for the Fire Service Department. Serving as a comprehensive fire department management system, its functionalities span across various crucial aspects. Primarily, the system maintains an updated inventory of fire department equipment, tracks the roster of firefighters and national employees, and facilitates seamless communication among stakeholders.Within the framework of this system, administrators can efficiently allocate equipment to different regions and states, streamline correspondence through letter dissemination, and assign duties effectively. Developed utilizing the CodeIgniter framework, the system incorporates extensive integration with Ajax technology, enhancing its responsiveness and interactivity.By automating previously manual processes, this system tackles complex operational challenges faced by department personnel, optimizing efficiency and resource utilization.",
 		"project_tech": [
@@ -365,9 +335,9 @@
 		"short_desc": "Myanmar Fire Service Deparment's Fire Safety Certificate with Code Igniter, Bootstrap and Mysql.",
 		"image": "/image/projects/cherryhan.png",
 		"project_img": {
-			"main": "/image/projects/mmchatai/main",
-			"imageone": "/image/projects/mmchatai/imageone",
-			"imagetwo": "/image/projects/mmchatai/imagetwo"
+			"main": "/image/projects/confidential.png",
+			"imageone": "/image/projects/confidential.png",
+			"imagetwo": "/image/projects/confidential.png"
 		},
 		"project_desc": "This project is also part of the Myanmar E-Goverment system for Fire Service Department. User can upload their building documents and information to get approve from the fire service deparment. Once approved, the system generate fire service certificate with relavant information and Qr Code. User can communicate with the system during the process and make payment. In the system, there are many complex operation to handle these process digitally and manually for example assigning group for building investigation.",
 		"project_tech": [

@@ -5,6 +5,7 @@ import Social from './Social'
 import Link from 'next/link'
 import data from '../../public/data/navbar'
 import ProfileImage from '../../public/image/profile.png'
+import QrCode from '../../public/image/qrcode/whatsapp_qrcode.jpg'
 import { usePathname } from 'next/navigation'
 
 const Sidebar = () => {
@@ -45,6 +46,14 @@ const Sidebar = () => {
                   ))
               }
           </ul>
+        {/* what's App qrcode  */}
+        <Image 
+            src={QrCode}
+            width={100}
+            height={100}
+            alt='this is whats app qrcode'
+            className='shadow-md shadow-slate-400'
+          />
         </div>
         <Social/>
       </div>

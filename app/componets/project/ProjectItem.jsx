@@ -43,22 +43,22 @@ export const CardItemTwo = ({item, index}) => {
         data-aos={renderTransition(index)} 
         data-aos-delay="10"
         data-aos-duration="1200"
-        className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-violet-700 dark:border-gray-200 me-0 md:me-3 mt-3 relative group z-0">
+        className="max-w-sm bg-white border border-gray-200 rounded-lg shadow me-0 md:me-3 mt-3 relative group z-0">
         <Link href={`/project/detail/${item.id}`}>
           <Image className="rounded-t-lg" src={item.image} alt="" width={300} height={150} priority/>
         </Link>
         <div className="hidden p-5 absolute top-0 group-hover:block bg-black bg-opacity-75 w-full h-full">
           <a href="#">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-200 dark:text-white">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-200">
               {item.title}
             </h5>
           </a>
-          <p className="mb-3 text-xs text-justify font-normal text-gray-700 dark:text-gray-300">
+          <p className="mb-3 text-xs text-justify font-normal text-gray-400">
             {item.short_desc}
           </p>
           <Link
             href={`/project/detail/${item.id}`}
-            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-violet-700 rounded-lg hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
+            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-violet-700 rounded-lg hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300"
           >
           <span className="me-3"> See Details </span> <AiOutlineArrowRight className="inline" />
           </Link>
