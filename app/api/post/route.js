@@ -1,3 +1,4 @@
+import User from "@/models/user";
 import Post from "@/models/post";
 import apiResponse from "@/utlis/apiResponse";
 import { connnectedToDB } from "@/utlis/db";

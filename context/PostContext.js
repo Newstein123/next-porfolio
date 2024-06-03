@@ -1,4 +1,5 @@
 "use client";
+import loading from "@/app/(home)/project/loading";
 import { createContext, useReducer } from "react";
 import toast from "react-hot-toast";
 
