@@ -1,29 +1,52 @@
 import mongoose, { Schema, model, models } from "mongoose";
 
-const PostSchema = new Schema({
-    title : {
-        type : String,
-        require : [true, "title is required"]
+const PostSchema = new Schema(
+  {
+    title: {
+      type: String,
+      require: [true, "title is required"],
     },
-    body : {
-        type : String,
-        require : [true, 'body is required']
+    body: {
+      type: String,
+      require: [true, "body is required"],
     },
-    category_id : {
-        type : mongoose.Schema.Types.ObjectId,
-        ref : 'Category'
+    lang: {
+      type: String,
+      default: "my",
     },
-    author : {
-        type : mongoose.Schema.Types.ObjectId,
-        ref : 'User'
+    category_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
     },
-    post_images : {
-        type : [String]
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
-    tags : {
-        type : [String]
-    }
-}, {timestamps : true})
+    post_images: {
+      type: [String],
+    },
+    tags: {
+      type: [String],
+    },
+    status: {
+      type: Boolean,
+      default: true,
+    },
+    featured: {
+      type: Boolean,
+      default: false,
+    },
+    views: {
+      type: Number,
+      default: 0,
+    },
+    likes: {
+      type: Number,
+      default: 0,
+    },
+  },
+  { timestamps: true }
+);
 
-const Post = models.Post || model('Post', PostSchema )
+const Post = models.Post || model("Post", PostSchema);
 export default Post;

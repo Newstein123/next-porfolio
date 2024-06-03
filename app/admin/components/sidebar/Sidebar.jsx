@@ -1,11 +1,17 @@
+"use client";
 
-'use client';
+import { Sidebar } from "flowbite-react";
+import Link from "next/link";
+import {
+  HiChartPie,
+  HiInbox,
+  HiShoppingBag,
+  HiTable,
+  HiUser,
+  HiViewBoards,
+} from "react-icons/hi";
 
-import { Button, Sidebar } from 'flowbite-react';
-import Link from 'next/link';
-import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from 'react-icons/hi';
-
-export const AdminSidebar = ({handleLogout}) => {
+export const AdminSidebar = ({ handleLogout }) => {
   return (
     <Sidebar aria-label="Sidebar with logo branding example">
       <Sidebar.Logo href="#" img="/favicon.svg" imgAlt="Flowbite logo">
@@ -14,7 +20,7 @@ export const AdminSidebar = ({handleLogout}) => {
       <Sidebar.Items>
         <Sidebar.ItemGroup>
           <Sidebar.Item href="#" icon={HiChartPie} as="div">
-            <Link href='/admin/dashboard'>Dashboard </Link>
+            <Link href="/admin/dashboard">Dashboard </Link>
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={HiViewBoards} as="div">
             <Link href="/admin/post"> Post </Link>
@@ -29,7 +35,7 @@ export const AdminSidebar = ({handleLogout}) => {
             User
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={HiShoppingBag} as="div">
-            <Link href='/admin/gs'>General Setting</Link>
+            <Link href="/admin/gs">General Setting</Link>
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={HiShoppingBag}>
             Profile
@@ -41,4 +47,4 @@ export const AdminSidebar = ({handleLogout}) => {
       </Sidebar.Items>
     </Sidebar>
   );
-}
+};

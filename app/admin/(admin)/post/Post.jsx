@@ -1,24 +1,42 @@
-import { Pagination, Table } from "flowbite-react";
+import { Pagination, Table, ToggleSwitch } from "flowbite-react";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
 import DeleteModal from "../../components/delete/DeleteModal";
 import { PostContext } from "@/context/PostContext";
+import { format } from "date-fns";
 
 const Post = ({ item, index }) => {
   const [openModal, setOpenModal] = useState(false);
-  const {state, deletePost} = useContext(PostContext)
+  const [openFeatured, setOpenFeatured] = useState(item?.featured);
+  const [openPublic, setOpenPublic] = useState(item?.status);
+  const { state, deletePost, featureChanged } = useContext(PostContext);
+  const formattedDate = format(new Date(2014, 1, 11), "MM/dd/yyyy");
+
+  // featured toggle changed
+
+  const handleFeaturedChange = (id, featured) => {
+    // do something
+    featureChanged(id, featured);
+    setOpenFeatured(!openFeatured);
+  };
+
+  // public toggle changed
+
+  const handlePublicChange = () => {
+    // do something
+    setOpenPublic(!openPublic);
+  };
 
   return (
     <React.Fragment>
-      <DeleteModal 
-          openModal={openModal}
-          setOpenModal={setOpenModal}
-          deleteData={deletePost}
-          state={state}
+      <DeleteModal
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+        deleteData={deletePost}
+        state={state}
+        id={item._id}
       />
-      <Table.Row
-        className="bg-white dark:border-gray-700 dark:bg-gray-800"
-      >
+      <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
         <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
           {index + 1}
         </Table.Cell>
@@ -27,7 +45,19 @@ const Post = ({ item, index }) => {
         </Table.Cell>
         <Table.Cell> {item.category_id.name} </Table.Cell>
         <Table.Cell> {item.author.name} </Table.Cell>
-        <Table.Cell> {item.createdAt} </Table.Cell>
+        <Table.Cell> {formattedDate} </Table.Cell>
+        <Table.Cell>
+          <ToggleSwitch
+            checked={openFeatured}
+            onChange={() => handleFeaturedChange(item._id, item.featured)}
+          />
+        </Table.Cell>
+        <Table.Cell>
+          <ToggleSwitch
+            checked={openPublic}
+            onChange={() => handlePublicChange()}
+          />
+        </Table.Cell>
         <Table.Cell>
           <div className="flex">
             <Link

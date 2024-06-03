@@ -6,8 +6,8 @@ const ProjectDetailSkeleton = () => {
       <div role="status" className="animate-pulse mx-10">
         {/* project detail header  */}
         <div className="h-[200px] bg-gray-200 rounded-md dark:bg-gray-700 w-full flex flex-col items-center justify-center">
-          <div class="h-20 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-[300px]"></div>
-          <div class="h-2.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-52 mt-2"></div>
+          <div className="h-20 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-[300px]"></div>
+          <div className="h-2.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-52 mt-2"></div>
         </div>
         <div className="flex flex-wrap mt-20 mx-3 md:mx-10">
           <div className="w-full lg:w-2/3">
@@ -15,21 +15,21 @@ const ProjectDetailSkeleton = () => {
               {/* project main image  */}
               <div className="h-[300px] bg-gray-200 rounded-md dark:bg-gray-700 w-full md:w-[603px]"></div>
               {/* project info */}
-              <div class="h-3.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-52 mt-2"></div>
-              <div class="h-2.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-2/3 mt-2"></div>
+              <div className="h-3.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-52 mt-2"></div>
+              <div className="h-2.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-2/3 mt-2"></div>
 
               {/* challenge of projects */}
               <div className="mt-10">
-                <div class="h-3.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-52 mt-2"></div>
-                <div class="h-2.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-2/3 mt-2"></div>
+                <div className="h-3.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-52 mt-2"></div>
+                <div className="h-2.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-2/3 mt-2"></div>
               </div>
             </div>
             {/* project images  */}
             <div className="flex mt-10">
               <div className="w-1/3">
-                <div class="flex items-center justify-center w-full h-48 bg-gray-300 rounded sm:w-72 dark:bg-gray-700">
+                <div className="flex items-center justify-center w-full h-48 bg-gray-300 rounded sm:w-72 dark:bg-gray-700">
                   <svg
-                    class="w-10 h-10 text-gray-200 dark:text-gray-600"
+                    className="w-10 h-10 text-gray-200 dark:text-gray-600"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -43,7 +43,7 @@ const ProjectDetailSkeleton = () => {
               <div className="w-1/3">
                 <div class="flex items-center justify-center w-full h-48 bg-gray-300 rounded sm:w-72 dark:bg-gray-700">
                   <svg
-                    class="w-10 h-10 text-gray-200 dark:text-gray-600"
+                    className="w-10 h-10 text-gray-200 dark:text-gray-600"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -57,29 +57,28 @@ const ProjectDetailSkeleton = () => {
 
             {/* project description */}
             <div className="mt-10">
-                {[...Array(5)].map((_, index) => (
-                    <div class="h-2.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-full mt-2"></div>
-                ))}
+              {[...Array(5)].map((_, index) => (
+                <div class="h-2.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-full mt-2"></div>
+              ))}
             </div>
           </div>
           <div className="w-full lg:w-1/3 mt-5 md:mt-0">
             {/* project information  */}
             <div className="h-[400px] bg-gray-200 rounded-md dark:bg-gray-700 p-5">
               {/* header  */}
-              <div class="h-3.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-52 mt-2"></div>
+              <div className="h-3.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-52 mt-2"></div>
               {/* info  */}
-              {[...Array(5)].map((_,index) => (
+              {[...Array(5)].map((_, index) => (
                 <div className="mt-3 flex items-center justify-center">
-                    <div className="w-1/3">
-                    <div class="h-10 ms-2 bg-gray-200 rounded-full dark:bg-gray-600 w-10 mt-2"></div>
-                    </div>
-                    <div class="w-2/3">
-                    <div class="h-3.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-50 mt-2"></div>
-                    <div class="h-2.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-50 mt-2"></div>
-                    </div>
+                  <div className="w-1/3">
+                    <div className="h-10 ms-2 bg-gray-200 rounded-full dark:bg-gray-600 w-10 mt-2"></div>
+                  </div>
+                  <div className="w-2/3">
+                    <div className="h-3.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-50 mt-2"></div>
+                    <div className="h-2.5 ms-2 bg-gray-200 rounded-md dark:bg-gray-600 w-50 mt-2"></div>
+                  </div>
                 </div>
               ))}
-              
             </div>
           </div>
         </div>

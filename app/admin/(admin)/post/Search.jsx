@@ -1,32 +1,60 @@
-import { Button, Datepicker, Select, TextInput } from 'flowbite-react'
-import React from 'react'
+import { PostContext } from "@/context/PostContext";
+import { Button, Datepicker, Select, TextInput } from "flowbite-react";
+import React, { useContext, useState } from "react";
 
-const Search = () => {
+const Search = ({ categories }) => {
+  const { searchPost } = useContext(PostContext);
+  const [searchData, setSearchData] = useState({
+    title: "",
+    tag: "",
+    categoryId: "",
+    createAt: "",
+  });
+
+  // search posts
+
+  const handleInputChange = (e) => {
+    setSearchData({ ...searchData, [e.target.name]: e.target.value });
+  };
+
   return (
-    <form>
-        <div className='flex justify-between'>
-            <TextInput 
-                placeholder='Search Post'
-                className='w-full me-3'
-            />
-            <TextInput 
-                placeholder='Enter tag'
-                className='w-full me-3'
-            />
-            <Datepicker
-                placeholder='Enter name'
-                className='w-full me-3'
-            />
-            <Select
-                className='w-full me-3'
-            >
-                <option value=""> Select Category </option>
-                <option value=""></option>
-            </Select>
-            <Button type='submit'> Search </Button>
-        </div>
+    <form onSubmit={(e) => searchPost(e, searchData)}>
+      <div className="flex justify-between">
+        <TextInput
+          type="search"
+          placeholder="Search Post"
+          className="w-full me-3"
+          name="title"
+          onChange={(e) => handleInputChange(e)}
+        />
+        <TextInput
+          placeholder="Enter tag"
+          className="w-full me-3"
+          name="tag"
+          onChange={(e) => handleInputChange(e)}
+        />
+        <Datepicker
+          placeholder="Enter name"
+          className="w-full me-3"
+          name="createdAt"
+          onChange={(e) => handleInputChange(e.target.value)}
+        />
+        <Select
+          className="w-full me-3"
+          name="categoryId"
+          onChange={(e) => handleInputChange(e)}
+        >
+          <option value=""> Select Category </option>
+          {categories.map((item) => (
+            <option key={item._id} value={item._id}>
+              {item.name}
+            </option>
+          ))}
+        </Select>
+        <Button type="submit"> Search </Button>
+      </div>
     </form>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;
