@@ -8,11 +8,9 @@ import { useParams } from "next/navigation";
 const Blogs = () => {
   const { state, getAllPosts } = useContext(PostContext);
   const { lang } = useParams();
-  console.log(state.loading);
-  console.log(state.posts);
 
   useEffect(() => {
-    getAllPosts({ lang, featured: false });
+    getAllPosts({ lang, featured: false, status: true });
   }, [lang]);
 
   return (

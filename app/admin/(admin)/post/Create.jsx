@@ -8,7 +8,6 @@ import {
   Modal,
   Select,
   TextInput,
-  Textarea,
 } from "flowbite-react";
 import { useContext, useState } from "react";
 import TagsInput from "react-tagsinput";
@@ -30,7 +29,6 @@ const Create = ({ openModal, setOpenModal, categories }) => {
 
   const handleCreate = async () => {
     try {
-      console.log(data);
       const formData = new FormData();
 
       formData.set("title", data.title);

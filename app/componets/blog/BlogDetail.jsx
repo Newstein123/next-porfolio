@@ -14,10 +14,10 @@ import parse from "html-react-parser";
 import DOMPurify from "dompurify";
 
 const BlogDetail = () => {
+  const { id } = useParams();
   const { state, getOnePost, reactionAdded } = useContext(PostContext);
   const [isLiked, setIsLiked] = useState(false);
-  const [likesCount, setLikesCount] = useState(state.post.likes);
-  const { id } = useParams();
+  const [likesCount, setLikesCount] = useState(0);
   // date
   const mongoDate = state.post?.createdAt
     ? new Date(state.post.createdAt)
@@ -35,7 +35,7 @@ const BlogDetail = () => {
 
   const handleLikeClick = () => {
     if (isLiked) return;
-    reactionAdded(state.post?._id);
+    reactionAdded(state.post._id);
     if (state.success) {
       // do something
       setIsLiked(true);
@@ -44,8 +44,16 @@ const BlogDetail = () => {
   };
 
   useEffect(() => {
+    if (state.post && state.post.likes !== undefined) {
+      setLikesCount(state.post.likes);
+    }
+  }, [state.post]);
+
+  useEffect(() => {
     getOnePost(id);
   }, [id]);
+
+  console.log(state);
 
   return (
     <div>
@@ -81,9 +89,7 @@ const BlogDetail = () => {
                   <small className="text-slate-500 me-5">
                     By
                     <span className="text-violet-700 ms-2">
-                      <Link href="/about">
-                        {state.post?.author?.name ?? "Author"}
-                      </Link>
+                      <Link href="/about">{state.post.author?.name}</Link>
                     </span>
                     . <span> {postedAt} || </span>
                   </small>

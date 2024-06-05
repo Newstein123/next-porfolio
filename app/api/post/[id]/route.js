@@ -1,6 +1,7 @@
 import { connnectedToDB } from "@/utlis/db";
 import apiResponse from "@/utlis/apiResponse";
 import Post from "@/models/post";
+import { del } from "@vercel/blob";
 
 export async function GET(req, { params }) {
   const { id } = params;
@@ -63,8 +64,15 @@ export async function DELETE(req, { params }) {
   try {
     await connnectedToDB();
     const id = params.id;
-    await Post.findOneAndDelete({ _id: id });
-    return new Response(apiResponse(true, "Post deleted successfully"));
+    const post = await Post.findOneAndDelete({ _id: id });
+    if (post.post_images.length > 0) {
+      post.post_images.map((item) => {
+        del(item, {
+          token: process.env.BLOB_READ_WRITE_TOKEN,
+        });
+      });
+    }
+    return new Response(apiResponse(true, "Post deleted successfully", []));
   } catch (error) {
     return new Response(
       apiResponse(false, "Something Wrong", null, error.message)

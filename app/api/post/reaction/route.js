@@ -5,7 +5,7 @@ import { connnectedToDB } from "@/utlis/db";
 export async function GET() {}
 
 export async function POST(req) {
-  const { id, isLiked } = await req.json();
+  const { id } = await req.json();
 
   try {
     await connnectedToDB();
@@ -15,7 +15,9 @@ export async function POST(req) {
       {
         new: true,
       }
-    );
+    )
+      .populate("author")
+      .populate("category_id");
 
     return new Response(apiResponse(true, "Reaction added successfully", post));
   } catch (error) {

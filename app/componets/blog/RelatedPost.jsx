@@ -18,17 +18,23 @@ const RelatedPost = ({ category, currentPostId }) => {
         More for {category?.name}
       </h1>
       <div className="flex flex-wrap">
-        {!state.loading && state.categoryPosts.length > 0
-          ? state.categoryPosts.map((item) => (
+        {!state.loading ? (
+          state.categoryPosts.length > 0 ? (
+            state.categoryPosts.map((item) => (
               <div className="md:w-1/2">
                 <Blog item={item} />
               </div>
             ))
-          : [...Array(4)].map((_, index) => (
-              <div className="md:w-1/2 w-full">
-                <BlogSkeleton key={index} />
-              </div>
-            ))}
+          ) : (
+            <p className="text-red-700 font-bold text-xl">There is no posts</p>
+          )
+        ) : (
+          [...Array(4)].map((_, index) => (
+            <div className="md:w-1/2 w-full">
+              <BlogSkeleton key={index} />
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

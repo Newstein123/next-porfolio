@@ -12,7 +12,7 @@ const LangAndFeatured = () => {
     // do something
     let language;
     !value ? (language = "my") : (language = "en");
-    getAllPosts({ lang: language, featured });
+    getAllPosts({ lang: language, featured, status: "" });
     if (state.success) {
       setLang(language);
       setChangedLang(value);
@@ -21,7 +21,7 @@ const LangAndFeatured = () => {
 
   const handleFeaturedChange = (value) => {
     // do something
-    getAllPosts({ lang, featured: value });
+    getAllPosts({ lang, featured: value, status: "" });
     if (state.success) {
       setFeatured(value);
     }

@@ -1,15 +1,16 @@
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { LuLanguages } from "react-icons/lu";
 
 const Language = () => {
   const router = useRouter();
-  const [lang, setLang] = useState("en");
+  const { lang } = useParams();
+  const [language, setLanguage] = useState(lang);
 
   const handleLangChange = (e) => {
-    const language = e.target.value;
-    router.push(`/blog/lang/${language}`);
-    setLang(language);
+    const value = e.target.value;
+    router.push(`/blog/lang/${value}`);
+    setLanguage(value);
   };
 
   return (
@@ -18,10 +19,14 @@ const Language = () => {
       <select
         className="rounded-md outline-none bg-slate-200 p-0 text-violet-700 text-sm py-2 px-1"
         onChange={(e) => handleLangChange(e)}
-        value={lang}
+        value={language}
       >
-        <option value="en"> En </option>
-        <option value="my"> My </option>
+        <option value="en" selected={language == "en" && true}>
+          En
+        </option>
+        <option value="my" selected={language == "my" && true}>
+          My
+        </option>
       </select>
     </div>
   );

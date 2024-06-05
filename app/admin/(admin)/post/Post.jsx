@@ -1,15 +1,17 @@
-import { Pagination, Table, ToggleSwitch } from "flowbite-react";
+import { Table, ToggleSwitch } from "flowbite-react";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
 import DeleteModal from "../../components/delete/DeleteModal";
 import { PostContext } from "@/context/PostContext";
 import { format } from "date-fns";
+import toast from "react-hot-toast";
 
 const Post = ({ item, index }) => {
   const [openModal, setOpenModal] = useState(false);
   const [openFeatured, setOpenFeatured] = useState(item.featured);
   const [openPublic, setOpenPublic] = useState(item?.status);
-  const { state, deletePost, featureChanged } = useContext(PostContext);
+  const { state, deletePost, featureChanged, statusChanged } =
+    useContext(PostContext);
   const formattedDate = format(new Date(2014, 1, 11), "MM/dd/yyyy");
 
   // featured toggle changed
@@ -17,14 +19,21 @@ const Post = ({ item, index }) => {
   const handleFeaturedChange = (id, featured) => {
     // do something
     featureChanged(id, featured);
-    setOpenFeatured(!openFeatured);
+    if (state.success) {
+      toast.success("Featured Updated Successfully");
+      setOpenFeatured(!openFeatured);
+    }
   };
 
   // public toggle changed
 
-  const handlePublicChange = () => {
+  const handleStatusChange = (id, status) => {
     // do something
-    setOpenPublic(!openPublic);
+    statusChanged(id, !status);
+    if (state.success) {
+      toast.success("Status Updated Successfully");
+      setOpenPublic(!openPublic);
+    }
   };
 
   return (
@@ -37,28 +46,28 @@ const Post = ({ item, index }) => {
         id={item._id}
       />
       <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white w-[14.28%]">
           {index + 1}
         </Table.Cell>
-        <Table.Cell>
+        <Table.Cell className="w-[14.28%]">
           <Link href={`/admin/post/${item._id}`}> {item.title} </Link>
         </Table.Cell>
-        <Table.Cell> {item.category_id.name} </Table.Cell>
-        <Table.Cell> {item.author.name} </Table.Cell>
-        <Table.Cell> {formattedDate} </Table.Cell>
-        <Table.Cell>
+        <Table.Cell className="w-[14.28%]">{item.category_id.name}</Table.Cell>
+        <Table.Cell className="w-[14.28%]"> {item.author.name} </Table.Cell>
+        <Table.Cell className="w-[14.28%]"> {formattedDate} </Table.Cell>
+        <Table.Cell className="w-[14.28%]">
           <ToggleSwitch
             checked={openFeatured}
             onChange={() => handleFeaturedChange(item._id, item.featured)}
           />
         </Table.Cell>
-        <Table.Cell>
+        <Table.Cell className="w-[14.28%]">
           <ToggleSwitch
             checked={openPublic}
-            onChange={() => handlePublicChange()}
+            onChange={() => handleStatusChange(item?._id, item?.status)}
           />
         </Table.Cell>
-        <Table.Cell>
+        <Table.Cell className="w-[14.28%]">
           <div className="flex">
             <Link
               href="#"

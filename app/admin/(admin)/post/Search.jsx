@@ -7,8 +7,10 @@ const Search = ({ categories }) => {
   const [searchData, setSearchData] = useState({
     title: "",
     tag: "",
+    lang: "",
     categoryId: "",
     createAt: "",
+    status: "",
   });
 
   // search posts
@@ -18,6 +20,7 @@ const Search = ({ categories }) => {
   };
 
   const handleSearch = (e) => {
+    e.preventDefault();
     searchPost(searchData);
   };
 

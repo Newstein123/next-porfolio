@@ -15,6 +15,7 @@ const Index = () => {
     categoryId: "",
     lang: lang,
     tag: "",
+    status: true,
   });
   const [showResult, setShowResult] = useState(false);
 

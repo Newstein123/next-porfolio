@@ -1,9 +1,12 @@
 import Link from "next/link";
 import Reaction from "./Reaction";
 import { formatDistanceToNow } from "date-fns";
+import parse from "html-react-parser";
+import DOMPurify from "dompurify";
 
 const Blog = ({ item }) => {
   const mongoDate = item?.createdAt ? new Date(item.createdAt) : null;
+  const postBody = DOMPurify.sanitize(item?.body);
 
   let postedAt;
   if (mongoDate) {
@@ -37,7 +40,10 @@ const Blog = ({ item }) => {
             <Link href={`/blog/${item?._id}`}>{item?.title}</Link>
           </h2>
           <p className="text-sm text-slate-500 my-3">
-            {item?.body.slice(0, 100)}
+            {parse(postBody).length > 0
+              ? parse(postBody).slice(0, 50)
+              : parse(postBody)}
+            <span> ... </span>
           </p>
           {/* Author name and date  */}
           <small className="text-slate-500">

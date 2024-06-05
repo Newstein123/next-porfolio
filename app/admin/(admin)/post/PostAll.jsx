@@ -2,13 +2,12 @@
 import { Breadcrumb, Button, Pagination, Table } from "flowbite-react";
 import React, { useContext, useEffect, useState } from "react";
 import { HiHome } from "react-icons/hi";
-import TableLoading from "../../components/loading/TableLoading";
-import Post from "./Post";
 import Search from "./Search";
 import { PostContext } from "@/context/PostContext";
 import Create from "./Create";
 import { Toaster } from "react-hot-toast";
 import LangAndFeatured from "./LangAndFeatured";
+import PostTable from "./PostTable";
 
 const PostAll = () => {
   const { state, getAllPosts, paginatePost } = useContext(PostContext);
@@ -37,7 +36,7 @@ const PostAll = () => {
   };
 
   useEffect(() => {
-    getAllPosts({ lang: "en", featured: false });
+    getAllPosts({ lang: "en", featured: false, status: "" });
     getAllCategories();
   }, []);
 
@@ -74,35 +73,7 @@ const PostAll = () => {
       {/* language and featured  */}
       <LangAndFeatured />
       {/* table  */}
-      <div className="overflow-x-auto my-5">
-        <Table hoverable>
-          <Table.Head>
-            <Table.HeadCell> No </Table.HeadCell>
-            <Table.HeadCell> Title </Table.HeadCell>
-            <Table.HeadCell>Category</Table.HeadCell>
-            <Table.HeadCell> Author </Table.HeadCell>
-            <Table.HeadCell> Date </Table.HeadCell>
-            <Table.HeadCell> Featured </Table.HeadCell>
-            <Table.HeadCell> Public </Table.HeadCell>
-            <Table.HeadCell>
-              <span className="sr-only">Edit</span>
-            </Table.HeadCell>
-          </Table.Head>
-          {!state.loading ? (
-            <Table.Body className="divide-y">
-              {state.posts.data.length > 0 ? (
-                state.posts.data.map((item, index) => (
-                  <Post key={index} item={item} index={index} />
-                ))
-              ) : (
-                <Table.Cell> Post not found </Table.Cell>
-              )}
-            </Table.Body>
-          ) : (
-            <TableLoading />
-          )}
-        </Table>
-      </div>
+      <PostTable loading={state.loading} posts={state?.posts?.data} />
       {/* pagination  */}
       {state.posts.data.length > 10 && (
         <div className="flex overflow-x-auto sm:justify-center">

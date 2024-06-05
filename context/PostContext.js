@@ -112,6 +112,13 @@ export const PostProvider = ({ children }) => {
     }
   };
 
+  const statusChanged = async (id, status) => {
+    fetchData("/api/post/status-changed", {
+      method: "POST",
+      body: JSON.stringify({ id, status }),
+    });
+  };
+
   const featureChanged = async (id, featured) => {
     fetchData("/api/post/featured-changed", {
       method: "POST",
@@ -139,7 +146,7 @@ export const PostProvider = ({ children }) => {
   const searchPost = async (searchData) => {
     dispatch({ type: "startLoading" });
     fetchData(
-      `/api/post?title=${searchData.title}&tag=${searchData.tag}&categoryId=${searchData.categoryId}&lang=${searchData.lang}`,
+      `/api/post?title=${searchData.title}&tag=${searchData.tag}&categoryId=${searchData.categoryId}&lang=${searchData.lang}&status=${searchData.status}`,
       {},
       "getAllPosts"
     );
@@ -168,7 +175,7 @@ export const PostProvider = ({ children }) => {
     fetchData(
       `/api/post?lang=${params.lang ?? "en"}&featured=${
         params.featured ?? false
-      }`,
+      }&status=${params.status}`,
       {},
       "getAllPosts"
     );
@@ -225,7 +232,7 @@ export const PostProvider = ({ children }) => {
         const result = await res.json();
         if (result.success) {
           dispatch({ type: "getResponseData", payload: result.message });
-          getAllPosts();
+          getAllPosts({ lang: "en", featured: false, status: "" });
         } else {
           dispatch({ type: "fail", payload: result.message });
         }
@@ -253,6 +260,7 @@ export const PostProvider = ({ children }) => {
         getFeaturedPosts,
         getCategoryPosts,
         reactionAdded,
+        statusChanged,
       }}
     >
       {children}

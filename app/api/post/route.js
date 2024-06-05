@@ -16,12 +16,15 @@ export async function GET(req) {
   const createdAt = searchParams.get("createdAt");
   const offset = (page - 1) * perpage;
   const lang = searchParams.get("lang");
+  const status = searchParams.get("status");
   const featured = searchParams.get("featured");
   const currentPostId = searchParams.get("currentPostId");
 
-  const query = {
-    status: true,
-  };
+  const query = {};
+
+  if (status) {
+    query.status = status;
+  }
 
   if (currentPostId) {
     query._id = { $ne: currentPostId };
