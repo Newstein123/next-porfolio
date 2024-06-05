@@ -6,6 +6,8 @@ import { useParams } from "next/navigation";
 import React, { useContext, useEffect } from "react";
 import { HiHome } from "react-icons/hi";
 import { formatDistanceToNow } from "date-fns";
+import parse from "html-react-parser";
+import DOMPurify from "dompurify";
 
 const PostDetail = () => {
   const { state, getOnePost } = useContext(PostContext);
@@ -20,6 +22,8 @@ const PostDetail = () => {
       addSuffix: true,
     });
   }
+  const bodyText = DOMPurify.sanitize(state.post?.body);
+
   useEffect(() => {
     getOnePost(id);
   }, []);
@@ -74,7 +78,7 @@ const PostDetail = () => {
                   ))}
               </div>
               {/* body  */}
-              <p className="text-slate-800 text-justify"> {state.post.body} </p>
+              <p className="text-slate-800 text-justify"> {parse(bodyText)} </p>
             </div>
           )}
         </React.Fragment>

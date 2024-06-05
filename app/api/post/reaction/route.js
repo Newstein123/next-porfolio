@@ -1,10 +1,24 @@
+import Post from "@/models/post";
 import apiResponse from "@/utlis/apiResponse";
+import { connnectedToDB } from "@/utlis/db";
+
+export async function GET() {}
 
 export async function POST(req) {
+  const { id, isLiked } = await req.json();
+
   try {
     await connnectedToDB();
-    console.log(req.params);
+    const post = await Post.findByIdAndUpdate(
+      { _id: id },
+      { $inc: { likes: 1 } },
+      {
+        new: true,
+      }
+    );
+
+    return new Response(apiResponse(true, "Reaction added successfully", post));
   } catch (error) {
-    return apiResponse(false, error.message, []);
+    return new Response(apiResponse(false, error.message, []));
   }
 }

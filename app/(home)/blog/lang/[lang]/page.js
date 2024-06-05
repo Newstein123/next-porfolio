@@ -6,7 +6,7 @@ const page = () => {
   return (
     <React.Fragment>
       <PostProvider>
-        <div className="mx-20">
+        <div className="mx-10 md:mx-20">
           <Index />
         </div>
       </PostProvider>

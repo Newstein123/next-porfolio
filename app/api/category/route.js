@@ -18,8 +18,8 @@ export async function POST(req) {
   try {
     await connnectedToDB();
     const category = new Category({ name });
-
     await category.save();
+
     return new Response(
       apiResponse(true, "Category created successfully", category)
     );

@@ -27,11 +27,6 @@ const LangAndFeatured = () => {
     }
   };
 
-  //   console.log(`lang is ${lang}\nfeatured is ${featured}`);
-  //   state.posts.data.map((item) =>
-  //     console.log(`post featured is ${item.featured}\n post lang is ${item.lang}`)
-  //   );
-
   return (
     <div className="flex my-3">
       {/* language  */}

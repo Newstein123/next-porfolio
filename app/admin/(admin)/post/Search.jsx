@@ -17,8 +17,12 @@ const Search = ({ categories }) => {
     setSearchData({ ...searchData, [e.target.name]: e.target.value });
   };
 
+  const handleSearch = (e) => {
+    searchPost(searchData);
+  };
+
   return (
-    <form onSubmit={(e) => searchPost(e, searchData)}>
+    <form onSubmit={handleSearch}>
       <div className="flex justify-between">
         <TextInput
           type="search"

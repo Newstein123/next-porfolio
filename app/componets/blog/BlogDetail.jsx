@@ -1,6 +1,6 @@
 "use client";
 import { Badge, Breadcrumb } from "flowbite-react";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { HiHome } from "react-icons/hi";
 import RelatedPost from "./RelatedPost";
 import Link from "next/link";
@@ -10,10 +10,15 @@ import { useParams } from "next/navigation";
 import { formatDistanceToNow } from "date-fns";
 import Comments from "./comment/Comments";
 import PostDetailSkeleton from "../skeleton/BlogDetailSkeleton";
+import parse from "html-react-parser";
+import DOMPurify from "dompurify";
 
 const BlogDetail = () => {
-  const { state, getOnePost } = useContext(PostContext);
+  const { state, getOnePost, reactionAdded } = useContext(PostContext);
+  const [isLiked, setIsLiked] = useState(false);
+  const [likesCount, setLikesCount] = useState(state.post.likes);
   const { id } = useParams();
+  // date
   const mongoDate = state.post?.createdAt
     ? new Date(state.post.createdAt)
     : null;
@@ -23,6 +28,20 @@ const BlogDetail = () => {
       addSuffix: true,
     });
   }
+
+  // body
+
+  const textBody = DOMPurify.sanitize(state.post?.body);
+
+  const handleLikeClick = () => {
+    if (isLiked) return;
+    reactionAdded(state.post?._id);
+    if (state.success) {
+      // do something
+      setIsLiked(true);
+      setLikesCount(likesCount + 1);
+    }
+  };
 
   useEffect(() => {
     getOnePost(id);
@@ -80,8 +99,10 @@ const BlogDetail = () => {
 
                 {/* views and likes  */}
                 <ReactAction
-                  likes={state.post.likes}
-                  views={state.post.views}
+                  handleLikeClick={handleLikeClick}
+                  isLiked={isLiked}
+                  likesCount={likesCount}
+                  views={state.post?.views}
                 />
                 {/* post image  */}
                 {state.post.post_images && state.post.post_images.length > 0 ? (
@@ -108,7 +129,7 @@ const BlogDetail = () => {
 
                 {/* post body  */}
                 <p className="my-5 text-slate-700 leading-8">
-                  {state.post?.body}
+                  {parse(textBody)}
                 </p>
               </div>
 

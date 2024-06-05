@@ -13,6 +13,7 @@ import {
 import { useContext, useState } from "react";
 import TagsInput from "react-tagsinput";
 import "react-tagsinput/react-tagsinput.css";
+import Editor from "./Editor";
 
 const Create = ({ openModal, setOpenModal, categories }) => {
   const { state, createPost } = useContext(PostContext);
@@ -92,11 +93,7 @@ const Create = ({ openModal, setOpenModal, categories }) => {
         {/* body */}
         <div className="my-3">
           <Label> Body </Label>
-          <Textarea
-            placeholder="Enter Body Message"
-            value={data.body}
-            onChange={(e) => setData({ ...data, body: e.target.value })}
-          />
+          <Editor data={data} setData={setData} />
         </div>
         {/* tags  */}
 

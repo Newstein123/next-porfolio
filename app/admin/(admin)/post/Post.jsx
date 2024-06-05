@@ -7,7 +7,7 @@ import { format } from "date-fns";
 
 const Post = ({ item, index }) => {
   const [openModal, setOpenModal] = useState(false);
-  const [openFeatured, setOpenFeatured] = useState(item?.featured);
+  const [openFeatured, setOpenFeatured] = useState(item.featured);
   const [openPublic, setOpenPublic] = useState(item?.status);
   const { state, deletePost, featureChanged } = useContext(PostContext);
   const formattedDate = format(new Date(2014, 1, 11), "MM/dd/yyyy");

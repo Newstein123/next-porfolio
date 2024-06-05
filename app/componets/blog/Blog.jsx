@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import Reaction from "./Reaction";
 import { formatDistanceToNow } from "date-fns";
 
@@ -12,8 +11,9 @@ const Blog = ({ item }) => {
       addSuffix: true,
     });
   }
+
   return (
-    <div className="w-full my-10">
+    <div className="my-10">
       <div className="mx-0 md:mx-2">
         {/* thumbnail image  */}
         <Link href={`/blog/${item?._id}`}>
@@ -45,7 +45,7 @@ const Blog = ({ item }) => {
           </small>
 
           {/* reaction  */}
-          <Reaction likes={item?.likes} views={item?.views} />
+          <Reaction views={item?.views} likesCount={item?.likes} />
         </div>
       </div>
     </div>
