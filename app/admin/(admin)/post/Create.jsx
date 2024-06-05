@@ -1,4 +1,5 @@
 "use client";
+import dynamic from "next/dynamic";
 import { PostContext } from "@/context/PostContext";
 import {
   Alert,
@@ -12,7 +13,7 @@ import {
 import { useContext, useState } from "react";
 import TagsInput from "react-tagsinput";
 import "react-tagsinput/react-tagsinput.css";
-import Editor from "./Editor";
+const Editor = dynamic(() => import("./Editor"), { ssr: false });
 
 const Create = ({ openModal, setOpenModal, categories }) => {
   const { state, createPost } = useContext(PostContext);
