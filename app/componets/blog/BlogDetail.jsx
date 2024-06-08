@@ -12,15 +12,18 @@ import Comments from "./comment/Comments";
 import PostDetailSkeleton from "../skeleton/BlogDetailSkeleton";
 import parse from "html-react-parser";
 import DOMPurify from "dompurify";
+import SocialShare from "./SocialShare";
+import { getLanguageData } from "@/app/helper/helper";
 
 const BlogDetail = () => {
-  const { id } = useParams();
+  const { id, lang } = useParams();
+  const language = getLanguageData(lang);
   const { state, getOnePost, reactionAdded } = useContext(PostContext);
   const [isLiked, setIsLiked] = useState(false);
   const [likesCount, setLikesCount] = useState(0);
   // date
-  const mongoDate = state.post?.createdAt
-    ? new Date(state.post.createdAt)
+  const mongoDate = state.post.currentPost?.createdAt
+    ? new Date(state.post.currentPost.createdAt)
     : null;
   let postedAt;
   if (mongoDate) {
@@ -31,11 +34,11 @@ const BlogDetail = () => {
 
   // body
 
-  const textBody = DOMPurify.sanitize(state.post?.body);
+  const textBody = DOMPurify.sanitize(state.post.currentPost?.body);
 
   const handleLikeClick = () => {
     if (isLiked) return;
-    reactionAdded(state.post._id);
+    reactionAdded(state.post.currentPost._id);
     if (state.success) {
       // do something
       setIsLiked(true);
@@ -44,16 +47,14 @@ const BlogDetail = () => {
   };
 
   useEffect(() => {
-    if (state.post && state.post.likes !== undefined) {
-      setLikesCount(state.post.likes);
+    if (state.post.currentPost && state.post.currentPost.likes !== undefined) {
+      setLikesCount(state.post.currentPost.likes);
     }
-  }, [state.post]);
+  }, [state.post.currentPost]);
 
   useEffect(() => {
-    getOnePost(id);
+    getOnePost(id, lang);
   }, [id]);
-
-  console.log(state);
 
   return (
     <div>
@@ -64,38 +65,43 @@ const BlogDetail = () => {
           className="bg-gray-50 px-5 py-3 dark:bg-gray-800"
         >
           <Breadcrumb.Item icon={HiHome}>
-            <Link href="/"> Home </Link>
+            <Link href="/"> {language.blog.navbar.home} </Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item as="div">
-            <Link href="/blog/lang/en">Blogs </Link>
+            <Link href={`/blog/${lang}`}>
+              {language.blog.text} ({language.name})
+            </Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item>
-            {state.post?.category_id?.name ?? "Category"}
+            {state.post.currentPost?.category_id?.name ??
+              language.blog.category}
           </Breadcrumb.Item>
         </Breadcrumb>
       </div>
 
       {/* blog details  */}
-      <div className="flex justify-center items-center my-10">
+      <div className="flex justify-center items-center mt-10 mb-5">
         <div className="w-full md:w-[600px] mx-10 md:mx-0">
           {JSON.stringify(state.post) !== "{}" ? (
             <>
               <div className="my-10">
                 <h1 className="text-slate-800 text-3xl font-bold leading-normal">
-                  {state.post.title}
+                  {state.post.currentPost?.title}
                 </h1>
                 <div className="flex items-center mt-5">
                   {/* author  */}
                   <small className="text-slate-500 me-5">
                     By
                     <span className="text-violet-700 ms-2">
-                      <Link href="/about">{state.post.author?.name}</Link>
+                      <Link href="/about">
+                        {state.post.currentPost?.author?.name}
+                      </Link>
                     </span>
                     . <span> {postedAt} || </span>
                   </small>
                   {/* tags  */}
                   <div className="me-3">
-                    {state.post?.tags?.map((item) => (
+                    {state.post.currentPost?.tags?.map((item) => (
                       <Badge color="purple" className="inline me-2" key={item}>
                         {item}
                       </Badge>
@@ -108,14 +114,15 @@ const BlogDetail = () => {
                   handleLikeClick={handleLikeClick}
                   isLiked={isLiked}
                   likesCount={likesCount}
-                  views={state.post?.views}
+                  views={state.post.currentPost?.views}
                 />
                 {/* post image  */}
-                {state.post.post_images && state.post.post_images.length > 0 ? (
+                {state.post.currentPost?.post_images &&
+                state.post.currentPost?.post_images.length > 0 ? (
                   <img
                     src={
-                      state.post.post_images
-                        ? state.post.post_images[0]
+                      state.post.currentPost?.post_images
+                        ? state.post.currentPost?.post_images[0]
                         : "https://placehold.co/600x400?font=roboto"
                     }
                     alt="post-detail-image"
@@ -139,19 +146,41 @@ const BlogDetail = () => {
                 </p>
               </div>
 
+              {/* Socail Share  */}
+              <SocialShare />
+
               {/* next and previous button  */}
               <div className="flex justify-between">
-                <button className="text-violet-700"> Previous </button>
-                <button className="text-violet-700"> Next </button>
+                <Link
+                  href={
+                    state.post.prevPost !== null
+                      ? `/blog/${state.post?.prevPost}`
+                      : "#"
+                  }
+                  className="text-violet-700"
+                >
+                  Previous
+                </Link>
+                <Link
+                  href={
+                    state.post.nextPost !== null
+                      ? `/blog/${state.post?.nextPost}`
+                      : "#"
+                  }
+                  className="text-violet-700"
+                >
+                  Next
+                </Link>
               </div>
 
               {/* comments  */}
-              <Comments postId={state.post._id} />
+              <Comments postId={state.post.currentPost?._id} />
 
               {/* related post  */}
               <RelatedPost
-                category={state.post?.category_id}
-                currentPostId={state.post?._id}
+                category={state.post.currentPost?.category_id}
+                currentPostId={state.post.currentPost?._id}
+                lang={language}
               />
             </>
           ) : (

@@ -8,7 +8,7 @@ const Reaction = ({ handleLikeClick, likesCount, isLiked, views }) => {
     <React.Fragment>
       <div className="my-2">
         <div className="w-full h-[1px] bg-slate-300"> </div>
-        <div className="flex py-3">
+        <div className="flex py-3 items-center">
           {/* views  */}
           <div>
             <span>

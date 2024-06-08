@@ -6,7 +6,11 @@ export async function GET() {
   await connnectedToDB();
   try {
     const categories = await Category.find();
-    return new Response(apiResponse(true, "All categories", categories));
+    const data = {
+      categories,
+      totalPages: await Category.countDocuments(),
+    };
+    return new Response(apiResponse(true, "All categories", data));
   } catch (error) {
     return new Response(apiResponse(false, error.message, []));
   }

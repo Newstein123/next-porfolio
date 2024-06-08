@@ -1,5 +1,6 @@
 import { Button, Modal } from "flowbite-react";
 import React from "react";
+import toast from "react-hot-toast";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 
 const DeleteModal = ({ openModal, setOpenModal, deleteData, state, id }) => {
@@ -8,9 +9,10 @@ const DeleteModal = ({ openModal, setOpenModal, deleteData, state, id }) => {
       await deleteData(id);
       if (state.success) {
         setOpenModal(false);
+        toast.success(state.messsage);
       }
     } catch (error) {
-      console.log(error);
+      toast.error(state.messsage);
     }
   };
   return (

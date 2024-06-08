@@ -51,6 +51,16 @@ const reducer = (state, { type, payload }) => {
         message: payload,
         success: true,
       };
+    case "updatePost":
+      return {
+        ...state,
+        posts: {
+          ...state.posts,
+          data: state.posts.data.map((item) =>
+            item._id == payload._id ? payload : item
+          ),
+        },
+      };
     case "startLoading":
       return {
         ...state,
@@ -93,11 +103,11 @@ export const PostProvider = ({ children }) => {
     try {
       const res = await fetch(url, options);
       if (res.ok) {
-        const data = await res.json();
-        if (data.success) {
-          dispatch({ type: onSuccessType, payload: data.data });
+        const result = await res.json();
+        if (result.success) {
+          dispatch({ type: onSuccessType, payload: result.data });
         } else {
-          dispatch({ type: "fail", payload: data.error });
+          dispatch({ type: "fail", payload: result.error });
         }
       } else {
         const errorData = await res.json();
@@ -152,10 +162,10 @@ export const PostProvider = ({ children }) => {
     );
   };
 
-  const getCategoryPosts = async (categoryId, currentPostId) => {
+  const getCategoryPosts = async (categoryId, currentPostId, lang) => {
     dispatch({ type: "startLoading" });
     fetchData(
-      `/api/post?categoryId=${categoryId}&currentPostId=${currentPostId}`,
+      `/api/post?categoryId=${categoryId}&currentPostId=${currentPostId}&lang=${lang}`,
       {},
       "getCategoryPosts"
     );
@@ -181,21 +191,20 @@ export const PostProvider = ({ children }) => {
     );
   };
 
-  const getOnePost = async (id) => {
+  const getOnePost = async (id, lang) => {
     dispatch({ type: "startLoading" });
-    fetchData(`/api/post/${id}`, {}, "getOnePost");
+    fetchData(`/api/post/${id}?lang=${lang}`, {}, "getOnePost");
   };
 
   const updatePost = async (formData) => {
     dispatch({ type: "startLoading" });
     fetchData(
-      `api/post/${formData.id}`,
+      `/api/post/${formData.get("id")}`,
       {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: formData,
       },
-      "getOnePost"
+      "updatePost"
     );
   };
 
@@ -209,7 +218,7 @@ export const PostProvider = ({ children }) => {
       if (res.ok) {
         const result = await res.json();
         if (result.success) {
-          getAllPosts({ lang: "en", featured: false });
+          getAllPosts({ lang: "en", featured: false, status: true });
         } else {
           dispatch({ type: "fail", payload: result.message });
         }

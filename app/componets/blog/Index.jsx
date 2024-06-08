@@ -6,14 +6,16 @@ import Blogs from "./Blogs";
 import FeaturedPost from "./FeaturedPost";
 import { PostContext } from "@/context/PostContext";
 import { useParams } from "next/navigation";
+import { getLanguageData } from "@/app/helper/helper";
 
 const Index = () => {
   const { state, searchPost, getAllPosts } = useContext(PostContext);
-  const { lang } = useParams();
+  const params = useParams();
+  const lang = getLanguageData(params.lang);
   const [search, setSearch] = useState({
     title: "",
     categoryId: "",
-    lang: lang,
+    lang: params.lang,
     tag: "",
     status: true,
   });
@@ -23,13 +25,13 @@ const Index = () => {
     e.preventDefault();
     if (search.title == "" && search.categoryId == "") {
       setShowResult(false);
-      getAllPosts({ lang, featured: false });
+      getAllPosts({ lang: params.lang, featured: false, status: true });
+      console.log(state);
       return;
     }
     setShowResult(true);
     if (showResult) {
       searchPost(search);
-      console.log(state);
     }
   };
 
@@ -40,11 +42,12 @@ const Index = () => {
         search={search}
         setSearch={setSearch}
         handleSearch={handleSearch}
+        lang={lang}
       />
       {/* All Blogs  */}
-      <Blogs />
+      <Blogs lang={lang} />
 
-      {!showResult && <FeaturedPost />}
+      {!showResult && <FeaturedPost lang={lang} />}
     </React.Fragment>
   );
 };

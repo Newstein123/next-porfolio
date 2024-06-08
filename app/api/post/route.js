@@ -1,4 +1,5 @@
 import User from "@/models/user";
+import Category from "@/models/category";
 import Post from "@/models/post";
 import apiResponse from "@/utlis/apiResponse";
 import { connnectedToDB } from "@/utlis/db";
@@ -92,13 +93,14 @@ export async function POST(req) {
     const lang = form.get("lang");
     const images = form.getAll("images");
     const tags = JSON.parse(form.get("tags"));
+    const links = form.get("links");
 
     if (!title || !body || !category_id) {
       return new Response(apiResponse(false, "All fields are required"));
     }
 
     // store post images into vercel blog
-    let post_images = [];
+    let post_images = [links];
     if (images) {
       for (const file of images) {
         try {

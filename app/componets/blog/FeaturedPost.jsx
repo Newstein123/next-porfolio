@@ -5,18 +5,20 @@ import { PostContext } from "@/context/PostContext";
 import BlogSkeleton from "../skeleton/BlogSkeleton";
 import { useParams } from "next/navigation";
 
-const FeaturedPost = () => {
+const FeaturedPost = ({ lang }) => {
   const { state, getFeaturedPosts } = useContext(PostContext);
-  const { lang } = useParams();
+  const params = useParams();
 
   useEffect(() => {
-    getFeaturedPosts(lang);
-  }, [lang]);
+    getFeaturedPosts(params.lang);
+  }, [params.lang]);
 
   return (
     <div className="mb-10">
-      <h1 className="text-2xl font-bold text-slate-800">Featured Posts</h1>
-      <div className="flex">
+      <h1 className="text-2xl font-bold text-slate-800">
+        {lang.blog.featuredPosts}
+      </h1>
+      <div className="flex my-10">
         {state.featuredLoading ? (
           [...Array(3)].map((_, index) => (
             <div className="md:w-1/3 w-full">
@@ -30,9 +32,7 @@ const FeaturedPost = () => {
             </div>
           ))
         ) : (
-          <p className="text-red-700 text-xl font-bold">
-            There is no posts yet
-          </p>
+          <p className="text-red-700 text-xl font-bold">{lang.blog.noPost}</p>
         )}
       </div>
     </div>

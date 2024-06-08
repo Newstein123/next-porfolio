@@ -9,20 +9,26 @@ import {
   Modal,
   Select,
   TextInput,
+  ToggleSwitch,
 } from "flowbite-react";
 import { useContext, useState } from "react";
 import TagsInput from "react-tagsinput";
 import "react-tagsinput/react-tagsinput.css";
+import toast from "react-hot-toast";
+import { CategoryContext } from "@/context/CategoryContext";
 const Editor = dynamic(() => import("./Editor"), { ssr: false });
 
-const Create = ({ openModal, setOpenModal, categories }) => {
+const Create = ({ openModal, setOpenModal }) => {
   const { state, createPost } = useContext(PostContext);
+  const { state: categoryState } = useContext(CategoryContext);
+  const [imageSwitch, setImageSwitch] = useState(false);
 
   const initData = {
     title: "",
     body: "",
     category_id: "",
     images: [],
+    links: "",
     tags: [],
     lang: "my",
   };
@@ -36,6 +42,7 @@ const Create = ({ openModal, setOpenModal, categories }) => {
       formData.set("body", data.body);
       formData.set("tags", JSON.stringify(data.tags));
       formData.set("lang", data.lang);
+      formData.set("links", data.links);
       for (const file of data.images) {
         formData.append("images", file);
       }
@@ -46,14 +53,15 @@ const Create = ({ openModal, setOpenModal, categories }) => {
       if (!state.error) {
         setOpenModal(false);
         setData(initData);
+        toast.success(state.message);
       }
     } catch (error) {
-      console.log(error);
+      toast.error(state.message);
     }
   };
 
   return (
-    <Modal show={openModal} onClose={() => setOpenModal(false)}>
+    <Modal show={openModal} onClose={() => setOpenModal(false)} size="4xl">
       <Modal.Header> Create Post </Modal.Header>
       <Modal.Body>
         {state.error && <Alert color="failure"> {state.error} </Alert>}
@@ -81,12 +89,25 @@ const Create = ({ openModal, setOpenModal, categories }) => {
         {/* image  */}
         <div className="my-3">
           <Label> Image </Label>
-          <FileInput
-            multiple={true}
-            id="file-upload-helper-text"
-            helperText="SVG, PNG, JPG or GIF (MAX. 800x400px)."
-            onChange={(e) => setData({ ...data, images: e.target.files })}
+          <ToggleSwitch
+            checked={imageSwitch}
+            label="File/Link"
+            className="my-2"
+            onChange={() => setImageSwitch(!imageSwitch)}
           />
+          {imageSwitch ? (
+            <TextInput
+              placeholder="https://your-image-link"
+              onChange={(e) => setData({ ...data, links: e.target.value })}
+            />
+          ) : (
+            <FileInput
+              multiple={true}
+              id="file-upload-helper-text"
+              helperText="SVG, PNG, JPG or GIF (MAX. 800x400px)."
+              onChange={(e) => setData({ ...data, images: e.target.files })}
+            />
+          )}
         </div>
 
         {/* body */}
@@ -94,8 +115,8 @@ const Create = ({ openModal, setOpenModal, categories }) => {
           <Label> Body </Label>
           <Editor data={data} setData={setData} />
         </div>
-        {/* tags  */}
 
+        {/* tags  */}
         <div className="my-3">
           <Label> Tag </Label>
           <TagsInput
@@ -112,8 +133,8 @@ const Create = ({ openModal, setOpenModal, categories }) => {
             onChange={(e) => setData({ ...data, category_id: e.target.value })}
           >
             <option> Select Category </option>
-            {categories.length > 0 &&
-              categories.map((item) => (
+            {categoryState.categories?.data.length > 0 &&
+              categoryState.categories?.data.map((item) => (
                 <option value={item._id} key={item._id}>
                   {item.name}
                 </option>

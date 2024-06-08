@@ -8,10 +8,12 @@ import Create from "./Create";
 import { Toaster } from "react-hot-toast";
 import LangAndFeatured from "./LangAndFeatured";
 import PostTable from "./PostTable";
+import { CategoryContext } from "@/context/CategoryContext";
 
 const PostAll = () => {
   const { state, getAllPosts, paginatePost } = useContext(PostContext);
-  const [openModal, setOpenModal] = useState(false);
+  const { getAllCategories } = useContext(CategoryContext);
+  const [openCreateModal, setOpenCreateModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
 
   // handle pagination
@@ -20,20 +22,7 @@ const PostAll = () => {
     paginatePost(page);
   };
 
-  const [categories, setCategories] = useState([]);
   const totalPages = Math.ceil(state.posts.totalPages / 10);
-
-  // get all categories
-
-  const getAllCategories = async () => {
-    const response = await fetch("/api/category");
-    if (response.ok) {
-      const result = await response.json();
-      if (result.success) {
-        setCategories(result.data);
-      }
-    }
-  };
 
   useEffect(() => {
     getAllPosts({ lang: "en", featured: false, status: "" });
@@ -56,14 +45,14 @@ const PostAll = () => {
       <div className="flex">
         <div className="w-4/5">
           {/* Search  */}
-          <Search categories={categories} />
+          <Search />
         </div>
         <div className="w-1/5 flex justify-end">
           {/* create button  */}
           <Button
             type="button"
             size="sm"
-            onClick={() => setOpenModal(true)}
+            onClick={() => setOpenCreateModal(true)}
             disabled={state.loading}
           >
             Create
@@ -86,11 +75,7 @@ const PostAll = () => {
         </div>
       )}
       {/* create modal */}
-      <Create
-        openModal={openModal}
-        setOpenModal={setOpenModal}
-        categories={categories}
-      />
+      <Create openModal={openCreateModal} setOpenModal={setOpenCreateModal} />
     </div>
   );
 };

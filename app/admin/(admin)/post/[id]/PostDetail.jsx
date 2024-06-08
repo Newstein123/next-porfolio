@@ -12,8 +12,8 @@ import DOMPurify from "dompurify";
 const PostDetail = () => {
   const { state, getOnePost } = useContext(PostContext);
   const { id } = useParams();
-  const mongoDate = state.post?.createdAt
-    ? new Date(state.post.createdAt)
+  const mongoDate = state.post.currentPost?.createdAt
+    ? new Date(state.post.currentPost.createdAt)
     : null;
 
   let postedAt;
@@ -22,7 +22,7 @@ const PostDetail = () => {
       addSuffix: true,
     });
   }
-  const bodyText = DOMPurify.sanitize(state.post?.body);
+  const bodyText = DOMPurify.sanitize(state.post.currentPost?.body);
 
   useEffect(() => {
     getOnePost(id);
@@ -45,21 +45,23 @@ const PostDetail = () => {
 
       {!state.loading ? (
         <React.Fragment>
-          {state.post && (
+          {state.post.currentPost && (
             <div className="my-10">
               {/* post title  */}
               <div className="my-2">
-                <p className="text-slate-700 text-2xl"> {state.post.title} </p>
+                <p className="text-slate-700 text-2xl">
+                  {state.post.currentPost.title}
+                </p>
               </div>
               {/* posted at  */}
               <p className="text-slate-500 text-sm">
-                Posted By <span> {state.post.author?.name} </span> |
+                Posted By <span> {state.post.currentPost.author?.name} </span> |
                 <span> {postedAt} </span>
               </p>
 
               {/* post tags  */}
               <div className="flex my-3">
-                {state.post.tags?.map((item) => (
+                {state.post.currentPost.tags?.map((item) => (
                   <Badge className="me-3"> {item} </Badge>
                 ))}
               </div>
@@ -67,13 +69,13 @@ const PostDetail = () => {
               {/* post categories */}
               <div className="flex my-2">
                 <span className="text-slate-600 font-bold">
-                  {state.post.category_id?.name} |
+                  {state.post.currentPost.category_id?.name} |
                 </span>
               </div>
               {/* images  */}
               <div className="my-3">
-                {state.post?.post_images?.length > 0 &&
-                  state.post?.post_images?.map((item) => (
+                {state.post.currentPost?.post_images?.length > 0 &&
+                  state.post.currentPost?.post_images?.map((item) => (
                     <img src={item} alt="post-image" width="100%" />
                   ))}
               </div>

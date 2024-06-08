@@ -1,0 +1,22 @@
+{
+    "name" : "English",
+    "search" : {
+        "title" : "My Articles",
+        "description" : "Find intresting contents about me and my career life here.",
+        "button" : "Search",
+        "placeholder" : "Search articles"
+    },
+    "blog" : {
+        "text" : "Blog",
+        "allPosts" : "All Posts",
+        "featuredPosts" : "Featured Posts",
+        "relatedPosts" : "More for",
+        "noPost" : "There is no posts",
+        "navbar" : {
+            "home" : "Home"
+        },
+        "category" : "Category",
+        "categories" : "Categories",
+        "selectCategory" : "Select Category"
+    }
+}

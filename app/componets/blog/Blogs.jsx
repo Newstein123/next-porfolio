@@ -5,19 +5,21 @@ import { PostContext } from "@/context/PostContext";
 import BlogSkeleton from "../skeleton/BlogSkeleton";
 import { useParams } from "next/navigation";
 
-const Blogs = () => {
+const Blogs = ({ lang }) => {
   const { state, getAllPosts } = useContext(PostContext);
-  const { lang } = useParams();
+  const params = useParams();
 
   useEffect(() => {
-    getAllPosts({ lang, featured: false, status: true });
-  }, [lang]);
+    getAllPosts({ lang: params.lang, featured: false, status: true });
+  }, [params.lang]);
 
   return (
     <div className="bg-slate-200">
       <div className="py-10">
-        <h1 className="text-2xl font-bold text-slate-800">All Posts</h1>
-        <div className="flex flex-wrap">
+        <h1 className="text-2xl font-bold text-slate-800">
+          {lang.blog.allPosts}
+        </h1>
+        <div className="flex flex-wrap my-10">
           {/* blog component  */}
           {state.loading ? (
             [...Array(6)].map((_, index) => (
@@ -28,11 +30,11 @@ const Blogs = () => {
           ) : state.posts.data.length > 0 ? (
             state.posts.data.slice(0, 6).map((item) => (
               <div className="md:w-1/3 w-full">
-                <Blog key={item._id} item={item} />
+                <Blog key={item._id} item={item} lang={lang} />
               </div>
             ))
           ) : (
-            <p className="text-red-700 font-bold text-xl">There is no posts</p>
+            <p className="text-red-700 font-bold text-xl">{lang.blog.noPost}</p>
           )}
         </div>
       </div>

@@ -1,9 +1,11 @@
+import { CategoryContext } from "@/context/CategoryContext";
 import { PostContext } from "@/context/PostContext";
 import { Button, Datepicker, Select, TextInput } from "flowbite-react";
 import React, { useContext, useState } from "react";
 
-const Search = ({ categories }) => {
+const Search = () => {
   const { searchPost } = useContext(PostContext);
+  const { state: categoryState } = useContext(CategoryContext);
   const [searchData, setSearchData] = useState({
     title: "",
     tag: "",
@@ -52,11 +54,12 @@ const Search = ({ categories }) => {
           onChange={(e) => handleInputChange(e)}
         >
           <option value=""> Select Category </option>
-          {categories.map((item) => (
-            <option key={item._id} value={item._id}>
-              {item.name}
-            </option>
-          ))}
+          {categoryState.categories.data.length > 0 &&
+            categoryState.categories?.data.map((item) => (
+              <option key={item._id} value={item._id}>
+                {item.name}
+              </option>
+            ))}
         </Select>
         <Button type="submit"> Search </Button>
       </div>

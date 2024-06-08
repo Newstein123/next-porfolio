@@ -9,7 +9,7 @@ const Language = () => {
 
   const handleLangChange = (e) => {
     const value = e.target.value;
-    router.push(`/blog/lang/${value}`);
+    router.push(`/blog/${value}`);
     setLanguage(value);
   };
 
@@ -21,10 +21,10 @@ const Language = () => {
         onChange={(e) => handleLangChange(e)}
         value={language}
       >
-        <option value="en" selected={language == "en" && true}>
+        <option value="en" defaultValue={language == "en" && true}>
           En
         </option>
-        <option value="my" selected={language == "my" && true}>
+        <option value="my" defaultValue={language == "my" && true}>
           My
         </option>
       </select>

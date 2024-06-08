@@ -5,12 +5,14 @@ import DeleteModal from "../../components/delete/DeleteModal";
 import { PostContext } from "@/context/PostContext";
 import { format } from "date-fns";
 import toast from "react-hot-toast";
+import Edit from "./Edit";
 
 const Post = ({ item, index }) => {
-  const [openModal, setOpenModal] = useState(false);
+  const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [openFeatured, setOpenFeatured] = useState(item.featured);
   const [openPublic, setOpenPublic] = useState(item?.status);
-  const { state, deletePost, featureChanged, statusChanged } =
+  const [openEditModal, setOpenEditModal] = useState(false);
+  const { state, deletePost, featureChanged, statusChanged, getOnePost } =
     useContext(PostContext);
   const formattedDate = format(new Date(2014, 1, 11), "MM/dd/yyyy");
 
@@ -39,11 +41,17 @@ const Post = ({ item, index }) => {
   return (
     <React.Fragment>
       <DeleteModal
-        openModal={openModal}
-        setOpenModal={setOpenModal}
+        openModal={openDeleteModal}
+        setOpenModal={setOpenDeleteModal}
         deleteData={deletePost}
         state={state}
         id={item._id}
+      />
+      {/* Edit Modal  */}
+      <Edit
+        setOpenModal={setOpenEditModal}
+        openModal={openEditModal}
+        item={item}
       />
       <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
         <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white w-[14.28%]">
@@ -52,7 +60,7 @@ const Post = ({ item, index }) => {
         <Table.Cell className="w-[14.28%]">
           <Link href={`/admin/post/${item._id}`}> {item.title} </Link>
         </Table.Cell>
-        <Table.Cell className="w-[14.28%]">{item.category_id.name}</Table.Cell>
+        <Table.Cell className="w-[14.28%]">{item.category_id?.name}</Table.Cell>
         <Table.Cell className="w-[14.28%]"> {item.author.name} </Table.Cell>
         <Table.Cell className="w-[14.28%]"> {formattedDate} </Table.Cell>
         <Table.Cell className="w-[14.28%]">
@@ -72,13 +80,14 @@ const Post = ({ item, index }) => {
             <Link
               href="#"
               className="font-medium text-cyan-600 hover:underline dark:text-cyan-500 me-3"
+              onClick={() => setOpenEditModal(true)}
             >
               Edit
             </Link>
             <Link
               href="#"
               className="font-medium text-red-600 hover:underline dark:text-red-500"
-              onClick={() => setOpenModal(true)}
+              onClick={() => setOpenDeleteModal(true)}
             >
               Delete
             </Link>

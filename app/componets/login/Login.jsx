@@ -28,11 +28,10 @@ const Login = () => {
         const data = await res.json();
         if (data.success) {
           router.push("/admin/dashboard");
-          setLoading(false);
         } else {
           setErrMessage(data.message);
-          setLoading(false);
         }
+        setLoading(false);
       }
     } catch (error) {
       console.log(error);
