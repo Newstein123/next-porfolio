@@ -25,7 +25,6 @@ const BlogDetail = () => {
   const postedAt = differForHumans(state.post.currentPost?.createdAt);
 
   // body
-
   const textBody = state.post.currentPost?.body;
 
   const handleLikeClick = () => {

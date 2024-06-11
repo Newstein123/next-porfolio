@@ -138,14 +138,10 @@ export const PostProvider = ({ children }) => {
 
   const reactionAdded = async (id) => {
     dispatch({ type: "startLoading" });
-    fetchData(
-      `/api/post/reaction`,
-      {
-        method: "POST",
-        body: JSON.stringify({ id }),
-      },
-      "getOnePost"
-    );
+    fetchData(`/api/post/reaction`, {
+      method: "POST",
+      body: JSON.stringify({ id }),
+    });
   };
 
   const paginatePost = async (page) => {
