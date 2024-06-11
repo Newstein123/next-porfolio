@@ -3,6 +3,7 @@ import { sanitizeHtml } from "@/app/libs/sanitizedHtml";
 import { CommentProvider } from "@/context/CommentContext";
 import { PostProvider } from "@/context/PostContext";
 import { Noto_Serif_Myanmar } from "next/font/google";
+import parse from "html-react-parser";
 
 // const myanmar = Noto_Serif_Myanmar({
 //   weight: "400",
@@ -27,7 +28,9 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const postBody = sanitizeHtml(post.body).slice(0, 200);
+  const sanitizedBody = sanitizeHtml(post.body).slice(0, 200);
+  const plainText = sanitizedBody.replace(/<[^>]+>/g, "");
+  const postBody = plainText.slice(0, 200);
 
   return {
     title: post.title,
