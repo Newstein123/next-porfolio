@@ -21,14 +21,14 @@ function reducer(state, { type, payload }) {
     case "getAllComments":
       return {
         ...state,
-        comments: payload.comments,
+        comments: payload.data.comments,
         success: true,
         message: payload.message,
       };
     case "getPostComments":
       return {
         ...state,
-        postComments: payload.comments,
+        postComments: payload.data.comments,
         success: true,
         message: payload.message,
       };
@@ -66,7 +66,7 @@ export const CommentProvider = ({ children }) => {
       dispatch({ type: "endLoading" });
       const result = await res.json();
       if (result.success) {
-        dispatch({ type: "getPostComments", payload: result.data });
+        dispatch({ type: "getPostComments", payload: result });
       }
     }
   };
@@ -75,16 +75,26 @@ export const CommentProvider = ({ children }) => {
 
   const createComment = async (data) => {
     dispatch({ type: "startLoading" });
-    const res = await fetch("/api/comments", {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
-    if (res.ok) {
-      dispatch({ type: "endLoading" });
-      const result = await res.json();
-      if (result.success) {
-        getPostComments(data.postId);
+    try {
+      const res = await fetch("/api/comments", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        const result = await res.json();
+        if (result.success) {
+          getPostComments(data.postId);
+        } else {
+          dispatch({ type: "fail", payload: result.message });
+        }
+      } else {
+        dispatch({ type: "fail", payload: res.message });
       }
+    } catch (error) {
+      dispatch({ type: "fail", payload: error.message });
+    } finally {
+      dispatch({ type: "endLoading" });
     }
   };
 

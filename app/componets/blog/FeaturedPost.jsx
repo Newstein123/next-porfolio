@@ -4,6 +4,8 @@ import Blog from "./Blog";
 import { PostContext } from "@/context/PostContext";
 import BlogSkeleton from "../skeleton/BlogSkeleton";
 import { useParams } from "next/navigation";
+import NoPost from "./NoPost";
+import { v4 as uuidv4 } from "uuid";
 
 const FeaturedPost = ({ lang }) => {
   const { state, getFeaturedPosts } = useContext(PostContext);
@@ -20,19 +22,19 @@ const FeaturedPost = ({ lang }) => {
       </h1>
       <div className="flex my-10">
         {state.featuredLoading ? (
-          [...Array(3)].map((_, index) => (
-            <div className="md:w-1/3 w-full">
-              <BlogSkeleton key={index} />
+          [...Array(3)].map(() => (
+            <div className="md:w-1/3 w-full" key={uuidv4()}>
+              <BlogSkeleton />
             </div>
           ))
         ) : state.featuredPosts.length > 0 ? (
           state.featuredPosts.map((item) => (
-            <div className="md:w-1/3 w-full">
-              <Blog key={item._id} item={item} />
+            <div className="md:w-1/3 w-full" key={item?._id}>
+              <Blog item={item} />
             </div>
           ))
         ) : (
-          <p className="text-red-700 text-xl font-bold">{lang.blog.noPost}</p>
+          <NoPost text={lang.blog.noPost} />
         )}
       </div>
     </div>

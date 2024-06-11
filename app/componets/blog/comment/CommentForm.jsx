@@ -19,12 +19,16 @@ const CommentForm = () => {
   } = useContext(CommentContext);
 
   const handleSubmit = () => {
-    createComment({ content: comment, name, postId: postState.post?._id });
+    createComment({
+      content: comment,
+      name,
+      postId: postState.post.currentPost?._id,
+    });
     if (commentState.success) {
       setOpenModal(false);
       setComment("");
       setName("");
-      toast.success(commentState.message);
+      toast.success("Comment created successfully");
     }
   };
 
@@ -38,19 +42,17 @@ const CommentForm = () => {
   };
 
   const handleCommentChange = (e) => {
-    setError("");
+    if (comment.length < 0) {
+      setError("* comment is required");
+    } else {
+      setError("");
+    }
     setComment(e.target.value);
   };
 
   useEffect(() => {
     getPostComments(postState.post?._id);
   }, [postState.post?._id]);
-
-  useEffect(() => {
-    if (comment == "") {
-      setError("* comment is required");
-    }
-  }, [comment]);
 
   return (
     <React.Fragment>
@@ -67,12 +69,12 @@ const CommentForm = () => {
         <TextInput
           required={true}
           className="w-full me-2"
-          placeholder="Give me your feedback"
+          placeholder="Your feedback here"
           type="text"
           value={comment}
           onChange={(e) => handleCommentChange(e)}
         />
-        <Button type="button" onClick={handleComment}>
+        <Button type="button" onClick={handleComment} color="purple">
           <IoMdSend />
         </Button>
       </div>

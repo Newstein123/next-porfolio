@@ -37,10 +37,10 @@ const CommentModal = ({
             </div>
 
             <div className="flex justify-between text-sm font-medium text-gray-500 dark:text-gray-300">
-              Skip
+              <button> Skip </button>
               <button
                 type="button"
-                onClick={handleSubmit}
+                onClick={() => handleSubmit()}
                 className="text-cyan-700 hover:underline dark:text-cyan-500"
               >
                 Save

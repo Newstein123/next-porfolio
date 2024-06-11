@@ -1,5 +1,5 @@
 "use client";
-import { Roboto_Condensed } from "next/font/google";
+import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const inter = Roboto_Condensed({ subsets: ["latin"] });
+const inter = Source_Sans_3({ subsets: ["latin"], weight: "400" });
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -42,12 +42,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         {children}
-        {process.env.APP_ENV == "production" &&
+        {process.env.APP_ENV == "production" && (
           <React.Fragment>
             <Analytics />
             <SpeedInsights />
           </React.Fragment>
-        }
+        )}
       </body>
     </html>
   );

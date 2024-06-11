@@ -57,7 +57,6 @@ export const CategoryProvider = ({ children }) => {
     dispatch({ type: "startLoading" });
     try {
       const response = await fetch("/api/category");
-      console.log(response);
       if (response.ok) {
         const result = await response.json();
         if (result.success) {

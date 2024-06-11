@@ -57,7 +57,9 @@ const Search = ({ search, setSearch, handleSearch, lang }) => {
                 </Select>
               </div>
               <div className="w-full">
-                <Button type="submit">{lang.search.button}</Button>
+                <Button type="submit" color="purple">
+                  {lang.search.button}
+                </Button>
               </div>
             </div>
           </form>

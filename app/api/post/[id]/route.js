@@ -2,6 +2,9 @@ import { connnectedToDB } from "@/utlis/db";
 import apiResponse from "@/utlis/apiResponse";
 import Post from "@/models/post";
 import { del, put } from "@vercel/blob";
+import User from "@/models/user";
+import Category from "@/models/category";
+import { sanitizeHtml } from "@/app/libs/sanitizedHtml";
 
 export async function GET(req, { params }) {
   const { id } = params;
@@ -18,38 +21,43 @@ export async function GET(req, { params }) {
       .populate("author")
       .populate("category_id");
 
-    if (currentPost) {
-      const prevPost = await Post.findOne({
+    if (!currentPost) {
+      return new Response(apiResponse(false, "Post not found"), {
+        status: 404,
+      });
+    }
+
+    const [prevPost, nextPost] = await Promise.all([
+      Post.findOne({
         createdAt: { $lt: currentPost.createdAt },
         category_id: currentPost.category_id,
         lang: lang,
       })
         .select("_id")
         .sort({ createdAt: -1 })
-        .exec();
+        .exec(),
 
-      const nextPost = await Post.findOne({
+      Post.findOne({
         createdAt: { $gt: currentPost.createdAt },
         category_id: currentPost.category_id,
         lang: lang,
       })
         .select("_id")
         .sort({ createdAt: 1 })
-        .exec();
+        .exec(),
+    ]);
 
-      return new Response(
-        apiResponse(true, "Post detail", {
-          currentPost,
-          prevPost: prevPost ? prevPost._id : null,
-          nextPost: nextPost ? nextPost._id : null,
-        }),
-        {
-          status: 200,
-        }
-      );
-    }
-
-    return new Response(apiResponse(true, "Post not found"));
+    return new Response(
+      apiResponse(true, "Post detail", {
+        currentPost: {
+          ...currentPost.toObject(),
+          body: sanitizeHtml(currentPost.body),
+        },
+        prevPost: prevPost ? prevPost._id : null,
+        nextPost: nextPost ? nextPost._id : null,
+      }),
+      { status: 200 }
+    );
   } catch (error) {
     return new Response(
       apiResponse(false, "Something Wrong", null, error.message),

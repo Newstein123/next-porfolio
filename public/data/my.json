@@ -18,5 +18,10 @@
         "category" : "အမျိုးအစား",
         "categories" : "အမျိုးအစားများ",
         "selectCategory" : "အမျိုးအစားရွေးခြယ်ပါ"
-    }
+    },
+    "next" : "နောက်သို့",
+    "previous" : "ရှေ့သို့",
+    "seeAllComments" : "Comment အားလုံးကြည့်မည်",
+    "hideComments" : "Comment များပိတ်ထားမည်",
+    "comments" : "Comments"
 }

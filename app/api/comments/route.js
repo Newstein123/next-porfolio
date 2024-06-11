@@ -29,7 +29,7 @@ export async function POST(req) {
 
   // validate for postId and comment
   if (!postId) {
-    return new Response(apiResponse(false, "Comment Field is required", []), {
+    return new Response(apiResponse(false, "PostId Field is required", []), {
       status: 200,
     });
   }

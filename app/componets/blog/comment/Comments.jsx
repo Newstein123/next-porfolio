@@ -1,19 +1,22 @@
+"use client";
 import React, { useContext, useEffect, useState } from "react";
 import CommentForm from "./CommentForm";
 import Comment from "./Comment";
 import { CommentContext } from "@/context/CommentContext";
+import CommentLoading from "../../skeleton/CommentLoading";
+import { v4 as uuidv4 } from "uuid";
 
-const Comments = ({ postId }) => {
+const Comments = ({ postId, lang }) => {
   const [openComments, setOpenComments] = useState(false);
-  const [text, setText] = useState("See All Comments");
+  const [text, setText] = useState(lang.seeAllComments);
   const { state, getPostComments } = useContext(CommentContext);
 
   const handleTextChange = () => {
     setOpenComments(!openComments);
     if (!openComments) {
-      setText("Hide Comments");
+      setText(lang.hideComments);
     } else {
-      setText("See All Comments");
+      setText(lang.seeAllComments);
     }
   };
 
@@ -33,18 +36,21 @@ const Comments = ({ postId }) => {
             <span className="text-xl text-violet-700 font-bold me-2">
               {state.postComments.length ?? 0}
             </span>
-            Comments
+            {lang.comments}
           </h3>
 
           {/* comment form  */}
           <CommentForm />
 
           {/* Comments  */}
-          {!state.loading &&
-            state.postComments.length > 0 &&
-            state.postComments.map((item) => (
-              <Comment key={item._id} item={item} />
-            ))}
+          {!state.loading
+            ? state.postComments.length > 0 &&
+              state.postComments.map((item) => (
+                <Comment key={item._id} item={item} />
+              ))
+            : [...Array(3)].map((_, index) => (
+                <CommentLoading key={uuidv4()} />
+              ))}
         </div>
       )}
     </React.Fragment>

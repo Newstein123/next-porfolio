@@ -5,7 +5,7 @@ import Social from "./Social";
 import Link from "next/link";
 import data from "../../public/data/navbar";
 import ProfileImage from "../../public/image/profile.png";
-import QrCode from "../../public/image/qrcode/whatsapp_qrcode.jpg";
+// import QrCode from "../../public/image/qrcode/whatsapp_qrcode.jpg";
 import { usePathname } from "next/navigation";
 
 const Sidebar = () => {
@@ -24,6 +24,7 @@ const Sidebar = () => {
             }}
             blurDataURL="data:..."
             alt="profile image"
+            priority
           />
           <h3 className="font-bold text-slate-200 text-center text-xl mt-3">
             Min Thet Paing
@@ -37,7 +38,10 @@ const Sidebar = () => {
                 key={item.id}
                 className={
                   item.link === pathname ||
-                  (pathname.startsWith("/project") && item.link === "/project")
+                  (pathname.startsWith("/project") &&
+                    item.link === "/project") ||
+                  (pathname.startsWith("/blog/en") && item.link == "blog/en") ||
+                  (pathname.startsWith("/blog/my") && item.link == "/blog/en")
                     ? "my-5 text-lg hover:text-red-500 text-red-400"
                     : "my-5 text-lg hover:text-red-500"
                 }
@@ -47,13 +51,13 @@ const Sidebar = () => {
             ))}
           </ul>
           {/* what's App qrcode  */}
-          <Image
+          {/* <Image
             src={QrCode}
             width={100}
             height={100}
             alt="this is whats app qrcode"
             className="shadow-md shadow-slate-400"
-          />
+          /> */}
         </div>
         <Social />
       </div>

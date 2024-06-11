@@ -5,7 +5,7 @@ const BlogSkeleton = () => {
     <React.Fragment>
       <div className="mx-0 md:mx-2 my-10 animate-pulse">
         {/* title  */}
-        <div class="h-6 bg-gray-300"></div>
+        <div className="h-6 bg-gray-300"></div>
 
         {/* image  */}
         <div className="flex items-center justify-center w-full h-[200px] bg-gray-300 rounded dark:bg-gray-700 my-2">
@@ -21,10 +21,10 @@ const BlogSkeleton = () => {
         </div>
 
         {/* author and date  */}
-        <div class="h-2.5 bg-gray-300"></div>
+        <div className="h-2.5 bg-gray-300"></div>
 
         {/* body  */}
-        <div class="h-3.5 bg-gray-300 mt-3"></div>
+        <div className="h-3.5 bg-gray-300 mt-3"></div>
       </div>
     </React.Fragment>
   );

@@ -1,6 +1,13 @@
 import BlogDetail from "@/app/componets/blog/BlogDetail";
+import { sanitizeHtml } from "@/app/libs/sanitizedHtml";
 import { CommentProvider } from "@/context/CommentContext";
 import { PostProvider } from "@/context/PostContext";
+import { Noto_Serif_Myanmar } from "next/font/google";
+
+// const myanmar = Noto_Serif_Myanmar({
+//   weight: "400",
+//   subsets: ["myanmar"],
+// });
 
 export async function generateMetadata({ params }) {
   const url = `${process.env.APP_URL}/api/post/${params.id}`;
@@ -19,7 +26,8 @@ export async function generateMetadata({ params }) {
       description: "The post you are looking for does not exist.",
     };
   }
-  const postBody = post.body;
+
+  const postBody = sanitizeHtml(post.body).slice(0, 200);
 
   return {
     title: post.title,

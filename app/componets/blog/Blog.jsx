@@ -1,39 +1,38 @@
 import Link from "next/link";
 import Reaction from "./Reaction";
-import { formatDistanceToNow } from "date-fns";
 import parse from "html-react-parser";
-import DOMPurify from "dompurify";
 import { useParams } from "next/navigation";
+import Image from "next/image";
+import { differForHumans } from "@/app/helper/helper";
 
 const Blog = ({ item }) => {
   const params = useParams();
-  const mongoDate = item?.createdAt ? new Date(item.createdAt) : null;
-  const sanitizeHtml = DOMPurify.sanitize(item?.body);
-  const plainText = sanitizeHtml.replace(/<[^>]+>/g, "");
+  const postedAt = differForHumans(item?.createdAt);
+  const plainText = item?.body.replace(/<[^>]+>/g, "");
   const postBody = plainText.slice(0, 200);
-
-  let postedAt;
-  if (mongoDate) {
-    postedAt = formatDistanceToNow(mongoDate, {
-      addSuffix: true,
-    });
-  }
 
   return (
     <div className="mx-0 md:mx-2">
       {/* thumbnail image  */}
-      <Link href={`/blog/${item?._id}`}>
+      <Link href={`/blog/${params.lang}/${item?._id}`}>
         {item?.post_images && item?.post_images.length > 0 ? (
-          <img
+          <Image
             src={item?.post_images[0]}
             alt="thumbnail-image"
-            className="rounded-md h-[200px] w-full"
+            className="rounded-md  w-full"
+            width={700}
+            height={475}
+            placeholder="blur"
+            blurDataURL="https://placehold.co/800x400?font=roboto"
           />
         ) : (
-          <img
+          <Image
             src="https://placehold.co/800x400?font=roboto"
             alt="thumbnail-image"
             className="rounded-md h-[200px] w-full"
+            width={700}
+            height={475}
+            layout="responsive"
           />
         )}
       </Link>

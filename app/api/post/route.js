@@ -5,6 +5,7 @@ import apiResponse from "@/utlis/apiResponse";
 import { connnectedToDB } from "@/utlis/db";
 import { getUserInfo } from "@/utlis/getUserInfo";
 import { put } from "@vercel/blob";
+import { sanitizeHtml } from "@/app/libs/sanitizedHtml";
 
 // get all posts
 export async function GET(req) {
@@ -70,8 +71,15 @@ export async function GET(req) {
       .sort({ createdAt: -1 })
       .skip(offset)
       .limit(perpage);
+
+    const transformedPosts = posts.map((post) => {
+      const plainPost = post.toObject();
+      plainPost.body = sanitizeHtml(plainPost.body);
+      return plainPost;
+    });
+
     const data = {
-      posts: posts,
+      posts: transformedPosts,
       totalPages: await Post.countDocuments(),
     };
     return new Response(apiResponse(true, "Post all", data));

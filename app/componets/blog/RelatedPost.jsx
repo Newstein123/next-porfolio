@@ -3,6 +3,8 @@ import Blog from "./Blog";
 import { PostContext } from "@/context/PostContext";
 import BlogSkeleton from "../skeleton/BlogSkeleton";
 import { useParams } from "next/navigation";
+import NoPost from "./NoPost";
+import { v4 as uuidv4 } from "uuid";
 
 const RelatedPost = ({ category, currentPostId, lang }) => {
   const { state, getCategoryPosts } = useContext(PostContext);
@@ -25,17 +27,17 @@ const RelatedPost = ({ category, currentPostId, lang }) => {
         {!state.loading ? (
           state.categoryPosts.length > 0 ? (
             state.categoryPosts.map((item) => (
-              <div className="md:w-1/2">
+              <div className="md:w-1/2" key={item._id}>
                 <Blog item={item} />
               </div>
             ))
           ) : (
-            <p className="text-red-700 font-bold text-xl">{lang.blog.noPost}</p>
+            <NoPost text={lang.blog.noPost} />
           )
         ) : (
           [...Array(4)].map((_, index) => (
-            <div className="md:w-1/2 w-full">
-              <BlogSkeleton key={index} />
+            <div className="md:w-1/2 w-full" key={uuidv4()}>
+              <BlogSkeleton />
             </div>
           ))
         )}

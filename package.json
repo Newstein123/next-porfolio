@@ -21,6 +21,7 @@
     "dompurify": "^3.1.5",
     "flowbite-react": "^0.7.2",
     "html-react-parser": "^5.1.10",
+    "jsdom": "^24.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.2.1",
     "next": "14.0.2",
@@ -34,7 +35,8 @@
     "react-simple-typewriter": "^5.0.1",
     "react-spring": "^9.7.3",
     "react-tagsinput": "^3.20.3",
-    "sharp": "^0.32.6"
+    "sharp": "^0.32.6",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

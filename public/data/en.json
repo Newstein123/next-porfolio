@@ -18,5 +18,10 @@
         "category" : "Category",
         "categories" : "Categories",
         "selectCategory" : "Select Category"
-    }
+    },
+    "next" : "Next",
+    "previous" : "Previous",
+    "seeAllComments" : "See All Comments",
+    "hideComments" : "Hide Comments",
+    "comments" : "Comments"
 }

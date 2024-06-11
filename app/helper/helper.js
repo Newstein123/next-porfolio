@@ -1,6 +1,6 @@
-import axios from "axios";
 import my from "../../public/data/my.json";
 import en from "../../public/data/en.json";
+import { formatDistanceToNow } from "date-fns";
 
 export const renderTransition = (index) => {
   switch (index) {
@@ -44,4 +44,16 @@ export function getLanguageData(lang) {
     language = my;
   }
   return language;
+}
+
+export function differForHumans(date) {
+  const mongoDate = date ? new Date(date) : null;
+  let postedAt;
+  if (mongoDate) {
+    postedAt = formatDistanceToNow(mongoDate, {
+      addSuffix: true,
+    });
+  }
+
+  return postedAt;
 }

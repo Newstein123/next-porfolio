@@ -44,10 +44,13 @@ const Index = () => {
         handleSearch={handleSearch}
         lang={lang}
       />
-      {/* All Blogs  */}
-      <Blogs lang={lang} />
 
-      {!showResult && <FeaturedPost lang={lang} />}
+      <div className="mx-10 md:mx-20">
+        {/* All Blogs  */}
+        <Blogs lang={lang} />
+
+        {!showResult && <FeaturedPost lang={lang} />}
+      </div>
     </React.Fragment>
   );
 };

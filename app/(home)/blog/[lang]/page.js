@@ -8,9 +8,7 @@ const page = () => {
     <React.Fragment>
       <PostProvider>
         <CategoryProvider>
-          <div className="mx-10 md:mx-20">
-            <Index />
-          </div>
+          <Index />
         </CategoryProvider>
       </PostProvider>
     </React.Fragment>

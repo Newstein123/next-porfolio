@@ -7,13 +7,13 @@ import Link from "next/link";
 import ReactAction from "./Reaction";
 import { PostContext } from "@/context/PostContext";
 import { useParams } from "next/navigation";
-import { formatDistanceToNow } from "date-fns";
 import Comments from "./comment/Comments";
 import PostDetailSkeleton from "../skeleton/BlogDetailSkeleton";
 import parse from "html-react-parser";
-import DOMPurify from "dompurify";
 import SocialShare from "./SocialShare";
-import { getLanguageData } from "@/app/helper/helper";
+import { differForHumans, getLanguageData } from "@/app/helper/helper";
+import { Toaster } from "react-hot-toast";
+import Image from "next/image";
 
 const BlogDetail = () => {
   const { id, lang } = useParams();
@@ -22,19 +22,11 @@ const BlogDetail = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [likesCount, setLikesCount] = useState(0);
   // date
-  const mongoDate = state.post.currentPost?.createdAt
-    ? new Date(state.post.currentPost.createdAt)
-    : null;
-  let postedAt;
-  if (mongoDate) {
-    postedAt = formatDistanceToNow(mongoDate, {
-      addSuffix: true,
-    });
-  }
+  const postedAt = differForHumans(state.post.currentPost?.createdAt);
 
   // body
 
-  const textBody = DOMPurify.sanitize(state.post.currentPost?.body);
+  const textBody = state.post.currentPost?.body;
 
   const handleLikeClick = () => {
     if (isLiked) return;
@@ -58,6 +50,7 @@ const BlogDetail = () => {
 
   return (
     <div>
+      <Toaster />
       {/* breadcumb  */}
       <div className="fixed top-0 w-full z-10">
         <Breadcrumb
@@ -119,38 +112,40 @@ const BlogDetail = () => {
                 {/* post image  */}
                 {state.post.currentPost?.post_images &&
                 state.post.currentPost?.post_images.length > 0 ? (
-                  <img
+                  <Image
                     src={
                       state.post.currentPost?.post_images
                         ? state.post.currentPost?.post_images[0]
                         : "https://placehold.co/600x400?font=roboto"
                     }
                     alt="post-detail-image"
-                    width="100%"
-                    height={400}
+                    placeholder="blur"
+                    width={700} // Define the aspect ratio (example: 700 / 475)
+                    height={475}
                     className="my-3"
+                    blurDataURL="https://placehold.co/600x400?font=roboto"
                   />
                 ) : (
-                  <img
+                  <Image
                     src="https://placehold.co/600x400?font=roboto"
                     alt="post-detail-image"
-                    width="100%"
-                    height={400}
+                    width={700} // Define the aspect ratio (example: 700 / 475)
+                    height={475}
                     className="my-3"
                   />
                 )}
 
                 {/* post body  */}
-                <p className="my-5 text-slate-700 leading-8">
+                <section className="my-5 text-slate-500 leading-10">
                   {parse(textBody)}
-                </p>
+                </section>
               </div>
 
               {/* Socail Share  */}
               <SocialShare />
 
               {/* next and previous button  */}
-              <div className="flex justify-between">
+              <div className="flex justify-between mb-5">
                 <Link
                   href={
                     state.post.prevPost !== null
@@ -159,7 +154,7 @@ const BlogDetail = () => {
                   }
                   className="text-violet-700"
                 >
-                  Previous
+                  {language.previous}
                 </Link>
                 <Link
                   href={
@@ -169,12 +164,12 @@ const BlogDetail = () => {
                   }
                   className="text-violet-700"
                 >
-                  Next
+                  {language.next}
                 </Link>
               </div>
 
               {/* comments  */}
-              <Comments postId={state.post.currentPost?._id} />
+              <Comments postId={state.post.currentPost?._id} lang={language} />
 
               {/* related post  */}
               <RelatedPost
